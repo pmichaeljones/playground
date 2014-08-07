@@ -1,28 +1,12 @@
-== README
+Welcome to my personal Ruby on Rails playground!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I'm Patrick Jones, a former SEO/SEM associate that was sick of having great ideas I couldn't build, so I decided to learn to code.
 
-Things you may want to cover:
+This project, hosted on Heroku, is where I implement ideas that come to me; be it in the shower or while brushing my teeth.
 
-* Ruby version
+I'm especially interested in API work. I think API mashups are SUPER COOL, and I hope to have a few on this site.
 
-* System dependencies
+If you need to contact me, please do so at pmichaeljones@gmail.com
 
-* Configuration
+I'm available for contract work and I LOVE to travel, so 1-3 month projects in new cities are right up my alley.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
