@@ -8,7 +8,7 @@
 </head>
 <body>
   <nav class='navbar navbar-default' role='navigation'>
-    <div class='container-fluid'>
+    <div class='container'>
       <div class='navbar-header'>
         <a class='navbar-brand' href='#'>Patrick Jones: Ruby on Rails Playground</a>
       </div>
@@ -29,6 +29,12 @@
       </div>
     </div>
   </nav>
-    <%= yield %>
+    <div class='container'>
+      <div class='row'>
+        <div class='span12'>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,7 @@
+<% if flash.keys.any? %>
+  <% flash.keys.each do |key| %>
+    <div class='alert alert-<%= flash_helper(key) %>'
+     <%= flash[key] %>
+    </div>
+  <% end %>
+<% end %>

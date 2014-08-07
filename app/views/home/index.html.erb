@@ -1,10 +1,32 @@
 <%= render 'layouts/top_nav', title: "Welcome to the site!" %>
+<%= render 'shared/errors', obj: @message %>
+<% binding.pry %>
+<div class='well'>
   <div class='panel panel-primary'>
     <div class='panel-heading'>
       <h3 class='panel-title'>Leave Me a Message</h3>
     </div>
     <div class='panel-body'>
-      Message form here
+
+      <%= form_for @message do |f| %>
+        <%= f.label :sender %>
+        <%= f.text_field :sender %>
+        <br/>
+        <%= f.label :contents %>
+        <%= f.text_field :contents %>
+        <br/>
+        <%= f.submit "Leave a Message", class: 'btn btn-primary' %>
+      <% end %>
+
     </div>
+    <h3>Messages:</h3>
+      <% @messages.each do |msg| %>
+        <div class="alert alert-info">
+          <%= msg.contents %>
+          <br/>
+          <small>From: <%= msg.sender %> </small>
+        </div>
+      <% end %>
   </div>
+</div>
 
