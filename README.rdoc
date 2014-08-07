@@ -4,7 +4,9 @@ Welcome to my personal Ruby on Rails playground!
 
 I'm Patrick Jones, a former SEO/SEM associate that was sick of having great ideas I couldn't build, so I decided to learn to code.
 
-My personal website is <a href="http://patrickjones.me">PatrickJones.me</a>
+My personal website is PatrickJones.me and the blog is PatrickJones.me/blog/
+
+I blog about most of the projects I put on this site.
 
 This project, hosted on Heroku, is where I implement ideas that come to me; be it in the shower or while brushing my teeth.
 
