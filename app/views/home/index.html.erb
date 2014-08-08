@@ -1,32 +1,49 @@
 <%= render 'layouts/top_nav', title: "Welcome to the site!" %>
-<%= render 'shared/errors', obj: @message %>
-<% binding.pry %>
-<div class='well'>
-  <div class='panel panel-primary'>
-    <div class='panel-heading'>
-      <h3 class='panel-title'>Leave Me a Message</h3>
-    </div>
-    <div class='panel-body'>
+  <div class='col-md-4'>
+    <%= render 'shared/errors', obj: @message %>
+    <div class='panel panel-primary'>
+      <div class='panel-heading'>
+        <h3 class='panel-title'>Leave Me a Message</h3>
+      </div>
+      <div class='panel-body'>
 
-      <%= form_for @message do |f| %>
-        <%= f.label :sender %>
-        <%= f.text_field :sender %>
-        <br/>
-        <%= f.label :contents %>
-        <%= f.text_field :contents %>
-        <br/>
-        <%= f.submit "Leave a Message", class: 'btn btn-primary' %>
-      <% end %>
-
-    </div>
-    <h3>Messages:</h3>
-      <% @messages.each do |msg| %>
-        <div class="alert alert-info">
-          <%= msg.contents %>
-          <br/>
-          <small>From: <%= msg.sender %> </small>
+        <%= form_for @message do |f| %>
+        <div class='form-group'>
+          <div class='input-group'>
+            <div class='input-group-addon'><span class='glyphicon glyphicon-arrow-right'></span></div>
+             <%= f.text_field :sender, class: 'form-control', placeholder: 'Enter Name' %>
+          </div>
         </div>
-      <% end %>
+        <div class='form-group'>
+          <div class='input-group'>
+            <div class='input-group-addon'><span class='glyphicon glyphicon-envelope'></span></div>
+             <%= f.text_field :contents, class: 'form-control', placeholder: 'Enter Message' %>
+          </div>
+        </div>
+          <br/>
+          <%= f.submit "Leave a Message", class: 'btn btn-primary' %>
+        <% end %>
+
+        <h3>Messages:</h3>
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>Message</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @messages.each do |msg| %>
+              <tr>
+                <td><%= msg.sender %></td>
+                <td><%= msg.contents %></td>
+                <td><%= pretty_time(msg.created_at) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        </div>
+    </div>
   </div>
-</div>
 

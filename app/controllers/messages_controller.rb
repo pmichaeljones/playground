@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
 
   def create
     #binding.pry
+    @messages = Message.all
     @message = Message.new(message_params)
 
     if @message.save
@@ -16,7 +17,7 @@ class MessagesController < ApplicationController
     else
       flash[:notice] = "Your message wasn't valid."
       #binding.pry
-      redirect_to root_path
+      render 'home/index'
     end
 
   end

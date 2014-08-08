@@ -11,7 +11,11 @@ module ApplicationHelper
     else
       ""
     end
-
   end
+
+  def pretty_time(time)
+    time.strftime("%b %e, %Y | | %m:%M %p")
+  end
+
 
 end

@@ -8,9 +8,9 @@
 </head>
 <body>
   <nav class='navbar navbar-default' role='navigation'>
-    <div class='container'>
+    <div class='container-fluid'>
       <div class='navbar-header'>
-        <a class='navbar-brand' href='#'>Patrick Jones: Ruby on Rails Playground</a>
+        <a class='navbar-brand' href='/'>Patrick Jones: Ruby on Rails Playground</a>
       </div>
       <div class='collapse navbar-collapse'>
          <ul class='nav navbar-nav'>
@@ -29,11 +29,12 @@
       </div>
     </div>
   </nav>
-    <div class='container'>
+    <div class='container-fluid'>
       <div class='row'>
-        <div class='span12'>
-          <%= yield %>
+        <div class='col-md-12'>
+          <%= render 'layouts/flash_messages' %>
         </div>
+        <%= yield %>
       </div>
     </div>
 </body>
