@@ -1,0 +1,9 @@
+<% if params[:query].empty? %>
+  $("#crossfit-names").html("You need to enter a word, silly.")
+<% elsif ((params[:query] =~ /\s/).nil? == false)  %>
+  $("#crossfit-names").html("Please remove spaces from your word.")
+<% elsif @reply_code == "404"  %>
+  $("#crossfit-names").html("No matching words were found.")
+<% else %>
+  $("#crossfit-names").html("<%= escape_javascript(render(:partial => 'shared/crossfit_names')) %>")
+<% end %>
