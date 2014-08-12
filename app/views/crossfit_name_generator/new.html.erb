@@ -1,0 +1,25 @@
+<%= render 'layouts/top_nav', title: "CrossFit Name Generator" %>
+<div class='col-md-12'>
+  <p>Using the Big Thesaurus API, I've created the CrossFit name generator below.
+    <br/>
+    Simply input a "starting word" for your CrossFit box business name.
+    <br/>
+    Click "Generate Names" and a list of possible CrossFit box names will be generated.
+    <br/>
+    This service is provided by Boost Fitness Marketing, the creators of <a href='http://boostfitnessmarketing.com/fitnesstexter'>FitnessTexter</a>, the text message marketing service used by over 300 fitness businesses to increase their membership volume.
+  </p>
+</div>
+<div class="well col-md-3">
+  <h3>CrossFit Name Generator!</h3>
+  <br/>
+  <%= form_tag(crossfit_name_generator_index_path, remote: true) do %>
+    <div class='form-group'>
+      <div class='input-group'>
+        <div class='input-group-addon'><span class='glyphicon glyphicon-arrow-right'></span></div>
+         <%= text_field_tag 'query', nil, placeholder: 'Enter your search term here', class: 'form-control'%>
+      </div>
+    </div>
+    <br/>
+    <%= submit_tag "Generate Names", class: 'btn btn-primary' %>
+  <% end %>
+</div>

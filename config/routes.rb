@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :messages, only: [:new, :create]
 
+  resources :crossfit_name_generator, only: [:new, :create]
+
 
 
 
