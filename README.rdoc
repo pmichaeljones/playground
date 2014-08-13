@@ -1,6 +1,6 @@
 == README
 
-Welcome to my personal Ruby on Rails playground!
+Welcome to my personal Ruby on Rails playground, where I implement my ideas.
 
 Here's the URL: http://pmichaeljones.herokuapp.com
 
