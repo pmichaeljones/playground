@@ -15,7 +15,7 @@ class CrossfitNameGeneratorController < ApplicationController
 
           else
 
-            #binding.pry
+            #binding.pry #use to debug this area
 
             require 'net/http'
 
