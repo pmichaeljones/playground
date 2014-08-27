@@ -11,7 +11,7 @@
 
 %hr
 
-.col-md-3
+.col-md-4
   .panel.panel-primary
     .panel.panel-heading
       %h3.panel-title CrossFit Name Generator
@@ -23,8 +23,8 @@
               %span.glyphicon.glyphicon-arrow-right
             = text_field_tag :query, nil, :class => 'form-control', :placeholder => "Enter Search Term"
         = submit_tag('Generate Names', class:'btn btn-primary')
-.col-md-9
+.col-md-8
   .panel.panel-primary
     .panel.panel-heading
       %h3.panel-title Possible CrossFit Names
-    .panel-body#crossfit-names
+    .panel-body#crossfit-names{ :style => "text-align: center;"}
