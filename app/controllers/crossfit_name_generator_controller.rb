@@ -9,7 +9,7 @@ class CrossfitNameGeneratorController < ApplicationController
 
         format.js do
 
-          #binding.pry
+          binding.pry
 
           if params[:query].empty? || ((params[:query] =~ /\s/).nil? == false)
 
@@ -20,7 +20,6 @@ class CrossfitNameGeneratorController < ApplicationController
             require 'net/http'
 
             uri = URI("http://words.bighugelabs.com/api/2/#{ENV['BIG_THES_KEY']}" + "/" + "#{params[:query]}" + "/json")
-
 
             res = Net::HTTP.get_response(uri)
 
