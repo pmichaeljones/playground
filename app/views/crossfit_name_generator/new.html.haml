@@ -1,44 +1,30 @@
-<%= render 'layouts/top_nav', title: "CrossFit Name Generator" %>
-<div>
-  <p>Using the Big Thesaurus API, I've created the CrossFit name generator below.
-    <br/>
-    Simply input a "starting word" for your CrossFit box business name. Use a words like angry, fierce, force, etc.
-    <br/>
-    Click "Generate Names" and a list of possible CrossFit box names will be generated.
-    <br/>
-    This service is provided by Boost Fitness Marketing, the creators of <a href='http://boostfitnessmarketing.com/fitnesstexter'>FitnessTexter</a>, the text message marketing service used by over 300 fitness businesses to increase their membership volume.
-  </p>
-</div>
+= render :partial => 'layouts/top_nav', :locals => { :title => "CrossFit Name Generator" }
 
-<!-- Attempt to build the same with HAML -->
+.well
+  %p Using the Big Thesaurus API, I've created the CrossFit name generator below.
 
+  %p Simply input a "starting word" for your CrossFit box business name. Use a words like angry, fierce, force, etc.
 
-<hr/>
-<div class="col-md-2">
-  <div class="panel panel-primary">
-    <div class="panel panel-heading">
-      <h3 class="panel-title">CrossFit Name Generator!</h3>
-    </div>
-    <div class="panel-body">
-      <%= form_tag(crossfit_name_generator_index_path, remote: true) do %>
-        <div class='form-group'>
-          <div class='input-group'>
-            <div class='input-group-addon'><span class='glyphicon glyphicon-arrow-right'></span></div>
-            <%= text_field_tag 'query', nil, placeholder: 'Enter your search term here', class: 'form-control'%>
-          </div>
-        </div>
-        <br/>
-      <%= submit_tag "Generate Names", class: 'btn btn-primary' %>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div class="col-md-10">
-  <div class="panel panel-primary">
-    <div class="panel panel-heading">
-      <h3 class="panel-title">Possible CrossFit Names</h3>
-    </div>
-    <div class="panel-body" id="crossfit-names">
-    </div>
-  </div>
-</div>
+  %p Click "Generate Names" and a list of possible CrossFit box names will be generated.
+
+  %p This service is provided by Boost Fitness Marketing, the creators of #{ link_to 'FitnessTextery', 'http://boostfitnessmarketing.com/fitnesstexter'} the text message marketing service used by over 300 fitness businesses to increase their membership volume.
+
+%hr
+
+.col-md-3
+  .panel.panel-primary
+    .panel.panel-heading
+      %h3.panel-title CrossFit Name Generator
+    .panel-body
+      = form_tag crossfit_name_generator_index_path, action: "create", remote: "true" do
+        .form-group
+          .input-group
+            .input-group-addon
+              %span.glyphicon.glyphicon-arrow-right
+            = text_field_tag :query, nil, :class => 'form-control', :placeholder => "Enter Search Term"
+        = submit_tag('Generate Names', class:'btn btn-primary')
+.col-md-9
+  .panel.panel-primary
+    .panel.panel-heading
+      %h3.panel-title Possible CrossFit Names
+    .panel-body#crossfit-names
