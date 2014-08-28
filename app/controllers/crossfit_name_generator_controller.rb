@@ -21,8 +21,11 @@ class CrossfitNameGeneratorController < ApplicationController
 
             uri = URI("http://words.bighugelabs.com/api/2/#{ENV['BIG_THES_KEY']}" + "/" + "#{params[:query]}" + "/json")
 
+            #binding.pry
 
             res = Net::HTTP.get_response(uri)
+
+            #binding.pry
 
             @reply_code = res.code
 
