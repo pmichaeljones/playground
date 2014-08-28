@@ -23,6 +23,8 @@ class CrossfitNameGeneratorController < ApplicationController
 
             res = Net::HTTP.get_response(uri)
 
+            #binding.pry
+
             @reply_code = res.code
 
             if @reply_code == "404"
