@@ -9,7 +9,7 @@ class CrossfitNameGeneratorController < ApplicationController
 
         format.js do
 
-          binding.pry
+          #binding.pry
 
           if params[:query].empty? || ((params[:query] =~ /\s/).nil? == false)
 
