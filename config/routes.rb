@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   resources :crossfit_name_generator, only: [:new, :create]
 
-  get '/twilio_info' => 'twilio#index'
+  get '/twilio_inbox' => 'twilio#inbox'
+  get '/twilio' => 'twilio#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
