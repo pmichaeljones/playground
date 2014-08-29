@@ -7,7 +7,7 @@ require 'twilio-ruby'
   end
 
   def inbox
-    binding.pry
+    #binding.pry
 
     message = IncomingSms.new
 
@@ -15,17 +15,17 @@ require 'twilio-ruby'
     message.from_city = params[:FromCity]
     message.from_number = params[:From]
 
-    binding.pry
+    #binding.pry
 
     message.save
 
     #binding.pry
 
-    # twiml = Twilio::TwiML::Response.new do |r|
-    #   r.Message "Thanks for the message #{params[:Body]}. How's #{params[:FromCity]}?"
-    # end
-    # render xml: twiml.text
-    render :index
+    twiml = Twilio::TwiML::Response.new do |r|
+      r.Message "Thanks for the message #{params[:Body]}. How's #{params[:FromCity]}?"
+      end
+    render xml: twiml.text
+    #render :index
   end
 
   def new
