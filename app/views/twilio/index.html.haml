@@ -10,7 +10,8 @@
   %h4 Received Messages:
   - @texts.each do |s|
     .alert.alert-success
-      %p{ :style => "font-weight: bold" } Sender:
-      = s.name
+      %p 
+        %b Sender:  
+        = s.name
       %p{ :style => "font-weight: bold" } Message:
       = s.message
