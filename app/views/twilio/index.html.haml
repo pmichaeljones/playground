@@ -7,6 +7,7 @@
   %h5{ :style => "text-decoration: underline"} Example Text Message (without the quotes)
   %p "John Hey Man. Just testing your Twilio App thingy!"
   %hr
+  %h4 Received Messages:
   - @texts.each do |s|
     .alert.alert-success
       %p{ :style => "font-weight: bold" } Sender:
