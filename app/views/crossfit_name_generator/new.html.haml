@@ -1,13 +1,16 @@
 = render :partial => 'layouts/top_nav', :locals => { :title => "CrossFit Name Generator" }
 
 .well
-  %p Using the #{ link_to 'Big Thesaurus API', 'http://words.bighugelabs.com/', :target => 'blank'}, I've created the CrossFit name generator below.
+  %p Using the #{ link_to 'Big Thesaurus API', 'http://words.bighugelabs.com/', :target => 'blank'}, I built the CrossFit name generator below.
 
-  %p Simply input a "starting word" for your CrossFit box business name. Use a words like angry, fierce, force, etc.
+  %p
+    Simply input a "starting word" for your CrossFit box business name. Use words like
+    %b angry, fierce, strong,
+    etc.
 
   %p Click "Generate Names" and a list of possible CrossFit box names will be generated.
 
-  %p This service is provided by Boost Fitness Marketing, the creators of #{ link_to 'FitnessTexter', 'http://boostfitnessmarketing.com/fitnesstexter', :target => 'blank'} the text message marketing service used by over 300 fitness businesses to increase their membership volume.
+  %p The "CrossFit Name Generator" is a service of Boost Fitness Marketing, the creators of #{ link_to 'FitnessTexter', 'http://boostfitnessmarketing.com/fitnesstexter', :target => 'blank'}, the text message marketing service used by over 300 fitness businesses to increase their membership volume.
 
 %hr
   .well
@@ -29,7 +32,10 @@
     .panel.panel-heading
       %h3.panel-title CrossFit Name Generator
     .panel-body
-      %p Please use singular adjectives such as: funny, crazy, powerful, etc.
+      %p
+        Please use singular adjectives such as:
+        %b funny, crazy, powerful,
+        etc.
       = form_tag crossfit_name_generator_index_path, action: "create", remote: "true" do
         .form-group
           .input-group
