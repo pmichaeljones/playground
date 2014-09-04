@@ -7,5 +7,7 @@
   %hr
   - @texts.each do |s|
     .alert.alert-success
-      %li= s.from_city
-      %li= s.body
+      %p{ :style => "font-weight: bold" } Sender:
+      = s.name
+      %p{ :style => "font-weight: bold" } Message:
+      = s.message

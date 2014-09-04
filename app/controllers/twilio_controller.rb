@@ -9,20 +9,21 @@ require 'twilio-ruby'
   def inbox
     #binding.pry
 
-    message = IncomingSms.new
+    sms = IncomingSms.new
 
-    message.body = params[:Body]
-    message.from_city = params[:FromCity]
-    message.from_number = params[:From]
+    sms.body = params[:Body]
+
+    sms.name = params[:Body].split(" ")[0]
+    sms.message = params[:Body].split(" ")[1..-1].join(" ")
 
     #binding.pry
 
-    message.save
+    sms.save
 
     #binding.pry
 
     twiml = Twilio::TwiML::Response.new do |r|
-      r.Message "Thanks for the message #{params[:Body]}. To go https://pmichaeljones.herokuapp.com/twilio to see your message."
+      r.Message "Thanks for the message #{params[:Body]}. Please refresh the page to see your message."
       end
     render xml: twiml.text
     #render :index
