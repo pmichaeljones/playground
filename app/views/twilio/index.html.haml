@@ -1,9 +1,11 @@
 /- binding.pry
-.well.col-md-2
-  %h4
-    Twilio Time Baby!
-    %hr
-    - @texts.each do |s|
-      .alert.alert-success
-        %li= s.from_city
-        %li= s.body
+/.well.col-md-2
+.col-md-4
+  %h4 It's Twilio Time Baby!
+  %p Twilio is a text messaging API that lets you send text messages online.
+  %p Text your name 720-897-3141 and await the reply message.
+  %hr
+  - @texts.each do |s|
+    .alert.alert-success
+      %li= s.from_city
+      %li= s.body
