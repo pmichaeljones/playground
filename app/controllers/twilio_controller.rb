@@ -23,7 +23,7 @@ require 'twilio-ruby'
     #binding.pry
 
     twiml = Twilio::TwiML::Response.new do |r|
-      r.Message "Thanks for the message #{params[:Body]}. Please refresh the page to see your message."
+      r.Message "Thanks for the message #{sms.name}. Please refresh the page to see your message."
       end
     render xml: twiml.text
     #render :index
