@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807230701) do
+ActiveRecord::Schema.define(version: 20140829163405) do
+
+  create_table "incoming_sms", force: true do |t|
+    t.string   "body"
+    t.string   "from_city"
+    t.string   "message_sid"
+    t.string   "from_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", force: true do |t|
     t.text     "contents"
