@@ -20,3 +20,15 @@
               %span.glyphicon.glyphicon-arrow-right
             = f.text_field :phone_number, class: 'form-control', placeholder:"Phone Number [Written as 555-555-5555]"
         = f.submit "Create Event", class:'btn btn-primary'
+      %br
+      %h4 Current Events Waiting for Reminders
+      - @reminders.each do |r|
+        .alert.alert-info
+          = link_to "Ready for Pickup", send_reminder_path, :class => 'btn btn-success pull-right'
+          %p
+            = r.client
+          %p
+            = r.event
+          %p
+            = r.phone_number
+
