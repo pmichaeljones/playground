@@ -14,6 +14,7 @@ class TwilioRemindersController < ApplicationController
   end
 
   def send_reminder
+    binding.pry
   end
 
 
