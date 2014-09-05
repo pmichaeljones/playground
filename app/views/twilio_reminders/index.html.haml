@@ -1,0 +1,22 @@
+.container
+  %h4 Welcome to the Twilio Reminders API Playground
+  %hr
+  .col-md-6
+    = form_for @twilio_reminder do |f|
+      .form
+        .form-group
+          .input-group
+            .input-group-addon
+              %span.glyphicon.glyphicon-arrow-right
+            = f.text_field :client, class: 'form-control', placeholder:"Customer Name"
+        .form-group
+          .input-group
+            .input-group-addon
+              %span.glyphicon.glyphicon-arrow-right
+            = f.text_field :event, class: 'form-control', placeholder:"Item to Be Picked Up [Sandwich, dry cleaning, etc]"
+        .form-group
+          .input-group
+            .input-group-addon
+              %span.glyphicon.glyphicon-arrow-right
+            = f.text_field :phone_number, class: 'form-control', placeholder:"Phone Number [Written as 555-555-5555]"
+        = f.submit "Create Event", class:'btn btn-primary'

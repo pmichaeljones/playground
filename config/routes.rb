@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/twilio_inbox' => 'twilio#inbox'
   get '/twilio' => 'twilio#index'
 
+  get '/twilio_reminders' => 'twilio_reminders#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
