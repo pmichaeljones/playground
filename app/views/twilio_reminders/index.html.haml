@@ -24,7 +24,7 @@
       %h4 Current Events Waiting for Reminders
       - @reminders.each do |r|
         .alert.alert-info
-          = link_to "Ready for Pickup", send_reminder_path, :class => 'btn btn-success pull-right'
+          = link_to "Ready for Pickup", send_reminder_path(r), class:  'btn btn-success pull-right'
           %p
             = r.client
           %p
