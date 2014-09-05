@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   get '/twilio_reminders' => 'twilio_reminders#index'
 
+  post 'twilio_reminders' => 'twilio_reminders#create'
+
+  get 'twilio_reminders' => 'twilio_reminders#send_reminder', as: "send_reminder"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
