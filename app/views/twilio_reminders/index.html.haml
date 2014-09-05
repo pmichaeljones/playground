@@ -27,8 +27,8 @@
       %br
       %h4 Current Events Waiting for Reminders
       - @reminders.each do |r|
-        .alert.alert-info
-          .pull-right
+        .alert.alert-info{ :style => "overflow: auto;"}
+          .pull-right{ :style => "float: left;"}
             - if r.message_sent == true
               %button.btn.btn-default{:disabled => "disabled", :style => "margin-bottom: 5px;"} Reminder Sent
               %br
