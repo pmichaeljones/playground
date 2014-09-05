@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904172813) do
+ActiveRecord::Schema.define(version: 20140905043549) do
 
   create_table "incoming_sms", force: true do |t|
     t.string   "body"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20140904172813) do
   create_table "messages", force: true do |t|
     t.text     "contents"
     t.string   "sender"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "twilio_reminders", force: true do |t|
+    t.string   "client"
+    t.string   "event"
+    t.integer  "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
