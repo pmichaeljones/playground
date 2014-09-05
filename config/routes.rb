@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get '/send_reminder/:id' => 'twilio_reminders#send_reminder', as: "send_reminder"
 
+  get '/delete_reminder/:id' => 'twilio_reminders#delete_reminder', as: "delete_reminder"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905060507) do
+ActiveRecord::Schema.define(version: 20140905174500) do
 
   create_table "incoming_sms", force: true do |t|
     t.string   "body"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140905060507) do
     t.string   "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "message_sent", default: false
   end
 
 end
