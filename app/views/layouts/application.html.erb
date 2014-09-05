@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Patrick Jones's Ruby on Rails Playground</title>
+  <% if @title %>
+    <title><%= @title %></title>
+  <% else %>
+    <title>Patrick Jones's Ruby on Rails Playground</title>
+  <% end %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
