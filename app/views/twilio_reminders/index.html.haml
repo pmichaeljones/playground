@@ -1,7 +1,11 @@
 .container
+
   %h4 Welcome to the Twilio Reminders API Playground
   %hr
   .col-md-6
+    - if @twilio_reminder == nil
+    - else
+      = render 'shared/errors', obj: @twilio_reminder
     = form_for @twilio_reminder do |f|
       .form
         .form-group
@@ -24,11 +28,18 @@
       %h4 Current Events Waiting for Reminders
       - @reminders.each do |r|
         .alert.alert-info
-          = link_to "Ready for Pickup", send_reminder_path(r), class:  'btn btn-success pull-right'
+          .pull-right
+            - if r.message_sent == true
+              %button.btn.btn-default{:disabled => "disabled", :style => "margin-bottom: 5px;"} Reminder Sent
+              %br
+            - else
+              = link_to "Ready for Pickup", send_reminder_path(r), { :style => "margin-bottom: 5px;", :class => 'btn btn-success'}
+              %br
+            = link_to "Remove Item", delete_reminder_path(r), class:  'btn btn-danger'
           %p
+            %b Client Name:
             = r.client
           %p
+            %b Item to be Picked Up:
             = r.event
-          %p
-            = r.phone_number
 
