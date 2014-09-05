@@ -1,6 +1,17 @@
 .container
 
-  %h4 Welcome to the Twilio Reminders API Playground
+  %h4 Twilio SMS Playground: Text Message Reminders
+  %hr
+  %p This is an experimental application that businesses would use to send a "Your Item is Ready for Pickup" text message to clients.
+  %p I was walking home from the grocery store and this idea came to me. 12 hours later, it's a real thing!
+  %ol{:type => "1"}
+    %li Input your name, hypothetical item that needs to be picked up, and your phone number
+    %li Task item will populate below the input form
+    %li Click "Ready for Pickup"
+    %li Twilio API sends a customized "Your Item is Ready for Pickup" text message to your phone
+    %li "Ready for Pickup" button is deactivated to prevent abuse
+    %li Click "Remove Item" to remove your task from the list
+  %b Please only use your PERSONAL phone number. Please don't put my career in jeopardy by abusing this. Thanks!
   %hr
   .col-md-6
     - if @twilio_reminder == nil
