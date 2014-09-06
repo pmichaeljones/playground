@@ -6,6 +6,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'haml'
 gem 'twilio-ruby'
+gem 'mandrill-api'
 
 gem 'autoprefixer-rails'
 
