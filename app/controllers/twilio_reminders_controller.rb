@@ -34,7 +34,7 @@ require 'twilio-ruby'
     @client = Twilio::REST::Client.new ENV["TWILIO_SID"], ENV["TWILIO_TOKEN"]
 
     message = @client.account.messages.create(
-      :body => "Patrick's Twilio App: Hi #{reminder.client}. Your #{reminder.event} is ready for pickup",
+      :body => "Patrick's Twilio App: Hi #{reminder.client}. Your #{reminder.event} is ready for pickup. Do not reply to this message.",
       :to => "#{user_phone_number}",
       :from => "+17208973141"
       )
