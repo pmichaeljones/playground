@@ -1,64 +1,66 @@
-<%= render 'layouts/top_nav', title: "Welcome to the site!" %>
-  <div class="col-md-12" style="margin-bottom: 10px;">
-    <div class="col-md-2">
-      <%= image_tag "http://boostfitnessmarketing.com/wp-content/uploads/patrick-jones-boost-fitness-marketing.jpg", width: '300', height: '300', style: "float: left;" %>
-    </div>
-    <div class="col-md-4">
-      <p>Hello! My name is Patrick Jones. I'm a Ruby on Rails developer based in Denver, Colorado.</p>
-      <p>This is my Rails playground, where I implement new ideas and play with APIs.</p>
-      <p>I write weekly posts on Rails development over on <a target="_blank" href="http://patrickjones.me/blog">my personal blog.</a></p>
-      <p>Take a look around. If you're in need of a contract Ruby on Rails developer, skilled in external API integration, please contact me: <strong>pmichaeljones[at]gmail.com</strong></p>
-      <p>I am currently seeking short-term apprenticeships & contact work. If your company has an opening for a 1-3 month Ruby on Rails apprenticeship, let's talk! Denver, NYC, Buenos Aires, it doesn't matter where!</p>
-      <p>As for contract work, I love traveling. I'm currently taking contract work in US & international cities. Airfare, a hotel during my stay, a daily per diem, and a list of cool nightlife spots in your city is all I ask in return. :)</p>
-      <p>If my sparse website design hasn't clued you in, let it be known, <strong>I'm not a designer</strong>. I prefer backend development. There are talented designers in the world, and I prefer to team up with them. They design it, I wire up the backend, BOOM, it's done.</p>
-    </div>
-  </div>
-  <br/>
-  <div class='col-md-6'>
-    <%= render 'shared/errors', obj: @message %>
-    <div class='panel panel-primary'>
-      <div class='panel-heading'>
-        <h3 class='panel-title'>Leave Me a Message</h3>
+<div class="container">
+  <%= render 'layouts/top_nav', title: "Welcome to the site!" %>
+    <div class="col-md-12" style="margin-bottom: 10px;">
+      <div class="col-md-4">
+        <%= image_tag "http://boostfitnessmarketing.com/wp-content/uploads/patrick-jones-boost-fitness-marketing.jpg", width: '300', height: '300', style: "float: left; margin-right: 10px;" %>
       </div>
-      <div class='panel-body'>
-
-        <%= form_for @message do |f| %>
-        <div class='form-group'>
-          <div class='input-group'>
-            <div class='input-group-addon'><span class='glyphicon glyphicon-arrow-right'></span></div>
-             <%= f.text_field :sender, class: 'form-control', placeholder: 'Enter Name' %>
-          </div>
+      <div class="col-md-8">
+        <p>Hello! My name is Patrick Jones. I'm a Ruby on Rails developer based in Denver, Colorado.</p>
+        <p>This is my Rails playground, where I implement new ideas and play with APIs.</p>
+        <p>I write weekly posts on Rails development over on <a target="_blank" href="http://patrickjones.me/blog">my personal blog.</a></p>
+        <p>Take a look around. If you're in need of a contract Ruby on Rails developer, skilled in external API integration, please contact me: <strong>pmichaeljones[at]gmail.com</strong></p>
+        <p>I am currently seeking short-term apprenticeships & contact work. If your company has an opening for a 1-3 month Ruby on Rails apprenticeship, let's talk! Denver, NYC, Buenos Aires, it doesn't matter where!</p>
+        <p>As for contract work, I love traveling. I'm currently taking contract work in US & international cities. Airfare, a hotel during my stay, a daily per diem, and a list of cool nightlife spots in your city is all I ask in return. :)</p>
+        <p>If my sparse website design hasn't clued you in, let it be known, <strong>I'm not a designer</strong>. I prefer backend development. There are talented designers in the world, and I prefer to team up with them. They design it, I wire up the backend, BOOM, it's done.</p>
+      </div>
+    </div>
+    <br/>
+    <div class='col-md-12'>
+      <%= render 'shared/errors', obj: @message %>
+      <div class='panel panel-primary'>
+        <div class='panel-heading'>
+          <h3 class='panel-title'>Leave Me a Message</h3>
         </div>
-        <div class='form-group'>
-          <div class='input-group'>
-            <div class='input-group-addon'><span class='glyphicon glyphicon-envelope'></span></div>
-             <%= f.text_field :contents, class: 'form-control', placeholder: 'Enter Message' %>
-          </div>
-        </div>
-          <br/>
-          <%= f.submit "Leave a Message", class: 'btn btn-primary' %>
-        <% end %>
+        <div class='panel-body'>
 
-        <h3>Messages:</h3>
-        <table class='table'>
-          <thead>
-            <tr>
-              <th>From</th>
-              <th>Message</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @messages.each do |msg| %>
+          <%= form_for @message do |f| %>
+          <div class='form-group'>
+            <div class='input-group'>
+              <div class='input-group-addon'><span class='glyphicon glyphicon-arrow-right'></span></div>
+               <%= f.text_field :sender, class: 'form-control', placeholder: 'Enter Name' %>
+            </div>
+          </div>
+          <div class='form-group'>
+            <div class='input-group'>
+              <div class='input-group-addon'><span class='glyphicon glyphicon-envelope'></span></div>
+               <%= f.text_field :contents, class: 'form-control', placeholder: 'Enter Message' %>
+            </div>
+          </div>
+            <br/>
+            <%= f.submit "Leave a Message", class: 'btn btn-primary' %>
+          <% end %>
+
+          <h3>Messages:</h3>
+          <table class='table'>
+            <thead>
               <tr>
-                <td><%= msg.sender %></td>
-                <td><%= msg.contents %></td>
-                <td><%= pretty_time(msg.created_at) %></td>
+                <th>From</th>
+                <th>Message</th>
+                <th>Date</th>
               </tr>
-            <% end %>
-          </tbody>
-        </table>
-        </div>
+            </thead>
+            <tbody>
+              <% @messages.each do |msg| %>
+                <tr>
+                  <td><%= msg.sender %></td>
+                  <td><%= msg.contents %></td>
+                  <td><%= pretty_time(msg.created_at) %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          </div>
+      </div>
     </div>
   </div>
 
