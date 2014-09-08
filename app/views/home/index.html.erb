@@ -1,6 +1,11 @@
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#twilio-logo').tooltip();
+});
+</script>
 <div class="container">
   <%= render 'layouts/top_nav', title: "Welcome to the site!" %>
-    <div class="col-md-12" style="margin-bottom: 10px;">
+    <div class="col-md-12" style="margin: 10px;">
       <div class="col-md-4">
         <%= image_tag "http://boostfitnessmarketing.com/wp-content/uploads/patrick-jones-boost-fitness-marketing.jpg", width: '300', height: '300', style: "float: left; margin-right: 10px;" %>
       </div>
@@ -13,6 +18,12 @@
         <p>If my sparse website design hasn't clued you in, let it be known, <strong>I'm not a designer</strong>. I prefer backend development. There are talented designers in the world, and I prefer to team up with them. They design it, I wire up the backend, BOOM, it's done.</p>
       </div>
     </div>
+    <!-- <div class="col-md-12", style="margin-bottom: 10px;">
+      <h3>External APIs that I have Worked With:</h3>
+      <hr/>
+      <img src="http://www.patrickjones.me/blog/wp-content/uploads/2014/09/twilio-small-logo.png" id="twilio-logo" data-toggle="tooltip" data-placement="top" title="twilio" data-original-title="Twilio">
+      <hr/>
+    </div> -->
     <br/>
     <div class='col-md-12'>
       <%= render 'shared/errors', obj: @message %>
