@@ -5,6 +5,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'haml'
+gem 'mail'
+
 gem 'twilio-ruby'
 gem 'mandrill-api'
 
