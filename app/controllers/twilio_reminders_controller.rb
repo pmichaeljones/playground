@@ -41,6 +41,14 @@ require 'twilio-ruby'
 
     message.to
 
+    patrick_message = @client.account.messages.create(
+      :body => "Someone just used your SMS API. Congrat-u-fucking-lations!",
+      :to => "+16124379264",
+      :from => "+17208973141"
+      )
+
+    patrick_message.to
+
     reminder.message_sent = true
 
     reminder.save
