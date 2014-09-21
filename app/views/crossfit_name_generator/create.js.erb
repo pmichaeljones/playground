@@ -5,5 +5,6 @@
 <% elsif @reply_code == "404"  %>
   $("#crossfit-names").html("No matching words were found.")
 <% else %>
+  $("#crossfit-counter").html("<%= @counter.count %> times")
   $("#crossfit-names").html("<%= escape_javascript(render(:partial => 'shared/crossfit_names')) %>")
 <% end %>

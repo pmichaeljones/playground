@@ -14,6 +14,9 @@
     %p The "CrossFit Name Generator" is a service of Boost Fitness Marketing, the creators of #{ link_to 'FitnessTexter', 'http://boostfitnessmarketing.com/fitnesstexter', :target => 'blank'}, the text message marketing service used by over 300 fitness businesses to increase their membership volume.
 
   %hr
+
+
+  %hr
     .well
       %h5 How It Works
       %p
@@ -33,6 +36,13 @@
       .panel.panel-heading
         %h3.panel-title CrossFit Name Generator
       .panel-body
+        %p
+          The name generator has been used:
+          %b
+            %span#crossfit-counter
+              =@counter.count
+              times
+        %hr
         %p
           Please use singular adjectives such as:
           %b funny, crazy, powerful,
