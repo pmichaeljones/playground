@@ -14,9 +14,6 @@
     %p The "CrossFit Name Generator" is a service of Boost Fitness Marketing, the creators of #{ link_to 'FitnessTexter', 'http://boostfitnessmarketing.com/fitnesstexter', :target => 'blank'}, the text message marketing service used by over 300 fitness businesses to increase their membership volume.
 
   %hr
-
-
-  %hr
     .well
       %h5 How It Works
       %p
@@ -54,6 +51,9 @@
                 %span.glyphicon.glyphicon-arrow-right
               = text_field_tag :query, nil, :class => 'form-control', :placeholder => "Enter Search Term"
           = submit_tag('Generate Names', class:'btn btn-primary')
+        %p{ :style => "padding-top: 10px;"}
+          If you found this name generator helpful, please share it with your friends!
+        %a{ :href => "/crossfit_name_generator/new" } http://pmichaeljones.herokuapp.com/crossfit_name_generator/new
   .col-md-8
     .panel.panel-primary
       .panel.panel-heading
