@@ -1,9 +1,11 @@
 class CrossfitNameGeneratorController < ApplicationController
 
   def new
+    @counter = Counter.where(name:"CrossFit").first
   end
 
   def create
+    @counter = Counter.where(name:"CrossFit").first
 
       respond_to do |format|
 
@@ -35,7 +37,8 @@ class CrossfitNameGeneratorController < ApplicationController
 
 
               #binding.pry
-
+              @counter.count += 1
+              @counter.save
               @business_names = hash["adjective"]["sim"]
 
             end
