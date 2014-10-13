@@ -17,7 +17,7 @@ class ContactMailer < ActionMailer::Base
 
     headers['X-MC-MergeVars'] = merge_vars.to_json
 
-    headers['X-MC-Template'] = "Contact Email Confirmation"
+    headers['X-MC-Template'] = "Email To Me"
 
   end
 
