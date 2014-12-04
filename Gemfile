@@ -1,24 +1,31 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.1'
+gem 'rails'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 gem 'bcrypt', '~> 3.1.7'
-gem 'haml'
 gem 'mail'
+gem 'autoprefixer-rails'
+gem 'turbolinks'
+gem 'jbuilder', '~> 2.0'
 
+# Front-End Framework & Design Gems
+gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
+gem 'haml-rails'
+gem 'sass-rails', '~> 4.0.3'
+gem 'jquery-rails'
+
+# Manage API keys and passwords
+gem 'figaro'
+
+# API gems
 gem 'twilio-ruby'
 gem 'mandrill-api'
 
-gem 'autoprefixer-rails'
+# Gem for creating static pages
+gem 'high_voltage', '~> 2.2.1'
 
-gem 'sass-rails', '~> 4.0.3'
-gem 'bootstrap-sass', '~> 3.2.0'
-
-
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
