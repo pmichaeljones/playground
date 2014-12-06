@@ -1,13 +1,13 @@
-%nav.top-bar.collapse(role="navigation")
+%nav.top-bar{role: 'navigation', data: {topbar:''}}
   %ul.title-area
     %li.name
       Patrick Jones's Ruby on Rails Playground
     %li.toggle-topbar.menu-icon
-      %span Menu Stuff
+      %span Menu
   %section.top-bar-section
     %ul.right
       %li.divider
-      %li Just Something
+      %li.active Just Something
       %li.has-dropdown.not-click
         = link_to "Patrick's API Fun Zone"
         %ul.dropdown
@@ -15,6 +15,7 @@
           %li= link_to "Mandrill Contact Form", contact_form_index_path
           %li= link_to "Twilio SMS Reminders", twilio_reminders_path
           %li= link_to "Twilio to Screen", twilio_path
+    %ul.left
       %li.divider
-      %li HELLO
+      %li=link_to "HELLO", "#"
       %li.divider
