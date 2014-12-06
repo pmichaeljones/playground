@@ -1,0 +1,117 @@
+.contain-to-grid
+  .row.show-for-medium-down.bottom-border
+    .small-10.columns
+      =link_to root_path do
+        %span.logo-first-word
+          Doggie
+        %span.logo-last-word
+          Dashboard
+    - if user_signed_in?
+      .small-2.columns.logout-zone
+        =link_to "Logout", destroy_user_session_path, method: :delete, class: 'tiny button radius mobile-transparent'
+    - else
+      .small-2.columns.logout-zone
+        =link_to "Sign In", new_user_session_path, class: 'tiny button radius mobile-transparent'
+  - unless !user_signed_in?
+    .icon-bar.four-up.show-for-medium-down
+      =link_to root_path, class: 'item' do
+        %i.fi-home.medium-icon
+        %label Home
+      =link_to owners_path, class: 'item' do
+        %i.fi-mail.medium-icon
+        %label Email
+      =link_to quick_pet_path, class: 'item' do
+        %i.fi-guide-dog.medium-icon
+        %label + Pet
+      =link_to new_owner_path, class: 'item' do
+        %i.fi-address-book.medium-icon
+        %label + Client
+  %nav.top-bar.collapse.show-for-large-up(role="navigation")
+    %ul.title-area
+      %li.name
+        =link_to root_path do
+          %span.logo-first-word
+            Doggie
+          %span.logo-last-word
+            Dashboard
+      %li.toggle-topbar.menu-icon
+        %span Menu Stuff
+    %section.top-bar-section
+      %ul.right
+        - if user_signed_in?
+          %li.divider
+          %li.has-form
+            =link_to quick_pet_path, class: 'button' do
+              New Pet +
+          %li.divider
+          %li.has-form
+            =link_to new_owner_path, class: 'button' do
+              New Pet Owner +
+          %li.divider
+          /%li= link_to "Scheduling"
+          /%li.divider
+          /%li= link_to "Dashboard"
+          /%li.divider
+          %li.has-dropdown.not-click
+            = link_to "Welcome, #{current_user.business}"
+            %ul.dropdown
+              %li= link_to "Business Dashboard", home_path
+              %li= link_to "Customer List", owners_path
+              %li= link_to "Update Business Profile", edit_user_registration_path
+              %li= link_to "Logout", destroy_user_session_path, method: :delete
+        - else
+          %li.divider
+          %li.sign-in-header= link_to "Free Demo", new_user_session_path
+          %li.divider
+          %li.sign-in-header= link_to "Email Us", contact_form_path
+          %li.divider
+          %li.sign-in-header= link_to "Register", new_user_registration_path
+          %li.divider
+          %li.sign-in-header= link_to "Log In", new_user_session_path
+          %li.divider
+
+
+          <nav class='navbar navbar-default' role='navigation'>
+    <div class='container-fluid'>
+      <div class='navbar-header'>
+        <a class='navbar-brand' href='/'>Patrick Jones: Ruby on Rails Playground</a>
+      </div>
+      <div class='collapse navbar-collapse'>
+         <ul class='nav navbar-nav'>
+          <li class='dropdown'>
+            <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Super Cool API Integrations <span class='caret'></span></a>
+            <ul class='dropdown-menu' role='menu'>
+              <li><%= link_to twilio_path do %>
+                <span class='glyphicon glyphicon-earphone'></span> Twilio to Screen
+                <% end %>
+              </li>
+              <li class='divider'></li>
+              <li><%= link_to twilio_reminders_path do %>
+                <span class='glyphicon glyphicon-earphone'></span> Twilio SMS Reminders
+                <% end %>
+              </li>
+              <li class='divider'></li>
+              <li><%= link_to contact_form_index_path do %>
+                <span class='glyphicon glyphicon-envelope'></span> Mandrill Contact Form
+                <% end %>
+              </li>
+              <li class='divider'></li>
+              <li><%= link_to new_crossfit_name_generator_path do %>
+                <span><img src='/crossfit-glyphicon.png' height=16 width= 14></span> CrossFit Name Generator
+                <% end %>
+              </li>
+              <li class='divider'></li>
+              <li><%= link_to do %>
+                <span class='glyphicon'><img src='/twitter-glyphicon.png' height=16 width= 14></span> Twitter API Extravaganza
+                <% end %>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <%= link_to "Send Me a Message", contact_form_index_path %>
+          </li>
+          <!-- <li><a href='#'>Fun with Forms</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
