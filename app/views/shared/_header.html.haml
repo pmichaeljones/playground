@@ -1,74 +1,37 @@
 .contain-to-grid
-  .row.show-for-medium-down.bottom-border
-    .small-10.columns
-      =link_to root_path do
-        %span.logo-first-word
-          Doggie
-        %span.logo-last-word
-          Dashboard
-    - if user_signed_in?
-      .small-2.columns.logout-zone
-        =link_to "Logout", destroy_user_session_path, method: :delete, class: 'tiny button radius mobile-transparent'
-    - else
-      .small-2.columns.logout-zone
-        =link_to "Sign In", new_user_session_path, class: 'tiny button radius mobile-transparent'
-  - unless !user_signed_in?
-    .icon-bar.four-up.show-for-medium-down
-      =link_to root_path, class: 'item' do
-        %i.fi-home.medium-icon
-        %label Home
-      =link_to owners_path, class: 'item' do
-        %i.fi-mail.medium-icon
-        %label Email
-      =link_to quick_pet_path, class: 'item' do
-        %i.fi-guide-dog.medium-icon
-        %label + Pet
-      =link_to new_owner_path, class: 'item' do
-        %i.fi-address-book.medium-icon
-        %label + Client
-  %nav.top-bar.collapse.show-for-large-up(role="navigation")
+  %nav.top-bar.collapse(role="navigation")
     %ul.title-area
       %li.name
         =link_to root_path do
-          %span.logo-first-word
-            Doggie
-          %span.logo-last-word
-            Dashboard
+          %span.logo
+            Patrick Jones's Ruby on Rails Playground
       %li.toggle-topbar.menu-icon
         %span Menu Stuff
     %section.top-bar-section
       %ul.right
-        - if user_signed_in?
-          %li.divider
-          %li.has-form
-            =link_to quick_pet_path, class: 'button' do
-              New Pet +
-          %li.divider
-          %li.has-form
-            =link_to new_owner_path, class: 'button' do
-              New Pet Owner +
-          %li.divider
-          /%li= link_to "Scheduling"
-          /%li.divider
-          /%li= link_to "Dashboard"
-          /%li.divider
-          %li.has-dropdown.not-click
-            = link_to "Welcome, #{current_user.business}"
-            %ul.dropdown
-              %li= link_to "Business Dashboard", home_path
-              %li= link_to "Customer List", owners_path
-              %li= link_to "Update Business Profile", edit_user_registration_path
-              %li= link_to "Logout", destroy_user_session_path, method: :delete
-        - else
-          %li.divider
-          %li.sign-in-header= link_to "Free Demo", new_user_session_path
-          %li.divider
-          %li.sign-in-header= link_to "Email Us", contact_form_path
-          %li.divider
-          %li.sign-in-header= link_to "Register", new_user_registration_path
-          %li.divider
-          %li.sign-in-header= link_to "Log In", new_user_session_path
-          %li.divider
+        %li.divider
+        %li.has-form
+          =link_to quick_pet_path, class: 'button' do
+            New Pet +
+        %li.divider
+        %li.has-form
+          =link_to new_owner_path, class: 'button' do
+            New Pet Owner +
+        %li.divider
+        /%li= link_to "Scheduling"
+        /%li.divider
+        /%li= link_to "Dashboard"
+        /%li.divider
+        %li.has-dropdown.not-click
+          = link_to "Patrick's API Fun Zone"
+          %ul.dropdown
+            %li= link_to "CrossFit Name Generator", new_crossfit_name_generator_path
+            %li= link_to "Mandrill Contact Form", contact_form_index_path
+            %li= link_to "Project 1", "#"
+            %li= link_to "Project 1", "#"
+        %li.divider
+        %li HELLO
+        %li.divider
 
 
           <nav class='navbar navbar-default' role='navigation'>
