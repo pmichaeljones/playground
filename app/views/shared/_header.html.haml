@@ -1,21 +1,22 @@
-%nav.top-bar{role: 'navigation', data: {topbar:''}}
-  %ul.title-area
-    %li.name
-      %h1
-        =link_to "Patrick Jones: Ruby on Rails Playground", root_path
-    %li.toggle-topbar.menu-icon
-      %span Menu
-  %section.top-bar-section
-    %ul.right
-      /%li.divider
-      /%li=link_to "Suggest an API Mashup"
-      %li.divider
-      %li=link_to "Send Me an Email", "#"
-      %li.divider
-      %li.has-dropdown.not-click
-        = link_to "Patrick's External API Integrations"
-        %ul.dropdown
-          %li= link_to "CrossFit Name Generator", new_crossfit_name_generator_path
-          %li= link_to "Mandrill Contact Form", contact_form_index_path
-          %li= link_to "Twilio SMS Reminders", twilio_reminders_path
-          %li= link_to "Twilio to Screen", twilio_path
+.contain-to-grid
+  %nav.top-bar{role: 'navigation', data: {topbar:''}}
+    %ul.title-area
+      %li.name
+        %h1
+          =link_to "Patrick Jones: Ruby on Rails Playground", root_path
+      %li.toggle-topbar.menu-icon
+        %span Menu
+    %section.top-bar-section
+      %ul.right
+        /%li.divider
+        /%li=link_to "Suggest an API Mashup"
+        %li.divider
+        %li=link_to "Send Me an Email", "#"
+        %li.divider
+        %li.has-dropdown.not-click
+          = link_to "Patrick's External API Integrations"
+          %ul.dropdown
+            %li= link_to "CrossFit Name Generator", new_crossfit_name_generator_path
+            %li= link_to "Mandrill Contact Form", contact_form_index_path
+            %li= link_to "Twilio SMS Reminders", twilio_reminders_path
+            %li= link_to "Twilio to Screen", twilio_path
