@@ -1,13 +1,12 @@
 %nav.top-bar{role: 'navigation', data: {topbar:''}}
   %ul.title-area
     %li.name
-      Patrick Jones's Ruby on Rails Playground
+      %h1
+        =link_to "Patrick Jones's Ruby on Rails Playground", "#"
     %li.toggle-topbar.menu-icon
       %span Menu
   %section.top-bar-section
     %ul.right
-      %li.divider
-      %li.active Just Something
       %li.has-dropdown.not-click
         = link_to "Patrick's API Fun Zone"
         %ul.dropdown
