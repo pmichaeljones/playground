@@ -29,7 +29,7 @@
       4. Hash is set as an instance variable
       %br
       5. Iterate over the instance variable of synonyms, prepending the word "CrossFit" to each.
-  %hr
+    %hr
 .row
   .small-12.columns
     = form_tag crossfit_name_generator_index_path, action: "create", remote: "true" do
@@ -45,7 +45,7 @@
               Used:
               %b= @counter.count
               times and counting!
-            %p{style: 'font-size: 10px;'}
+            %p{style: 'font-size: 12px;'}
               If you found this name generator helpful, please share it with your friends!
               %a{ :href => "/crossfit_name_generator/new" } http://pmichaeljones.herokuapp.com/crossfit_name_generator/new
           %hr
