@@ -18,20 +18,6 @@
   %hr
 .row
   .small-12.columns
-    %h4 How It Works
-    %p
-      1. Input word is sent to Big Thesaurus API via a Rails AJAX request using the 'net/http' library
-      %br
-      2. Big Thesaurus looks up word, and if it exists, it sends back a JSON file with synonyms, antonyms, etc
-      %br
-      3. JSON file is parsed for just the synonyms hash
-      %br
-      4. Hash is set as an instance variable
-      %br
-      5. Iterate over the instance variable of synonyms, prepending the word "CrossFit" to each.
-    %hr
-.row
-  .small-12.columns
     = form_tag crossfit_name_generator_index_path, action: "create", remote: "true" do
       %fieldset
         %legend CrossFit Name Generator
@@ -49,7 +35,19 @@
               If you found this name generator helpful, please share it with your friends!
               %a{ :href => "/crossfit_name_generator/new" } http://pmichaeljones.herokuapp.com/crossfit_name_generator/new
           %hr
-        .row
-          .small-12.columns.centered
-            %h3 CrossFit Box Business Name Generator
           .panel-body#crossfit-names{ :style => "text-align: center;"}
+  %hr
+.row
+  .small-12.columns
+    %h4 How It Works
+    %p
+      1. Input word is sent to Big Thesaurus API via a Rails AJAX request using the 'net/http' library
+      %br
+      2. Big Thesaurus looks up word, and if it exists, it sends back a JSON file with synonyms, antonyms, etc
+      %br
+      3. JSON file is parsed for just the synonyms hash
+      %br
+      4. Hash is set as an instance variable
+      %br
+      5. Iterate over the instance variable of synonyms, prepending the word "CrossFit" to each.
+    %hr
