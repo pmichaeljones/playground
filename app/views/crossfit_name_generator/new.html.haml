@@ -1,7 +1,10 @@
 - @title = "CrossFit Box Name Generator"
-= render :partial => 'layouts/top_nav', :locals => { :title => "CrossFit Name Generator" }
-.col-md-12
-  .well
+.row
+  .small-12.columns.centered
+    %h2 CrossFit Box Business Name Generator
+  %hr
+.row
+  .small-12.columns
     %p Using the #{ link_to 'Big Thesaurus API', 'http://words.bighugelabs.com/', :target => 'blank'}, I built the CrossFit name generator below.
 
     %p
@@ -12,20 +15,18 @@
     %p Click "Generate Names" and a list of possible CrossFit box names will be generated.
 
     %p The "CrossFit Name Generator" is a service of Boost Fitness Marketing, the creators of #{ link_to 'FitnessTexter', 'http://boostfitnessmarketing.com/fitnesstexter', :target => 'blank'}, the text message marketing service used by over 300 fitness businesses to increase their membership volume.
-
   %hr
-    .well
-      %h5 How It Works
-      %p
-        1. Input word is sent to Big Thesaurus API via a Rails AJAX request using the 'net/http' library
-        %br
-        2. Big Thesaurus looks up word, and if it exists, it sends back a JSON file with synonyms, antonyms, etc
-        %br
-        3. JSON file is parsed for just the synonyms hash
-        %br
-        4. Hash is set as an instance variable
-        %br
-        5. Iterate over the instance variable of synonyms, prepending the word "CrossFit" to each.
+    %h4 How It Works
+    %p
+      1. Input word is sent to Big Thesaurus API via a Rails AJAX request using the 'net/http' library
+      %br
+      2. Big Thesaurus looks up word, and if it exists, it sends back a JSON file with synonyms, antonyms, etc
+      %br
+      3. JSON file is parsed for just the synonyms hash
+      %br
+      4. Hash is set as an instance variable
+      %br
+      5. Iterate over the instance variable of synonyms, prepending the word "CrossFit" to each.
   %hr
 
   .col-md-4
