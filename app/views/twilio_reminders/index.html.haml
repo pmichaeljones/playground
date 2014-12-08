@@ -1,57 +1,59 @@
 - @title = "SMS Reminders Application using Twilio API"
-.container
-
-  %h4 Twilio SMS Playground: Text Message Reminders
-  %hr
-  %p This is an experimental application that businesses would use to send a "Your Item is Ready for Pickup" text message to clients.
-  %p I was walking home from the grocery store and this idea came to me. 12 hours later, it's a real thing!
-  %ol{:type => "1"}
-    %li Input your name, hypothetical item that needs to be picked up, and your phone number
-    %li Task item will populate below the input form
-    %li Click "Ready for Pickup"
-    %li Twilio API sends a customized "Your Item is Ready for Pickup" text message to your phone
-    %li "Ready for Pickup" button is deactivated to prevent abuse
-    %li Click "Remove Item" to remove your task from the list
-  %b Please only use your PERSONAL phone number. Please don't put my career in jeopardy by abusing this. Thanks!
-  %hr
-  .col-md-6
+.row
+  .small-12.columns.centered
+    %h2 Twilio Text Message Reminders
+.row
+  .small-12.columns
+    %p This is an experimental application that businesses would use to send a "Your Item is Ready for Pickup" text message to clients.
+    %p I was walking home from the grocery store and this idea came to me. 12 hours later, it's a real thing!
+    %ol{:type => "1"}
+      %li Input your name, hypothetical item that needs to be picked up, and your phone number
+      %li Task item will populate below the input form
+      %li Click "Ready for Pickup"
+      %li Twilio API sends a customized "Your Item is Ready for Pickup" text message to your phone
+      %li "Ready for Pickup" button is deactivated to prevent abuse
+      %li Click "Remove Item" to remove your task from the list
+    %b Please only use your PERSONAL phone number. Please don't put my career in jeopardy by abusing this. Thanks!
+    %hr
+.row
+  .small-12.columns
     - if @twilio_reminder == nil
     - else
       = render 'shared/errors', obj: @twilio_reminder
     = form_for @twilio_reminder do |f|
-      .form
-        .form-group
-          .input-group
-            .input-group-addon
-              %span.glyphicon.glyphicon-arrow-right
-            = f.text_field :client, class: 'form-control', placeholder:"Customer Name"
-        .form-group
-          .input-group
-            .input-group-addon
-              %span.glyphicon.glyphicon-arrow-right
-            = f.text_field :event, class: 'form-control', placeholder:"Item to Be Picked Up [Sandwich, dry cleaning, etc]"
-        .form-group
-          .input-group
-            .input-group-addon
-              %span.glyphicon.glyphicon-arrow-right
-            = f.text_field :phone_number, class: 'form-control', placeholder:"Phone Number [Written as 555-555-5555]"
-        = f.submit "Create Event", class:'btn btn-primary'
+      %fieldset
+        %legend Set Up Text Message Reminder
+        .row
+          .small-12.large-4.columns
+            = f.label :client, "Client Name"
+            = f.text_field :client, class: 'radius', placeholder:"Customer Name"
+          .small-12.large-4.columns
+            = f.label :event, "Item to be Picked Up"
+            = f.text_field :event, class: 'radius', placeholder:"Item to Be Picked Up [Sandwich, dry cleaning, etc]"
+          .small-12.large-4.columns
+            = f.label :phone_number, "Phone Number"
+            = f.text_field :phone_number, class: 'radius', placeholder:"Phone Number [Written as 555-555-5555]"
+        .row
+          .small-12.columns.centered
+            = f.submit "Create Pickup Reminder", class:'button alert radius'
       %br
+.row
+  .small-12.columns
+    - if @reminders.count != 0
       %h4 Current Events Waiting for Reminders
-      - @reminders.each do |r|
-        .alert.alert-info{ :style => "overflow: auto;"}
-          .pull-right{ :style => "float: left;"}
-            - if r.message_sent == true
-              %button.btn.btn-default{:disabled => "disabled", :style => "margin-bottom: 5px;"} Reminder Sent
-              %br
-            - else
-              = link_to "Ready for Pickup", send_reminder_path(r), { :style => "margin-bottom: 5px;", :class => 'btn btn-success'}
-              %br
-            = link_to "Remove Item", delete_reminder_path(r), class:  'btn btn-danger'
-          %p
-            %b Client Name:
-            = r.client
-          %p
-            %b Item to be Picked Up:
-            = r.event
+.row
+  - @reminders.each do |r|
+    .small-12.large-6.columns
+      .panel.radius{style: "height: 150px;"}
+        %p
+          %b Client Name:
+          = r.client
+        %p
+          %b Item to be Picked Up:
+          = r.event
+        - if r.message_sent == true
+          .label Reminder Has Been Sent Successfully
+        - else
+          = link_to "Click to Send Pickup Reminder", send_reminder_path(r), { :style => "margin-bottom: 5px;", :class => 'success label'}
+        = link_to "Remove Item", delete_reminder_path(r), class:  'alert label'
 
