@@ -1,0 +1,36 @@
+.row
+  .small-12.columns.centered
+    %h2 GitHub Coding Leaderboard Web App
+.row
+  .small-12.column
+    %p
+      I built this
+      =link_to "GitHub leaderboard tracker", "https://tealeaf-leaderboard.herokuapp.com/"
+      for
+      =link_to "TeaLeaf Academy.", "http://tealeafacademy.com"
+      I wanted a way to keep track of how much the students were actively coding. Everyone knows that active coding is the only way to learn. With that goal in mind, it was time to get building, TDD style! Development details are located at the bottom of this page, below the screenshot.
+.row
+  .small-10.small-centered.columns
+    %img(src="https://drive.google.com/uc?id=0BwSA_JYWKK3IcnRVMl9wcGVyQmc")
+  %hr
+.row
+  .small-12.column
+    %p
+      The first aspect of this build was figuring out a way to get GitHub public contributions. You'd think that GitHub would have made this public accesible via their API years ago. Wrong! Turns out, the public contribution number is rather finicky and takes MANY different variables into consideration. Who owns the repo, if the commits were made on a master branch vs a feature branch. Long story short, GitHub support just suggested that I scrape their site and pull the necessary data from it's SPAN tag. Until they redesign the front page of GitHub profiles, we'll be good to go.
+    %p
+      Scraping the site was done with the Nokogiri gem. Such a fun little gem. You just input in a website URI and then get back the entire sourcecode for said page. From their, it's just a matter of querying the info for the necessary datapoints("public contributions" and "longest streak").
+    %p
+      As for verifying GitHub users, I just made an HTTP get request to their GitHub user page. If the response was 200, I assumed it was a valid GitHub user. Any other HTTP response code from GitHub and I shoot an error message telling the person that they entered the incorrect GitHub username.
+    %p
+      The last bit of sweet code is the codeword to erase your name from the leaderboard. Only the person who owns the GitHub username should be able to remove themselves from the leaderboard. Using a simple Faker gem random word generator, I assigned every user with a keyword that can be used to remove themselves from the leaderboard. If they forgot their keyword, they can enter their email address, and, if we have the email on file, we will send them the codeword.
+    %p
+      The app was built entirely using TDD, from start to finish.
+.row
+  .small-12.columns
+    %p
+      There you have it! The code is all available in the repos below. Give it a run for your business!
+      %br
+      =link_to "Tealeaf Coding Leaderboard Repo (showing TDD process)", "https://github.com/pmichaeljones/tl_leaderboard"
+      %br
+      =link_to "GitHub Leaderboard Open Source with No TeaLeaf References", "https://github.com/pmichaeljones/github_leaderboard"
+
