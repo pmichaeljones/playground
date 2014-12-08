@@ -16,7 +16,7 @@
 .row
   .small-12.column
     %p
-      The first aspect of this build was figuring out a way to get GitHub public contributions. You'd think that GitHub would have made this public accesible via their API years ago. Wrong! Turns out, the public contribution number is rather finicky and takes MANY different variables into consideration. Who owns the repo, if the commits were made on a master branch vs a feature branch. Long story short, GitHub support just suggested that I scrape their site and pull the necessary data from it's SPAN tag. Until they redesign the front page of GitHub profiles, we'll be good to go.
+      The first aspect of this build was figuring out a way to get GitHub public contributions. You'd think that GitHub would have made this public accesible via their API years ago. Wrong! Turns out, the public contribution number is rather finicky and takes MANY different variables into consideration. Who owns the repo, if the commits were made on a master branch vs a feature branch, the the branch was very merged, etc. Long story short, GitHub support just suggested that I scrape their site and pull the necessary data from it's SPAN tag. Until they redesign the front page of GitHub profiles, we'll be good to go.
     %p
       Scraping the site was done with the Nokogiri gem. Such a fun little gem. You just input in a website URI and then get back the entire sourcecode for said page. From their, it's just a matter of querying the info for the necessary datapoints("public contributions" and "longest streak").
     %p
