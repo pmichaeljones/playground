@@ -1,0 +1,61 @@
+.row{style: "margin-top: 10px;"}
+  .small-12.columns
+    %img{src: "http://www.patrickjones.me/blog/wp-content/uploads/2014/04/patrick-jones-ruby-rails-developer-api-specialist.png", height: 200, width: 200, style: "float: left; margin-right: 10px;"}
+    %p
+      Hello! My name is Patrick Jones. I'm a Junior Ruby on Rails developer based in Denver, Colorado.
+    %p
+      This is my Rails playground, where I implement new ideas and play with APIs. There's just something great up integrating with external APIs and extending the usability of my web apps.
+    %p
+      I'm a strong proponent of TDD with a side of integration testing using Capybara. I love HAML. It has made view template coding 10X easier. ERB was great, but I'm a HAML man now.
+    %p
+      I am currently seeking a Jr Rails/Ruby Developer position. I'd love to work with a team of senior devs and help them solve busines problems while leveling up my Ruby knowledge as a result. I intend to start doing some Node coursework in the near future. Maybe GO, not sure yet. There's just so much available, you need to pick your battles.
+    %p
+      If your company has an opening, let's talk! Denver, NYC, Buenos Aires, Berlin, it doesn't matter where. I've lived abroad before and I'd love to do it again. I'm also bilingual in Spanish and English.
+    %hr
+.row
+  .small-12.columns
+    = render 'shared/errors', obj: @message
+    = form_for @message, data:{abide:''} do |f|
+      %fieldset
+        %legend Leave Me a Message!
+        .row
+          .small-6.large-3.column
+            =f.label :sender
+            =f.text_field :sender, class: 'radius', placeholder: 'Enter Name'
+          .small-6.large-9.column
+            =f.label :contents, "Message"
+            =f.text_field :contents, class: 'radius', placeholder: 'Put Your Funny, Witty, Non-SPAM Message Here'
+        .row
+          .small-12.large-8.columns
+            %p
+              To prove you're not a SPAM robot, type the word
+              %span.bold
+                Stringer Bell
+              in the box:
+          .small-12.large-4.columns
+            =hidden_field_tag :codeword, 'Stringer Bell', id:'codeword'
+            =text_field_tag :code_word, nil, placeholder: "Put Codeword Here", class: "radius", required: "", data: { equalto: "codeword" }
+            %small.error.centered
+              Wrong answer! Now you've angered him.
+              %img{src: "http://img4.wikia.nocookie.net/__cb20140916012537/thewire/images/0/05/The_Wire-_Stringer_Bell.jpg"}
+        .row
+          .small-12.columns
+            =f.submit "Leave a Message", class: 'button radius'
+            %p{style: "font-size: 14px;"}
+              That's right. I'm a fan of <a href="http://en.wikipedia.org/wiki/The_Wire">The Wire</a>, and you should be too. What a show! Type the wrong codeword to get a good laugh.
+        %hr
+        %table
+          %thead
+            %tr
+              %th(width=150) Sender
+              %th(width=550) Message
+              %th Date
+          %tbody
+          - @messages.each do |message|
+            %tr
+              %td
+                = message.sender
+              %td
+                = message.contents
+              %td
+                = pretty_time(message.created_at)

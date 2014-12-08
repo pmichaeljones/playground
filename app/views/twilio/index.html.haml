@@ -1,19 +1,24 @@
 - @title = "SMS to Screen using Twilio API"
-.container
-  .col-md-12
+.row
+  .small-12.columns.centered
+    %h2 Twilio Text Message to Screen
+.row
+  .small-12.columns
     %h4{ :style => "text-decoration: underline"} It's Twilio Time Baby!
     %p Twilio is a text messaging API that lets you send text messages online.
     %p Text your first name, followed by a message, to 720-897-3141 and await the reply message.
     %h5{ :style => "text-decoration: underline"} Example Text Message (without the quotes)
     %p "John Hey Man. Just testing your Twilio App thingy!"
-    %hr
+.row
+  .small-12.columns
     %h4 Received Messages:
-  .col-md-4
+  %hr
+  .small-12.large-6.columns
     - @texts.each do |s|
-      .alert.alert-success
-        %p
-          %b Sender:
-          = s.name
-        %p
-          %b Message:
-          = s.message
+      %p
+        %b Sender:
+        = s.name
+      %p
+        %b Message:
+        = s.message
+      %hr

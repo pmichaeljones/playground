@@ -1,40 +1,31 @@
 - @title = "Contact Form: Mandril API Integration"
-.container
-  .col-md-12
-    %h3 Contact Form : Powered by Mandrill API
-    .col-md-1
-      =image_tag "http://mandrill.com/assets/images/brand/logo-shield-72695847.png", height: 100, width: 100
-    .col-md-11
-      %p I scratch built this contact form, leveraging the #{ link_to "Mandril API", "http://mandrill.com", :target => "blank" } to process the email.
-      %p That little monkey to the left is their logo.
-      %p I built the form with the form_tag Rails helper, HAML for the HTML and bootstrap for the styling.
-      %p The form params are shipped off to the ContactFormController#create.
-      %P From there, I pass the params to my "contact_form_email" ActionMailer. Easy peasy!
+.row
+  .small-12.columns.centered
+    %h2 Contact Form : Powered by Mandrill API
+.row
+  .small-12.columns
+    =image_tag "http://mandrill.com/assets/images/brand/logo-shield-72695847.png", style: "float: left; margin-top: -35px;"
+    %p I scratch built this contact form, leveraging the #{ link_to "Mandril API", "http://mandrill.com", :target => "blank" } to process the email.
+    %p That little monkey to the left is their logo.
+    %p I built the form with the form_tag Rails helper, HAML for the HTML and Foundation for the styling.
+    %p The form params are shipped off to the ContactFormController#create.
+    %P From there, I pass the params to my "contact_form_email" ActionMailer. Easy peasy!
   %hr
-  .col-md-12
-    =form_tag contact_form_index_path, action: 'create', method: 'post' do
-      %form.form-horizontal
-        .form-group
-          .col-md-4
-            .input-group
-              =label_tag "Name"
-            =text_field_tag :name, nil, class: "form-control", width: 10
-        .form-group
-          .col-md-4
-            .input-group
-              =label_tag "Email"
-            =email_field :user, :address, class: "form-control"
-        .form-group
-          .col-md-8
-            .input-group{ :style => "margin-top: 10px;"}
-              =label_tag "Subject"
-            =text_field_tag :subject, nil, class: "form-control"
-        .form-group
-          .col-md-8
-            .input-group{ :style => "margin-top: 10px;"}
-              =label_tag "Message"
-            =text_area_tag :message, nil, class: "form-control"
-        .form-group
-          .col-md-8
-            %br
-            =submit_tag "Send Message", class: "btn btn-info"
+  =form_tag contact_form_index_path, action: 'create', method: 'post' do
+    %fieldset
+      %legend Shoot Me a Mail!
+      .row
+        .small-12.large-6.columns
+          =label_tag :name
+          =text_field_tag :name, nil, class: "radius"
+        .small-12.large-6.columns
+          =label_tag :user, "Email"
+          =email_field :user, :address, class: "radius"
+        .small-12.columns
+          =label_tag :subject
+          =text_field_tag :subject, nil, class: "radius"
+        .small-12.columns
+          =label_tag :message
+          =text_area_tag :message, nil, class: "radius"
+        .small-12.columns
+          =submit_tag "Send Message", class: "button radius right"
