@@ -26,3 +26,23 @@
 .centered {
   text-align: center;
 }
+
+.tabs dd > a, .tabs .tab-title > a {
+  color: white;
+  background: #333;
+  border-left: 3px solid white;
+}
+
+.tabs dd.active a, .tabs .tab-title.active a {
+  background: #00BFFF;
+  color: black;
+}
+
+.tabs dd > a:hover, .tabs .tab-title > a:hover {
+  background: #00BFFF;
+  color: black;
+}
+
+.tabs {
+  margin-left: 5px;
+}
