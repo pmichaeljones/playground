@@ -16,8 +16,9 @@
         %li.has-dropdown.not-click
           = link_to "Patrick's External API Integrations"
           %ul.dropdown
+            %li= link_to "Pet Boarding CRM System", '/doggie_dashboard_CRM'
             %li= link_to "GitHub Coding Leaderboard", '/github_coding_leaderboard'
+            %li= link_to "Twilio SMS Reminders", twilio_reminders_path
             %li= link_to "CrossFit Name Generator", new_crossfit_name_generator_path
             %li= link_to "Mandrill Contact Form", contact_form_index_path
-            %li= link_to "Twilio SMS Reminders", twilio_reminders_path
             %li= link_to "Twilio to Screen", twilio_path

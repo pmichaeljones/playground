@@ -34,15 +34,23 @@
 }
 
 .tabs dd.active a, .tabs .tab-title.active a {
-  background: #00BFFF;
+  background: orange;
   color: black;
 }
 
 .tabs dd > a:hover, .tabs .tab-title > a:hover {
-  background: #00BFFF;
+  background: orange;
   color: black;
 }
 
 .tabs {
   margin-left: 5px;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+  background: orange;
+}
+
+.top-bar-section .dropdown li:not(.has-form):not(.active):hover > a:not(.button) {
+  background: orange;
 }
