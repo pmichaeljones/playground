@@ -50,6 +50,16 @@
       %li RESTful API Experience
       %li Agile Development
 .row
+  .small-12.column
+    %h4 Personal Projects & Code Samples
+    %hr
+.row
+  .small-12.large-4.columns
+    %p.centered
+      =link_to "DoggieDashboard.com", "https://doggiedashboard.com"
+    %p
+      DoggieDashboard is an online CRM for doggie daycares and pet boarding facilities. It allows business owners to keep track of their clients and pets, as well as send emails to clients from directly in the web app. Site was built following TDD best-practices and currently has over 140 tests.
+.row
   .small-12.columns
     = render 'shared/errors', obj: @message
     = form_for @message, data:{abide:''} do |f|
