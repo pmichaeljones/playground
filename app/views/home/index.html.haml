@@ -15,6 +15,29 @@
       If your company has an opening, let's talk! Denver, NYC, Buenos Aires, Berlin, it doesn't matter where. I've lived abroad before and I'd love to do it again. I'm also bilingual in Spanish and English.
     %hr
 .row
+  .small-12.columns.centered
+    %h2 Patrick M Jones Resume & Curriculum Vitae
+    %p
+      pmichaeljones@gmail.com
+      |
+      =link_to "https://github.com/pmichaeljones", "https://github.com/pmichaeljones"
+      |
+      Denver, Colorado USA
+.row
+  .small-12.column
+    %h4 Ruby on Rails Development Experience
+    %hr
+.row
+  .small-12.large-4.columns
+    %h5.bold Languages & Databases
+    %ul.no-bullet
+      %li HTML & CSS ( HAMl )
+      %li Ruby
+      %li Javascript ( JQuery )
+      %li MySQL & PostgreSQL
+
+
+.row
   .small-12.columns
     = render 'shared/errors', obj: @message
     = form_for @message, data:{abide:''} do |f|
