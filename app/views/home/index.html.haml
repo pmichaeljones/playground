@@ -15,61 +15,69 @@
       If your company has an opening, let's talk! Denver, NYC, Buenos Aires, Berlin, it doesn't matter where. I've lived abroad before and I'd love to do it again. I'm also bilingual in Spanish and English.
     %hr
 .row
-  .small-12.columns.centered
-    %h2 Patrick M Jones Resume & Curriculum Vitae
-    %p
-      pmichaeljones@gmail.com
-      |
-      =link_to "https://github.com/pmichaeljones", "https://github.com/pmichaeljones"
-      |
-      Denver, Colorado USA
-.row
-  .small-12.column
-    %h4 Ruby on Rails Development Experience
-    %hr
-.row
-  .small-12.large-4.columns
-    %h5.bold Languages & Databases
-    %ul.no-bullet
-      %li HTML & CSS ( HAMl )
-      %li Ruby
-      %li Javascript ( JQuery )
-      %li MySQL & PostgreSQL
-  .small-12.large-4.columns
-    %h5.bold Web & Front-End Frameworks
-    %ul.no-bullet
-      %li Rails
-      %li Sinatra
-      %li Zurb Foundation
-      %li Twitter Bootstrap
-  .small-12.large-4.columns
-    %h5.bold Tools & Methodologies
-    %ul.no-bullet
-      %li TDD ( RSPC & Capybara )
-      %li DVCS ( GitHub )
-      %li RESTful API Experience
-      %li Agile Development
-.row
-  .small-12.column
-    %h4 Personal Projects & Code Samples
-    %hr
-.row
-  .small-12.large-4.columns
-    %p.centered
-      =link_to "DoggieDashboard.com", "https://doggiedashboard.com"
-    %p
-      DoggieDashboard is an online CRM for doggie daycares and pet boarding facilities. It allows business owners to keep track of their clients and pets, as well as send emails to clients from directly in the web app. Stripe billing integration is an upcoming feature branch. It fills a void in a niche industry that is currently being served by standard CD-ROM software. Site was built following TDD best-practices and currently has over 140 tests.
-  .small-12.large-4.columns
-    %p.centered
-      =link_to "GitHub Coding Leaderboard Tracker", "https://tealeaf-leaderboard.herokuapp.com/"
-    %p
-      This app was built to keep track of students coding progress at the TeaLeaf Academy. Coding is all about perseverance. Learning to program isn't that difficult, it just takes time. It utilizes the Nokogiri gem in order to scrape the GitHub profile page of each student, pulling various pieces of information from the page. This data is then used to update the coding leaderboard and adjust the student's commit count and longest streak.
-  .small-12.large-4.columns
-    %p.centered
-      =link_to "Gadget Tracker Hackaton Submission", "http://gadget-tracker.herokuapp.com/"
-    %p
-      Gadget Tracker is the result of a 1-person, 5-hour, hackaton that I attended in November 2014. The only requirement, "Create a web app that helps users keep track of their digital devices and allows photo upload." Having never used the PaperClip gem before, I was foreced to learn and implement it during the last 45 minutes of the hackaton. We were able to touch the repo after the 5 hour mark, so there are some errors I would like to change, but it remains as is.
-  %hr
+  .small-12.column.centered
+    %dl.accordion{data: {accordion: ''}}
+      %dd.accordion-navigation
+        =link_to "Click for Resume & CV", "#panel1"
+        #panel1.content
+          .row
+            .small-12.columns.centered
+              %h2 Patrick M Jones Resume & Curriculum Vitae
+              %p
+                pmichaeljones@gmail.com
+                |
+                =link_to "https://github.com/pmichaeljones", "https://github.com/pmichaeljones"
+                |
+                Denver, Colorado USA
+          .row
+            .small-12.column
+              %h4 Ruby on Rails Development Experience
+              %hr
+          .row
+            .small-12.large-4.columns
+              %h5.bold Languages & Databases
+              %ul.no-bullet
+                %li HTML & CSS ( HAMl )
+                %li Ruby
+                %li Javascript ( JQuery )
+                %li MySQL & PostgreSQL
+            .small-12.large-4.columns
+              %h5.bold Web & Front-End Frameworks
+              %ul.no-bullet
+                %li Rails
+                %li Sinatra
+                %li Zurb Foundation
+                %li Twitter Bootstrap
+            .small-12.large-4.columns
+              %h5.bold Tools & Methodologies
+              %ul.no-bullet
+                %li TDD ( RSPC & Capybara )
+                %li DVCS ( GitHub )
+                %li RESTful API Experience
+                %li Agile Development
+          .row
+            .small-12.column
+              %h4 Personal Projects & Code Samples
+              %hr
+          .row
+            .small-12.large-4.columns
+              %h4.centered
+                =link_to "DoggieDashboard.com", "https://doggiedashboard.com"
+              %p
+                DoggieDashboard is an online CRM for doggie daycares and pet boarding facilities. It allows business owners to keep track of their clients and pets, as well as send emails to clients from directly in the web app. Stripe billing integration is an upcoming feature branch. It fills a void in a niche industry that is currently being served by standard CD-ROM software. Site was built following TDD best-practices and currently has over 140 tests.
+            .small-12.large-4.columns
+              %h4.centered
+                =link_to "GitHub Coding Leaderboard", "https://tealeaf-leaderboard.herokuapp.com/"
+              %p
+                This app was built to keep track of students coding progress at the TeaLeaf Academy. Coding is all about perseverance. Learning to program isn't that difficult, it just takes time. It utilizes the Nokogiri gem in order to scrape the GitHub profile page of each student, pulling various pieces of information from the page. This data is then used to update the coding leaderboard and adjust the student's commit count and longest streak.
+            .small-12.large-4.columns
+              %h4.centered
+                =link_to "Gadget Tracker Hackathon", "http://gadget-tracker.herokuapp.com/"
+              %p
+                Gadget Tracker is the result of a 1-person, 5-hour, hackaton that I attended in November 2014. The only requirement,
+                %b"Create a web app that helps users keep track of their digital devices and allows photo upload."
+                Having never used the PaperClip gem before, I was foreced to learn and implement it during the last 45 minutes of the hackaton. We were able to touch the repo after the 5 hour mark, so there are some errors I would like to change, but it remains as is.
+            %hr
 .row
   .small-12.columns
     = render 'shared/errors', obj: @message
