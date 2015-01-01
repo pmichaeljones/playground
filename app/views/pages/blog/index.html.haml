@@ -1,0 +1,15 @@
+.row
+  .small-12.column
+    %h1 Patrick Jones Ruby on Rails Blog
+    %hr
+    %h3 Posts:
+    - Dir.glob('app/views/pages/blog/*.html.haml').sort.each do |file|
+      - blog_post = File.basename(file,'.html.haml')
+      - unless blog_post == 'index' || blog_post == 'blog_template'
+        %li= link_to blog_post.titleize, "#{blog_post}"
+    / .panel
+    /   %h4=link_to "Moving Blog from Wordpress", 'moving-blog-from-wordpress'
+    /   %p Published: January 1, 2015
+    / .panel
+    /   %h4=link_to "Post 2", "#"
+    /   %p

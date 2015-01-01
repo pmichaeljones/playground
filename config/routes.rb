@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   resources :crossfit_name_generator, only: [:new, :create]
 
+  get '/blog' => 'pages#blog'
+  #get '/blog' => "pages#blog"
+
   get '/twilio_inbox' => 'twilio#inbox'
   get '/twilio' => 'twilio#index'
 
