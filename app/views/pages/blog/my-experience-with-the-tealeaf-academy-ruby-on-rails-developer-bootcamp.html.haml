@@ -1,258 +1,260 @@
 /Base template for all blog posts
 - @title = "My Experience with the TeaLeaf Academy Ruby on Rails Developer Bootcamp"
 - @metadescription = "I started Course 1 of the TeaLeaf Academy Bootcamp on April 5, 2014. Follow my 16-week journey as I go from a newb to a legit Rails developer...I hope!"
- .row
- .small-12.column
-   %h2 TITLE
-   %pubDate Published: April 23, 2014
-   %hr
-   %p
-    <img src="http://www.patrickjones.me/blog/wp-content/uploads/2014/04/patrick-jones-ruby-rails-developer-api-specialist.png" alt="Patrick Jones Ruby on Rails Developer" width="292" height="284" class="alignleft size-full wp-image-709" />My name is Patrick Jones and I'm changing my career.
+.row
+  .small-12.column
+    %h1.blog-title My Experience with the TeaLeaf Academy Ruby on Rails Developer Bootcamp
+    %pubDate Published: April 23, 2014
+    %hr
+    %p.left
+      %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IU1VIaVVqMTQ2OGs", :style => "padding-right: 15px;" }
 
-    This is a LONG post, just warning you. I've been adding to it over the course of the last 6 months.
+    %p
+      My name is Patrick Jones and I'm changing my career.
+    %p
+      This is a LONG post, just warning you. I've been adding to it over the course of the last 6 months.
+    %p
+      <strong>Too Long;  Didn't Read Summary:</strong>
+    %p
+      I quit my job in SEO in October 2013 and decided I wanted to learn Ruby on Rails. It's been a very successful journey so far.
+    %p
+      I'm currently in course 3 of 3 with the TeaLeaf Academy. I owe all of my Rails knowledge to them.
+    %p
+      I'm most excited about external API implementations. Here are links to the ones I've created so far.
+    %p
+      <strong>Twilio SMS Reminder:</strong> <a href="http://pmichaeljones.herokuapp.com/twilio_reminders" title="twilio API text message pickup reminders" target="_blank">http://pmichaeljones.herokuapp.com/twilio_reminders</a>
+    %p
+      <strong>Twilio to Screen:</strong> <a href="http://pmichaeljones.herokuapp.com/twilio" title="twilio to screen API work" target="_blank">http://pmichaeljones.herokuapp.com/twilio</a>
+    %p
+      <strong>Big Thesaurus API CrossFit Name Generator:</strong> <a href="http://pmichaeljones.herokuapp.com/crossfit_name_generator/new" title="crossfit gym box name generator" target="_blank">http://pmichaeljones.herokuapp.com/crossfit_name_generator/new</a>
+    %p
+      <strong>Mandrill Contact Form:</strong> <a href="http://pmichaeljones.herokuapp.com/contact_form" title="mandrill API contact form" target="_blank">http://pmichaeljones.herokuapp.com/contact_form</a>
+    %p
+      I just finished building a GitHub leaderboard tracking web app for TeaLeaf students. It's currently open-source and ideally will be implemented by other companies using to track their developers public progress. It was built using TDD and has a solid test suite to use when implementing new features.
+    %p
+      <a href="https://tealeaf-leaderboard.herokuapp.com/" title="Tealeaf Github Coding Leaderboard" target="_blank">TeaLeaf Academy Coding Leaderboard Project</a>
 
-    - - - - -
+    %hr
+    %p
+      I worked in search engine marketing for a while and wasn't challenged. I had too many good ideas for web apps that I didn't know how to create.
+    %p
+      I started my journey into <a href="http://www.patrickjones.me/blog/online-guide-to-how-i-taught-myself-ruby-on-rails/" title="Online Guide to How I Taught Myself Ruby (& Ruby on Rails)" target="_blank">self-taught software development</a> using Team Treehouse, Learn Ruby the Hard Way, and many other tutorials. It was enjoyable and I learned a lot.
+    %p
+      However, I needed a path to follow, so I started the TeaLeaf Academy Developer Bootcamp on April 5, 2014.
+    %p
+      Here's my anticipated class roadmap:
+      <strong>Course 1: Introduction to Ruby & Web Development</strong>: April 2014 (4 Week Completion Time)
+      <strong>Course 2: Rapid Prototyping with Ruby on Rails</strong>: May 2014 (4 Week Completion Time)
+      <strong>Course 3: Build Robust & Production Quality Applications</strong>: June & July 2014 (8+ Week Completion Time)
+    %p
+      If I can stay true to my word, this will be a continually-expanding blog post. I plan on having 16 weeks of reviews and lecture notes. Make sure to bookmark it and come back for weekly updates.
+    %p
+      I will also be hyperlinking all pertinent blog posts about TeaLeaf Academy below so that you don't need to sift through my random blog posts on inject methods, attr_accessors, getter methods, etc. I'll also be writing up a overview of how every week of class went, what we learned, where I struggled, and any other fun tidbits of info.
+    %p
+      Please leave comments and discussion topics in the Facebook comments section at the very bottom. I'm happy (and quite quick) to answer any questions.
+    %p
+      Enjoy!
 
-    <strong>Too Long;  Didn't Read Summary:</strong>
-
-    I quit my job in SEO in October 2013 and decided I wanted to learn Ruby on Rails. It's been a very successful journey so far.
-
-    I'm currently in course 3 of 3 with the TeaLeaf Academy. I owe all of my Rails knowledge to them.
-
-    Here's a link to my personal coding playground, hosted on Heroku: <a href="http://pmichaeljones.herokuapp.com" title="Patrick Jones's Ruby on Rails Developer & API Specialist" target="_blank">http://pmichaeljones.herokuapp.com</a>
-
-    I'm most excited about external API implementations. Here are links to the ones I've created so far.
-
-    <strong>Twilio SMS Reminder:</strong> <a href="http://pmichaeljones.herokuapp.com/twilio_reminders" title="twilio API text message pickup reminders" target="_blank">http://pmichaeljones.herokuapp.com/twilio_reminders</a>
-
-    <strong>Twilio to Screen:</strong> <a href="http://pmichaeljones.herokuapp.com/twilio" title="twilio to screen API work" target="_blank">http://pmichaeljones.herokuapp.com/twilio</a>
-
-    <strong>Big Thesaurus API CrossFit Name Generator:</strong> <a href="http://pmichaeljones.herokuapp.com/crossfit_name_generator/new" title="crossfit gym box name generator" target="_blank">http://pmichaeljones.herokuapp.com/crossfit_name_generator/new</a>
-
-    <strong>Mandrill Contact Form:</strong> <a href="http://pmichaeljones.herokuapp.com/contact_form" title="mandrill API contact form" target="_blank">http://pmichaeljones.herokuapp.com/contact_form</a>
-
-    I just finished building a GitHub leaderboard tracking web app for TeaLeaf students. It's currently open-source and ideally will be implemented by other companies using to track their developers public progress. It was built using TDD and has a solid test suite to use when implementing new features.
-
-    <a href="https://tealeaf-leaderboard.herokuapp.com/" title="Tealeaf Github Coding Leaderboard" target="_blank">TeaLeaf Academy Coding Leaderboard Project</a>
-
-    - - - - -
-
-    I worked in search engine marketing for a while and wasn't challenged. I had too many good ideas for web apps that I didn't know how to create.
-
-    I started my journey into <a href="http://www.patrickjones.me/blog/online-guide-to-how-i-taught-myself-ruby-on-rails/" title="Online Guide to How I Taught Myself Ruby (& Ruby on Rails)" target="_blank">self-taught software development</a> using Team Treehouse, Learn Ruby the Hard Way, and many other tutorials. It was enjoyable and I learned a lot.
-
-    However, I needed a path to follow, so I started the TeaLeaf Academy Developer Bootcamp on April 5, 2014.
-
-    Here's my anticipated class roadmap:
-    <strong>Course 1: Introduction to Ruby & Web Development</strong>: April 2014 (4 Week Completion Time)
-    <strong>Course 2: Rapid Prototyping with Ruby on Rails</strong>: May 2014 (4 Week Completion Time)
-    <strong>Course 3: Build Robust & Production Quality Applications</strong>: June & July 2014 (8+ Week Completion Time)
-
-    If I can stay true to my word, this will be a continually-expanding blog post. I plan on having 16 weeks of reviews and lecture notes. Make sure to bookmark it and come back for weekly updates.
-
-    I will also be hyperlinking all pertinent blog posts about TeaLeaf Academy below so that you don't need to sift through my random blog posts on inject methods, attr_accessors, getter methods, etc. I'll also be writing up a overview of how every week of class went, what we learned, where I struggled, and any other fun tidbits of info.
-
-    Please leave comments and discussion topics in the Facebook comments section at the very bottom. I'm happy (and quite quick) to answer any questions.
-
-    Enjoy!
-
-    -<a href="http://www.patrickjones.me/blog/about-me/" title="Who is Patrick Jones?" target="_blank">Patrick</a>
+    %hr
 
     <h3>TeaLeaf Academy Bootcamp PreCourse & Week 1 Overview</h3>
-
-    <a href="http://www.patrickjones.me/blog/tealeaf-academy-week-1-lecture-notes/" title="Tealeaf Academy Week 1 Lecture Notes" target="_blank">TeaLeaf Academy Week 1 Lecture Notes</a>
-
-    The PreCourse work for TeaLeaf was a good primer. You have to go through the first 13 chapters of Chris Pine's Learn to Program book as well as the <a href="http://www.gotealeaf.com/books/ruby" title="Tealeaf Ruby Book" target="_blank">Intro to Programming with Ruby</a> book by the TeaLeaf guys. Now, you might be thinking, "If we just go through a book, why should I pay for this class?" I kind of thought the same thing. However, one of the main benefits of TeaLeaf is the message board. You can ask a question, and get a response in less than 10 minutes, no joke. It's like having a bunch of software developers as mentors.
-
-    So, yes, even though you're just doing Chris Pine's book, you get to ask the instructors questions and get clarifications. Beyond Learn to Program, you learn to set up a GitHub account and learn how to push and pull repos. It's quite addicting once you get started. You don't want to "break the streak" so you try to code a little bit every day. <a href="http://github.com/pmichaeljones" title="Patrick Jones GitHub" target="_blank">Check out my GitHub here</a>, hopefully my streak is still going. I'm at 24 days when wrote this.
-
-    The first week of TeaLeaf was pretty straight forward. We had about 2 hours worth of online video lecture. I make it a point to watch the lectures as if I were in a college classroom. I have my notebook and take pretty detailed written notes. This really helps me learn concepts. Sure, you could just watch the videos and say to yourself, "Yup, I got it. That makes sense." and move on, but are you really absorbing the material? Totally up to you.
-
-    After the lectures, we were tasked with creating a procedural blackjack game. Procedural meaning that Ruby starts reading it from the top and works its way to the bottom. No classes, no instance variables, no modules, no inheritance; just straight coding.
-
-    I missed the memo on the no instance variables. Turns out, I didn't fully understand what an instance variable was. I THOUGHT I knew what it was, but when I used instance variables in my completed solution, Chris Lee, the main instructor, let me know that I should not have needed them.
-
-    I think it's quite funny how before starting TeaLeaf, I had done quite a few online tutorials and thought that I could probably skip the first TeaLeaf course and just jump right into the second one. WRONG! It's easy to follow along with TreeHouse videos, or do some online tutorial, but to actually create a working application from scratch is much more difficult that one would imagine. Having some watchful eyes(the instructors) help you out along the way is totally worth it. You could easily go down a rabbit's hole if you were trying to self-teach yourself everything. With TeaLeaf, they're keeping me on track and making sure I know the most important stuff.
-
-    I finished the procedural BlackJack game, with some help from the forums, and was quite happy. It was a big achievement to have built something from start to finish. Given, it was still only a command-line game. However, 3 months ago, I'd never once used the command line on a computer. Now, I'm super confident bouncing around the command line, doing what I have to do. I'm learning that becoming a software developer is going to be a slow steady process. There's no use in rushing through the lessons if you're not going to absorb the subject material. Take your time and try to fully comprehend the lessons before moving on. [ I wrote this last paragraph at the start of week 3. A little hindsight 20/20 ;) ]
+    %p
+      The PreCourse work for TeaLeaf was a good primer. You have to go through the first 13 chapters of Chris Pine's Learn to Program book as well as the <a href="http://www.gotealeaf.com/books/ruby" title="Tealeaf Ruby Book" target="_blank">Intro to Programming with Ruby</a> book by the TeaLeaf guys. Now, you might be thinking, "If we just go through a book, why should I pay for this class?" I kind of thought the same thing. However, one of the main benefits of TeaLeaf is the message board. You can ask a question, and get a response in less than 10 minutes, no joke. It's like having a bunch of software developers as mentors.
+    %p
+      So, yes, even though you're just doing Chris Pine's book, you get to ask the instructors questions and get clarifications. Beyond Learn to Program, you learn to set up a GitHub account and learn how to push and pull repos. It's quite addicting once you get started. You don't want to "break the streak" so you try to code a little bit every day. <a href="http://github.com/pmichaeljones" title="Patrick Jones GitHub" target="_blank">Check out my GitHub here</a>, hopefully my streak is still going. I'm at 24 days when wrote this.
+    %p
+      The first week of TeaLeaf was pretty straight forward. We had about 2 hours worth of online video lecture. I make it a point to watch the lectures as if I were in a college classroom. I have my notebook and take pretty detailed written notes. This really helps me learn concepts. Sure, you could just watch the videos and say to yourself, "Yup, I got it. That makes sense." and move on, but are you really absorbing the material? Totally up to you.
+    %p
+      After the lectures, we were tasked with creating a procedural blackjack game. Procedural meaning that Ruby starts reading it from the top and works its way to the bottom. No classes, no instance variables, no modules, no inheritance; just straight coding.
+    %p
+      I missed the memo on the no instance variables. Turns out, I didn't fully understand what an instance variable was. I THOUGHT I knew what it was, but when I used instance variables in my completed solution, Chris Lee, the main instructor, let me know that I should not have needed them.
+    %p
+      I think it's quite funny how before starting TeaLeaf, I had done quite a few online tutorials and thought that I could probably skip the first TeaLeaf course and just jump right into the second one. WRONG! It's easy to follow along with TreeHouse videos, or do some online tutorial, but to actually create a working application from scratch is much more difficult that one would imagine. Having some watchful eyes(the instructors) help you out along the way is totally worth it. You could easily go down a rabbit's hole if you were trying to self-teach yourself everything. With TeaLeaf, they're keeping me on track and making sure I know the most important stuff.
+    %p
+      I finished the procedural BlackJack game, with some help from the forums, and was quite happy. It was a big achievement to have built something from start to finish. Given, it was still only a command-line game. However, 3 months ago, I'd never once used the command line on a computer. Now, I'm super confident bouncing around the command line, doing what I have to do. I'm learning that becoming a software developer is going to be a slow steady process. There's no use in rushing through the lessons if you're not going to absorb the subject material. Take your time and try to fully comprehend the lessons before moving on. [ I wrote this last paragraph at the start of week 3. A little hindsight 20/20 ;) ]
 
     <h3>TeaLeaf Academy Bootcamp Week 2 Overview</h3>
-
-    <a href="http://www.patrickjones.me/blog/tealeaf-academy-week-2-lecture-notes/" title="Tealeaf Academy Week 2 Lecture Notes" target="_blank">TeaLeaf Academy Week 2 Lecture Notes</a>
-
-    Week 2 of TeaLeaf Academy is when you finally dive into object-oriented programming. I think it's funny how everyone loves to say, "In Ruby, everything's an object!" but they never really tell you what it means. It's like how the first thing people in Denver reference when talking about Denver is the weather, "You know, it's snowing one minute and it's 80 degrees the next. That's Denver for you!" The first thing people talk about when you mention Ruby is "everything's an object!!!!!" Who cares. I don't. And neither does TeaLeaf. They don't beat this idea into your head. They just expect it to sink in over time. Since this is my first programing language, I don't have anything to compare it to. Someone could tell me the similarities of Python and Ruby are stunning, and I wouldn't even bat an eye. Once I learn more about programming, I'm sure I'll start seeing these things, but for now, I'm focusing on Ruby.
-
-    Anyways, back to business. So yes, week 2 is all about object orientation. As you can see from 1500+ word my <a href="http://www.patrickjones.me/blog/tealeaf-academy-week-2-lecture-notes/" title="Tealeaf Academy Week 2 Lecture Notes" target="_blank">Week 2 Lecture Notes</a>, it was a pretty action packed week. Lots of new concepts to learn.
-
-    Here are some key take-aways:
-
-    1. I really didn't know what an instance of an object was. I knew you instantiated an object by doing Object.new, but beyond that, I wasn't really sure what it meant. One of the good quotes from the lectures was, <strong>Class definitions are like cookie cutters, and objects are like the cookies. All the cookies have the same general shape, but they might have different frosting and flavor.</strong> This helped me understand a little bit better of how objects function. It also made me wonder if, once we get to creating users, each time a user signs up for our site, they become an instance of the User class. I think so, but I can't be certain yet. Still 14 weeks of lessons to go.
-
-    2. <strong>attr_accessor</strong> is super cool, but a little confusing. I really like the idea of being able to set and get instance variables. However, I was unaware of the Ruby lookup for variables and had an issue where I thought one of the variables in the code solution looked like a local variable, but it turns out it was actually a getter method for the instance variable. As it turns out, Ruby first looks to see if a local variable has been initialized inside a method. If it hasn't, then it looks to see if there is a method of the same name. If neither exists, it throws as error. So, what I thought was an uninitialized local variable was actually a getter method without a <strong>self.</strong> in front of it. Took me about 3 hours of research to figure this out. Live and learn!
-
-    3. <strong>Inheritance and modules are very helpful.</strong> I really found this concept interesting. One of the big Ruby acronyms (and I'm sure in most languages) is DRY, Don't Repeat Yourself. I found that when I was creating my procedural blackjack game, I was writing certain code over and over, but I didn't know a way to get around it. After you learn about inheritance and modules in lesson 2, you realize that you can REALLY clean up your code by pulling out similarities and putting them into either a superclass or a module. Superclasses have an "IS-A" relationship, as in, "A Penguin <strong>IS-A</strong> Bird". Modules are behavior-based and have a "HAS-A" relationship, as in "An Eagle <strong>HAS-A</strong> Ability to Fly." Once you figure out how your various classes are related, you can start creating super classes and modules and, in turn, create much cleaner class definitions. Your classes should include JUST the behavior and states of that specific class.
-
-    4. <strong>Taking a break from coding and getting outside is very valuable.</strong> I think this is a SUPER important issue. As most of you know, I quit my full-time search engine marketing job to pursue this career change. That said, I get to work all day until 4pm(when I start my restaurant job) on my coding. Sometimes it's very easy to get holed up in my apartment and not get outside. However, I've come to realize that getting outside is very beneficial to my mental health and problem solving abilities. Sometimes I'll get stuck on a problem and I'll just go for a good 30-minute walk/job around my neighborhood. Sometimes I'll come up with an answer while jogging, and other times, I won't, but at least I'll have gotten some vitamin D from the sun and some fresh air in my lungs.
-
-    5. I've come to realize that I have no interest in working a regular 9 to 6 job anymore. I would rather work less hours and have more time to spend with my friends and family than work more hours and have more money. I've lived quite well on $2000/month for many years. Given, I'll be making more than $2000/month as a software developer, but I know I don't NEED to make more than that. I have so many hobbies and interests I want to pursue, and I think being a developer will allow me to do just that. If I can work for 3 hours in the morning, go paragliding in the afternoon, and then come back and work another 3 hours at night, that's perfect for me. Sitting in an office from 9 to 6, Monday through Friday, isn't for me. Sorry, but I need more out of life than that.
+    %p
+      Week 2 of TeaLeaf Academy is when you finally dive into object-oriented programming. I think it's funny how everyone loves to say, "In Ruby, everything's an object!" but they never really tell you what it means. It's like how the first thing people in Denver reference when talking about Denver is the weather, "You know, it's snowing one minute and it's 80 degrees the next. That's Denver for you!" The first thing people talk about when you mention Ruby is "everything's an object!!!!!" Who cares. I don't. And neither does TeaLeaf. They don't beat this idea into your head. They just expect it to sink in over time. Since this is my first programing language, I don't have anything to compare it to. Someone could tell me the similarities of Python and Ruby are stunning, and I wouldn't even bat an eye. Once I learn more about programming, I'm sure I'll start seeing these things, but for now, I'm focusing on Ruby.
+    %p
+      Anyways, back to business. So yes, week 2 is all about object orientation. As you can see from 1500+ word my <a href="http://www.patrickjones.me/blog/tealeaf-academy-week-2-lecture-notes/" title="Tealeaf Academy Week 2 Lecture Notes" target="_blank">Week 2 Lecture Notes</a>, it was a pretty action packed week. Lots of new concepts to learn.
+    %p
+      Here are some key take-aways:
+    %p
+      1. I really didn't know what an instance of an object was. I knew you instantiated an object by doing Object.new, but beyond that, I wasn't really sure what it meant. One of the good quotes from the lectures was, <strong>Class definitions are like cookie cutters, and objects are like the cookies. All the cookies have the same general shape, but they might have different frosting and flavor.</strong> This helped me understand a little bit better of how objects function. It also made me wonder if, once we get to creating users, each time a user signs up for our site, they become an instance of the User class. I think so, but I can't be certain yet. Still 14 weeks of lessons to go.
+    %p
+      2. <strong>attr_accessor</strong> is super cool, but a little confusing. I really like the idea of being able to set and get instance variables. However, I was unaware of the Ruby lookup for variables and had an issue where I thought one of the variables in the code solution looked like a local variable, but it turns out it was actually a getter method for the instance variable. As it turns out, Ruby first looks to see if a local variable has been initialized inside a method. If it hasn't, then it looks to see if there is a method of the same name. If neither exists, it throws as error. So, what I thought was an uninitialized local variable was actually a getter method without a <strong>self.</strong> in front of it. Took me about 3 hours of research to figure this out. Live and learn!
+    %p
+      3. <strong>Inheritance and modules are very helpful.</strong> I really found this concept interesting. One of the big Ruby acronyms (and I'm sure in most languages) is DRY, Don't Repeat Yourself. I found that when I was creating my procedural blackjack game, I was writing certain code over and over, but I didn't know a way to get around it. After you learn about inheritance and modules in lesson 2, you realize that you can REALLY clean up your code by pulling out similarities and putting them into either a superclass or a module. Superclasses have an "IS-A" relationship, as in, "A Penguin <strong>IS-A</strong> Bird". Modules are behavior-based and have a "HAS-A" relationship, as in "An Eagle <strong>HAS-A</strong> Ability to Fly." Once you figure out how your various classes are related, you can start creating super classes and modules and, in turn, create much cleaner class definitions. Your classes should include JUST the behavior and states of that specific class.
+    %p
+      4. <strong>Taking a break from coding and getting outside is very valuable.</strong> I think this is a SUPER important issue. As most of you know, I quit my full-time search engine marketing job to pursue this career change. That said, I get to work all day until 4pm(when I start my restaurant job) on my coding. Sometimes it's very easy to get holed up in my apartment and not get outside. However, I've come to realize that getting outside is very beneficial to my mental health and problem solving abilities. Sometimes I'll get stuck on a problem and I'll just go for a good 30-minute walk/job around my neighborhood. Sometimes I'll come up with an answer while jogging, and other times, I won't, but at least I'll have gotten some vitamin D from the sun and some fresh air in my lungs.
+    %p
+      5. I've come to realize that I have no interest in working a regular 9 to 6 job anymore. I would rather work less hours and have more time to spend with my friends and family than work more hours and have more money. I've lived quite well on $2000/month for many years. Given, I'll be making more than $2000/month as a software developer, but I know I don't NEED to make more than that. I have so many hobbies and interests I want to pursue, and I think being a developer will allow me to do just that. If I can work for 3 hours in the morning, go paragliding in the afternoon, and then come back and work another 3 hours at night, that's perfect for me. Sitting in an office from 9 to 6, Monday through Friday, isn't for me. Sorry, but I need more out of life than that.
 
     <h3>TeaLeaf Academy Bootcamp Week 3 Overview</h3>
+    %p
+      I thought it was about time for a little update. I'm still working my way though Week 3 of the first course, and though I haven't finished yet, I already have some good thoughts about my progress.
+    %p
+      1. I'm SUPER happy to be into the web development part of the course. There's nothing wrong with creating programs in the command line, but they're just that, command line programs. You can't do much with them besides internal computer scripts, which is something that doesn't interest me in the slightest.
+    %p
+      2. I had no idea HTTP was such a huge part of web development. I knew what it stood for and I knew it was how you accessed websites, but I wasn't aware that using GET & POST requests was how a website functioned. I'm used to designing websites in WordPress, where everything is done for you. Building an online game from scratch is quite eye-opening.
+    %p
+      I recently had a good email conversation with Chris Lee, one of the TeaLeaf founders/instructors. I was telling him how I was really happy to have a set track to follow, with important concepts pointed out. Had I tried to learn HTTP on my own, I might have spent weeks learning the differences between 1.0 and 1.1, when, in reality, it's not important at all. If there's one thing about modern web development, it's that there are a SHITLOAD of concepts that you could potentially learn. JavaScript, AJAX, MySQL, HTPP, Apache, etc. It can be a bit overwhelming when you're trying to teach yourself, because you don't know what is needed and what isn't needed. With TeaLeaf, during the lectures/lessons, they tell you what you should learn and what you shouldn't. Yes, we'll be using some AJAX in lesson 4, but that doesn't mean we need to be Ajax experts. Learning bits and pieces of other technologies is the best way to become a well-rounded web developer.
+    %p
+      3. Programming is really difficult and I need to keep forging ahead. My whole life I've considered myself intelligent, and been considered intelligent by the rest of the population. School was never that difficult and I always did quite well. Then I started to learn programming!
+    %p
+      This is some very confusing and complex stuff. It isn't something you can just read over and say, "Yup, got it!" There are certain concepts (see my <a href="http://www.patrickjones.me/blog/trying-understand-ruby-inject-method/" title="Trying to Understand the Ruby Inject Method (AGAIN!)">Ruby Inject post</a>), that just don't seem to sink in, regardless of how much I try to understand them. It's a very humbling experience to have to play around in PRY for hours, trying to understand why your method is returning the wrong value, again and again and again. However, I'm also grateful for this experience. I haven't had to work my brain in quite some time. SEO/SEM were quite easy and I felt like I was on auto-pilot most of the time. Ruby gives me a mental workout every single day, and I know I'm only getting smarter and more analytical as a result.
+    %p
+      Anyways, back to lesson 3. I'm in Minneapolis for the weekend, so I'll probably work a little less than usual. That's the good thing about TeaLeaf, it's self-paced. You can work on your lessons whenever you have time and always have the forums as your disposal.
 
-    <a href="http://www.patrickjones.me/blog/week-3-notes-tealeaf-academy-rails-course/" title="Week 3 Notes from TeaLeaf Academy Rails Course">TeaLeaf Academy Week 3 Notes</a>
+    %hr
+    %p
+      I just finished up my online blackjack game and I have to say, I'm super fucking proud! 4 weeks ago, I knew how to make command line programs. Today, I sat on my computer for the last few hours and played my online blackjack there. There are a few bugs here and there, namely with keeping state throughout the application, but beyond that, it works splendidly!
 
-    I thought it was about time for a little update. I'm still working my way though Week 3 of the first course, and though I haven't finished yet, I already have some good thoughts about my progress.
+    %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3ITmg4ME1uSWJXbG8", :style => "border: 1px solid black"}
+    %p
+    %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IQTlxQXROYnlKaFk", :style => "border: 1px solid black"}
 
-    1. I'm SUPER happy to be into the web development part of the course. There's nothing wrong with creating programs in the command line, but they're just that, command line programs. You can't do much with them besides internal computer scripts, which is something that doesn't interest me in the slightest.
+    %p
+      As you can see, it pays to bet big!
+    %p
+      I'm just about done with this week's lesson. I'm been working a lot at the restaurant lately, so I sometimes get behind. Need to keep my head down and crank out a few more 6 hour days so that I can catch up and move onto the Rails course.
 
-    2. I had no idea HTTP was such a huge part of web development. I knew what it stood for and I knew it was how you accessed websites, but I wasn't aware that using GET & POST requests was how a website functioned. I'm used to designing websites in WordPress, where everything is done for you. Building an online game from scratch is quite eye-opening.
-
-    I recently had a good email conversation with Chris Lee, one of the TeaLeaf founders/instructors. I was telling him how I was really happy to have a set track to follow, with important concepts pointed out. Had I tried to learn HTTP on my own, I might have spent weeks learning the differences between 1.0 and 1.1, when, in reality, it's not important at all. If there's one thing about modern web development, it's that there are a SHITLOAD of concepts that you could potentially learn. JavaScript, AJAX, MySQL, HTPP, Apache, etc. It can be a bit overwhelming when you're trying to teach yourself, because you don't know what is needed and what isn't needed. With TeaLeaf, during the lectures/lessons, they tell you what you should learn and what you shouldn't. Yes, we'll be using some AJAX in lesson 4, but that doesn't mean we need to be Ajax experts. Learning bits and pieces of other technologies is the best way to become a well-rounded web developer.
-
-    3. Programming is really difficult and I need to keep forging ahead. My whole life I've considered myself intelligent, and been considered intelligent by the rest of the population. School was never that difficult and I always did quite well. Then I started to learn programming!
-
-    This is some very confusing and complex stuff. It isn't something you can just read over and say, "Yup, got it!" There are certain concepts (see my <a href="http://www.patrickjones.me/blog/trying-understand-ruby-inject-method/" title="Trying to Understand the Ruby Inject Method (AGAIN!)">Ruby Inject post</a>), that just don't seem to sink in, regardless of how much I try to understand them. It's a very humbling experience to have to play around in PRY for hours, trying to understand why your method is returning the wrong value, again and again and again. However, I'm also grateful for this experience. I haven't had to work my brain in quite some time. SEO/SEM were quite easy and I felt like I was on auto-pilot most of the time. Ruby gives me a mental workout every single day, and I know I'm only getting smarter and more analytical as a result.
-
-    Anyways, back to lesson 3. I'm in Minneapolis for the weekend, so I'll probably work a little less than usual. That's the good thing about TeaLeaf, it's self-paced. You can work on your lessons whenever you have time and always have the forums as your disposal.
-
-    ----
-
-    I just finished up my online blackjack game and I have to say, I'm super fucking proud! 4 weeks ago, I knew how to make command line programs. Today, I sat on my computer for the last few hours and played my online blackjack there. There are a few bugs here and there, namely with keeping state throughout the application, but beyond that, it works splendidly!
-
-    <img style="border:1px solid #000" src="http://www.patrickjones.me/blog/wp-content/uploads/2014/04/Screen-Shot-2014-05-06-at-3.21.45-PM.png" alt="Tealeaf Academy Sinatra BlackJack Game" width="297" height="304" class="aligncenter size-full wp-image-604" />
-
-    <img style="border:1px solid #000" src="http://www.patrickjones.me/blog/wp-content/uploads/2014/04/Screen-Shot-2014-05-06-at-3.22.05-PM.png" alt="Tealeaf BlackJack Game" width="962" height="881" class="aligncenter size-full wp-image-603" />
-
-    As you can see, it pays to bet big!
-
-    I'm just about done with this week's lesson. I'm been working a lot at the restaurant lately, so I sometimes get behind. Need to keep my head down and crank out a few more 6 hour days so that I can catch up and move onto the Rails course.
-
-    ----
-    Just officially finished week 3 of Course 1. To date, I've built a fully-functioning online blackjack game. It's nothing spectacular, but it's a great start into the world of web development. After creating my own version, and then watching the solution videos, I can see where I was coding using best practices and where I was just hacking shit together. I've decided that I'm going to re-factor my entire project now that I have a better idea of how to use instance variables in Sinatra. Which, on a sidenote, are SUPER COOL!
-
-    I was adding WAY to much logic into my ERB templates which was making them super cluttered. The idea of using <code><% if @variable %></code> and then displaying the variable contents was quite nice. I could use this for a lot of clean-up and what-would-appear-to-be dynamic content.
-
-    I'm quite happy with my progress and style of learning right now. I work on the lessons without any help, struggling my way along, and then I watch the solution videos and take notes about best practices, cool ideas, etc. Then I refactor the code on my own using what I learned from the solution videos. This is basically double reinforcement of what I have just learned. I just took a peek at the 4th week, and it looks like we dive into adding some AJAX and JavaScript, which will be super cool.
-
-    Another thing I'm excited about is going back to review some of the Treehouse Ruby lessons. Now that I've actually used Ruby, I'll have a better understanding of the lessons. When I originally was self-teaching, I didn't grasp Ruby and was just kind of a coding robot, following along with their examples. Now that I have more experience, I will be able to watch the videos and better understand what is happening. I imagine this is how it will be with Rails. I'll learn a TON from the TeaLeaf course, but I'll also be able to watch the CodeSchool and Treehouse Rails videos and glean some extra tidbits of info.
+    %hr
+    %p
+      Just officially finished week 3 of Course 1. To date, I've built a fully-functioning online blackjack game. It's nothing spectacular, but it's a great start into the world of web development. After creating my own version, and then watching the solution videos, I can see where I was coding using best practices and where I was just hacking shit together. I've decided that I'm going to re-factor my entire project now that I have a better idea of how to use instance variables in Sinatra. Which, on a sidenote, are SUPER COOL!
+    %p
+      I was adding WAY to much logic into my ERB templates which was making them super cluttered. The idea of using <code><% if @variable %></code> and then displaying the variable contents was quite nice. I could use this for a lot of clean-up and what-would-appear-to-be dynamic content.
+    %p
+      I'm quite happy with my progress and style of learning right now. I work on the lessons without any help, struggling my way along, and then I watch the solution videos and take notes about best practices, cool ideas, etc. Then I refactor the code on my own using what I learned from the solution videos. This is basically double reinforcement of what I have just learned. I just took a peek at the 4th week, and it looks like we dive into adding some AJAX and JavaScript, which will be super cool.
+    %p
+      Another thing I'm excited about is going back to review some of the Treehouse Ruby lessons. Now that I've actually used Ruby, I'll have a better understanding of the lessons. When I originally was self-teaching, I didn't grasp Ruby and was just kind of a coding robot, following along with their examples. Now that I have more experience, I will be able to watch the videos and better understand what is happening. I imagine this is how it will be with Rails. I'll learn a TON from the TeaLeaf course, but I'll also be able to watch the CodeSchool and Treehouse Rails videos and glean some extra tidbits of info.
 
     <h3>TeaLeaf Academy Bootcamp Week 4 Overview</h3>
-    Just finished Course 1 of the TeaLeaf Academy Bootcamp. Here's my final app: http://stark-bayou-5903.herokuapp.com/ It's nothing spectacular, but I built it from scratch, top to bottom. It could use a bit of AJAX and a LOT of design tweaks, but from a programming standpoint, it works quite well.
-
-    The final week of the TeaLeaf course is all about adding AJAX and unobtrusive JavaScript to your game so that you don't have to refresh the page after every click. As you can see with my app, every click registers a new HTTP request and the entire page reloads. Adding some AJAX to certain button clicks would allow the game to send the HTTP request in the background and then display the new content without having to refresh the page.
-
-    We also learned how to deploy to Heroku. It was probably the simplest process possible. With a few quick command line instructions your app is up and running. Super simple. Some of the Windows PC guys had a really hard time deploying their apps. Another reason to use a Mac when you're deploying web apps, it's just so much easier.
+    %p
+      Just finished Course 1 of the TeaLeaf Academy Bootcamp. Here's my final app: http://stark-bayou-5903.herokuapp.com/ It's nothing spectacular, but I built it from scratch, top to bottom. It could use a bit of AJAX and a LOT of design tweaks, but from a programming standpoint, it works quite well.
+    %p
+      The final week of the TeaLeaf course is all about adding AJAX and unobtrusive JavaScript to your game so that you don't have to refresh the page after every click. As you can see with my app, every click registers a new HTTP request and the entire page reloads. Adding some AJAX to certain button clicks would allow the game to send the HTTP request in the background and then display the new content without having to refresh the page.
+    %p
+      We also learned how to deploy to Heroku. It was probably the simplest process possible. With a few quick command line instructions your app is up and running. Super simple. Some of the Windows PC guys had a really hard time deploying their apps. Another reason to use a Mac when you're deploying web apps, it's just so much easier.
 
     <h2>TeaLeaf Academy Course 1 Final Impressions</h2>
-    All in all, I really enjoyed the TeaLeaf experience. I definitely accomplished more with them in 6 weeks than I would have during 6 weeks of self-study. I went from coding neophyte to a novice coder. Could I build a whole web app on my own right now? No. Could I understand someone else's web app. Totally! This is going to be a long, slow, process. You don't become a software developer overnight. I'm fully dedicated to spending a year on learning how to code.
-
-    That said, I don't feel like I'm ready to move onto the Rails course yet. My Ruby knowledge is a bit lacking. Yes, I can write a pretty decent command line program in Ruby, but I still feel like I'll be a better Rails developer if I know Ruby inside and out. TeaLeaf taught you enough Ruby to get the job done, but I don't want to be some half-ass Rails developer who copies and pastes everything from StackOverflow. I want to be the guy who's helping people on StackOverflow; the guy coworkers look to when they have a Ruby problem. That said, I've decided to take the <a href="http://pragmaticstudio.com/ruby" title="Pragmatic Studio Ruby" target="_blank">Pragmatic Studio's Ruby Programming</a> course. It's $200, but the reviews are GREAT and I'm really excited to augment my Ruby knowledge a bit before I dive into the Rails course.
-
-    I'll be back in a few weeks, hopefully being a much better Ruby developer. I'll be talking about my Pragmatic experience over on the <a href="http://www.patrickjones.me/blog/online-guide-to-how-i-taught-myself-ruby-on-rails/" title="Online Guide to How I Taught Myself Ruby (& Ruby on Rails)">self-taught Ruby post.</a>
+    %p
+      All in all, I really enjoyed the TeaLeaf experience. I definitely accomplished more with them in 6 weeks than I would have during 6 weeks of self-study. I went from coding neophyte to a novice coder. Could I build a whole web app on my own right now? No. Could I understand someone else's web app. Totally! This is going to be a long, slow, process. You don't become a software developer overnight. I'm fully dedicated to spending a year on learning how to code.
+    %p
+      That said, I don't feel like I'm ready to move onto the Rails course yet. My Ruby knowledge is a bit lacking. Yes, I can write a pretty decent command line program in Ruby, but I still feel like I'll be a better Rails developer if I know Ruby inside and out. TeaLeaf taught you enough Ruby to get the job done, but I don't want to be some half-ass Rails developer who copies and pastes everything from StackOverflow. I want to be the guy who's helping people on StackOverflow; the guy coworkers look to when they have a Ruby problem. That said, I've decided to take the <a href="http://pragmaticstudio.com/ruby" title="Pragmatic Studio Ruby" target="_blank">Pragmatic Studio's Ruby Programming</a> course. It's $200, but the reviews are GREAT and I'm really excited to augment my Ruby knowledge a bit before I dive into the Rails course.
+    %p
+      I'll be back in a few weeks, hopefully being a much better Ruby developer. I'll be talking about my Pragmatic experience over on the <a href="http://www.patrickjones.me/blog/online-guide-to-how-i-taught-myself-ruby-on-rails/" title="Online Guide to How I Taught Myself Ruby (& Ruby on Rails)">self-taught Ruby post.</a>
 
     <h2>June 24, 2014: Back In Action</h2>
-    I'm back at it. After a 3 week hiatus to go through Pragmatic Studio's Ruby course, I'm back with TeaLeaf to start Course 2. This process has taken longer than I anticipated, but with numerous vacations/friend-visits during the past 2 months, I haven't been able to dedicate 100% of my free time to coding. However, that's not a bad thing. Giving all my time to coding would mean letting friendships slip away, and that's not how I want to live. Having friends/family visit is a great way to clear your mind and come back refreshed.
-
-    That said, today is June 24, 2014, and I'm starting the pre-work for TeaLeaf's Course #2: Rapid Prototyping with Ruby on Rails. I'm really hoping to finish this section in 3 weeks so that I can dive into Course 3. Course 2 sounds like it will be very interesting and difficult, but Course 3 is going to be the real game-changer. Listed at 8 to 10 weeks for completion, you know it's going to be hard.
-
-    So, here we go!
+    %p
+      I'm back at it. After a 3 week hiatus to go through Pragmatic Studio's Ruby course, I'm back with TeaLeaf to start Course 2. This process has taken longer than I anticipated, but with numerous vacations/friend-visits during the past 2 months, I haven't been able to dedicate 100% of my free time to coding. However, that's not a bad thing. Giving all my time to coding would mean letting friendships slip away, and that's not how I want to live. Having friends/family visit is a great way to clear your mind and come back refreshed.
+    %p
+      That said, today is June 24, 2014, and I'm starting the pre-work for TeaLeaf's Course #2: Rapid Prototyping with Ruby on Rails. I'm really hoping to finish this section in 3 weeks so that I can dive into Course 3. Course 2 sounds like it will be very interesting and difficult, but Course 3 is going to be the real game-changer. Listed at 8 to 10 weeks for completion, you know it's going to be hard.
+    %p
+      So, here we go!
 
     <h3>TeaLeaf Academy Bootcamp Course 2: Pre-Course Overview</h3>
-    Working on the precourse work now and one of the tasks is to set up Rails on your machine. Who wants to say, 'Hello, World!" when you can make it much more fun?!?
+    %p
+      Working on the precourse work now and one of the tasks is to set up Rails on your machine. Who wants to say, 'Hello, World!" when you can make it much more fun?!?
 
-    <img style="border:1px solid #000" src="http://www.patrickjones.me/blog/wp-content/uploads/2014/04/Screen-Shot-2014-06-26-at-12.11.32-PM.png" alt="Screen Shot 2014-06-26 at 12.11.32 PM" width="370" height="195" class="aligncenter size-full wp-image-643" />
+    %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IMzhGQmdEVXdLUUE", :style => "border: 1px solid black"}
 
     <h3>TeaLeaf Academy Bootcamp Course 2: Week 1 Overview</h3>
-
-    <a href="http://www.patrickjones.me/blog/tealeaf-academy-course-2-lecture-1-notes/" title="TeaLeaf Academy Course 2 Lecture 1 Notes">Course 2 Week 1 Lecture 1 Notes</a>
-
-    <a href="http://www.patrickjones.me/blog/tealeaf-academy-course-2-week-1-lecture-2-notes/" title="TeaLeaf Academy Course 2 Week 1 Lecture 2 Notes">Course 2 Week 1 Lecture 2 Notes</a>
-
-    Just finished up week 1 and I'm quite happy with the results so far. First and foremost, I finally understand what Rails is and does. For the past 3 months, I've been telling people that I'm working towards becoming a Ruby on Rails developer, and they asked me what Rails was. I tried to explain what I thought it was, but I was pretty much just blowing smoke.
-
-    Well, now I finally understand the basics of Rails. What it is, how it works, how the models views and controllers interact, what a partial is, how <code>Rake Routes</code> works and what it does, etc. By no means do I understand all of those themes 100%, but I at least know what is going on now. I can see the similarities of Rails and Sinatra, and I can also see why people say Rails is too magical.
-
-    So much stuff is happening in the background. You type one command line prompt <code>rails generate users model</code> and it writes over 1000 lines of code for you, numerous test files and more. It's quite scary at first, because you're not sure what everything that was created actually was.
-
-    Week 1 focuses on the persistence (database) layer, and the majority of time is spent building models, learning how to manipulate a SQLITE3 database with SQL, and figuring out how to set up one-to-many and many-to-many associations. Now that I understand the many-to-many association model and the necessity of using a join table, I think they're quite cool. You can really make some intricate connection between your various data sets once you set up a good DB schema.
-
-    One of the big teaching areas of TeaLeaf is that you write all your own code. There's no using generators and scaffolding to build your projects. I like this idea since it really teaches you what's happening when you use a generator to build models and generate users, posts, etc. So far, I understand all the code that I have produced. Some of the predefined Rails methods are still a bit tricky, but I know that, with time, they will start to become second nature.
-
-    One thing is for sure though, I'm really happy I did the second Ruby course with Pragmatic Studio. Object-orientation doesn't confuse me anymore. I understand the idea of passing around various types of objects, and then being able to manipulate then with instance methods. TeaLeaf did an okay job teaching OO (and I know they have added a few new OO assignments to Course 1), but the Pragmatic Studio Ruby course was great. Kind of boring (since command line programs tend to be boring), but it was a great way to further my Ruby understanding. It will be fun to read "Eloquent Ruby" and "Practical OO Design in Ruby" in a few months and finally be able to grasp everything that is happening.
-
-    Time to start week 2!
-
-    <strong>Note: I'm already on Course 3. I got pulled into Course 2 so much that I didn't update the last 3 weeks of course 2.</strong>
+    %p
+      Just finished up week 1 and I'm quite happy with the results so far. First and foremost, I finally understand what Rails is and does. For the past 3 months, I've been telling people that I'm working towards becoming a Ruby on Rails developer, and they asked me what Rails was. I tried to explain what I thought it was, but I was pretty much just blowing smoke.
+    %p
+      Well, now I finally understand the basics of Rails. What it is, how it works, how the models views and controllers interact, what a partial is, how <code>Rake Routes</code> works and what it does, etc. By no means do I understand all of those themes 100%, but I at least know what is going on now. I can see the similarities of Rails and Sinatra, and I can also see why people say Rails is too magical.
+    %p
+      So much stuff is happening in the background. You type one command line prompt <code>rails generate users model</code> and it writes over 1000 lines of code for you, numerous test files and more. It's quite scary at first, because you're not sure what everything that was created actually was.
+    %p
+      Week 1 focuses on the persistence (database) layer, and the majority of time is spent building models, learning how to manipulate a SQLITE3 database with SQL, and figuring out how to set up one-to-many and many-to-many associations. Now that I understand the many-to-many association model and the necessity of using a join table, I think they're quite cool. You can really make some intricate connection between your various data sets once you set up a good DB schema.
+    %p
+      One of the big teaching areas of TeaLeaf is that you write all your own code. There's no using generators and scaffolding to build your projects. I like this idea since it really teaches you what's happening when you use a generator to build models and generate users, posts, etc. So far, I understand all the code that I have produced. Some of the predefined Rails methods are still a bit tricky, but I know that, with time, they will start to become second nature.
+    %p
+      One thing is for sure though, I'm really happy I did the second Ruby course with Pragmatic Studio. Object-orientation doesn't confuse me anymore. I understand the idea of passing around various types of objects, and then being able to manipulate then with instance methods. TeaLeaf did an okay job teaching OO (and I know they have added a few new OO assignments to Course 1), but the Pragmatic Studio Ruby course was great. Kind of boring (since command line programs tend to be boring), but it was a great way to further my Ruby understanding. It will be fun to read "Eloquent Ruby" and "Practical OO Design in Ruby" in a few months and finally be able to grasp everything that is happening.
+    %p
+      Time to start week 2!
+    %p
+      <strong>Note: I'm already on Course 3. I got pulled into Course 2 so much that I didn't update the last 3 weeks of course 2.</strong>
 
     <h3>Course 2 Overview</h3>
-    Since I don't feel like going back and transcribing all of my notes from Course 2, I thought I'd just write one long post about the entirety of course 2. First and foremost, it was SO GREAT to actually get into Rails. You learn what Rails is and how it works. For the my first 5 months of programming, I kept telling people I was going to be a Rails developer, but I couldn't even describe what Rails did. Now I have a firm grasp on what Rails is, how it works, and how to use it.
+    %p
+      Since I don't feel like going back and transcribing all of my notes from Course 2, I thought I'd just write one long post about the entirety of course 2. First and foremost, it was SO GREAT to actually get into Rails. You learn what Rails is and how it works. For the my first 5 months of programming, I kept telling people I was going to be a Rails developer, but I couldn't even describe what Rails did. Now I have a firm grasp on what Rails is, how it works, and how to use it.
 
-    First things first, Rails does a LOT of stuff for you. There are a lot of conventions that you just have to accept and then, upon acceptance, you can tell Rails you want to do something against convention. A lot of this stuff has to do with ActiveRecord naming conventions and making sure you follow the rules when it comes to naming models, tables, and controllers.
-
-    However, I think it's REALLY AMAZING that I can actually talk about models, views and controllers right now and it makes sense. Less than 5 weeks ago, I wouldn't have had any idea what I was talking about, and now I can actually "talk shop" about Rails. I'm no guru yet, but I'm starting to get it. All in all, a very cool feeling to at least understand what Rails is doing.
-
-    At the end of Course 2, you have a fully functioning reddit-clone. It's pretty cool, I won't lie. It's nothing spectacular, but actually building something from start to finish is a very rewarding feeling. Before I started TeaLeaf, I was emailing Chris, one of the founders, and he said that knowing how to build web apps was a very powerful feeling. I have to agree. I'm not there yet, but after Course 3, I'm totally confident i'll be able to build a production-grade web app, with tests, billing, email notifications, etc. Come October when I'm done with TeaLeaf3, if I had an idea for a cool web-app, I'm looking forward to putting on a pot of coffee, sitting down at my machine, and cranking out a working prototype.
-
-    One of the areas I'm most excited for is to start getting into APIs. I just think they're the coolest thing in the world. You can make a web app that sends messages with Twilio, shoots off email notifications with MailGun, bills people via Stripe, and sends postcard with Postly. The more I get into programming, the more I'm excited to make API mashups and/or become a REALLY GOOD developer for a certain API. I was talking on Facebook with a classmate from Tealeaf, and we were talking about becoming a ass-kicking Twilio developer, and then taking contract work. I think that sounds like the most fun. Become REALLY good at one API, and then have companies pay you a nice fee to come to their office, pull down their code, create a new Twilio feature, and then leave once it's fully implemented.  I don't want to be a half-ass guy in many areas, I'd rather be a kick-ass guy in one area and have people search me out for it.
-
-    Anyways, enough ranting and raving. It's time to start Course 3!
+    %p
+      First things first, Rails does a LOT of stuff for you. There are a lot of conventions that you just have to accept and then, upon acceptance, you can tell Rails you want to do something against convention. A lot of this stuff has to do with ActiveRecord naming conventions and making sure you follow the rules when it comes to naming models, tables, and controllers.
+    %p
+      However, I think it's REALLY AMAZING that I can actually talk about models, views and controllers right now and it makes sense. Less than 5 weeks ago, I wouldn't have had any idea what I was talking about, and now I can actually "talk shop" about Rails. I'm no guru yet, but I'm starting to get it. All in all, a very cool feeling to at least understand what Rails is doing.
+    %p
+      At the end of Course 2, you have a fully functioning reddit-clone. It's pretty cool, I won't lie. It's nothing spectacular, but actually building something from start to finish is a very rewarding feeling. Before I started TeaLeaf, I was emailing Chris, one of the founders, and he said that knowing how to build web apps was a very powerful feeling. I have to agree. I'm not there yet, but after Course 3, I'm totally confident i'll be able to build a production-grade web app, with tests, billing, email notifications, etc. Come October when I'm done with TeaLeaf3, if I had an idea for a cool web-app, I'm looking forward to putting on a pot of coffee, sitting down at my machine, and cranking out a working prototype.
+    %p
+      One of the areas I'm most excited for is to start getting into APIs. I just think they're the coolest thing in the world. You can make a web app that sends messages with Twilio, shoots off email notifications with MailGun, bills people via Stripe, and sends postcard with Postly. The more I get into programming, the more I'm excited to make API mashups and/or become a REALLY GOOD developer for a certain API. I was talking on Facebook with a classmate from Tealeaf, and we were talking about becoming a ass-kicking Twilio developer, and then taking contract work. I think that sounds like the most fun. Become REALLY good at one API, and then have companies pay you a nice fee to come to their office, pull down their code, create a new Twilio feature, and then leave once it's fully implemented.  I don't want to be a half-ass guy in many areas, I'd rather be a kick-ass guy in one area and have people search me out for it.
+    %p
+      Anyways, enough ranting and raving. It's time to start Course 3!
 
     <h2>TeaLeaf Academy Course 3: Pre-Course Overview</h2>
-    September 2, 2014. Just finished the precourse work for TeaLeaf's 3rd course. Nothing too difficult, except learning HAML. What a difficult, but very worthwhile, thing to learn!
-
-    It took me a few days to get it down, and I'm still a little shaky with it, but it's slowly starting to make more and more sense. Regardless of the learning curve, it makes writing HTML much more enjoyable. No need to worry about closing DIV tags, or even using DIV tags for that matter. DIVs are the default HTML element that is used if you don't specify a different element.
-
-    If you want to read more about my HAML experience, you can read <a href="http://www.patrickjones.me/blog/converting-rails-form-divs-haml/" title="Converting Rails Form from DIVs to HAML" target="_blank">this post</a> about converting a DIV-heavy Rails form to a HAML form. One of the most frustrating things I've had to do in the programming world. However, once I got it, it was sweet! I literally shouted "F*CK YES!!!!!!!!" in my home office when I reloaded the page and the form was finally properly displayed.
-
-    Another cool aspect of the precourse is that they suggest we start going to MeetUp events for Ruby developers. Seeing as we're only 10 weeks from finishing the final course, it's time to start making connections with local companies looking for junior talent. Since my business is doing well financially, I'm thinking of doing a series of 3-month apprenticeships with various Rails shops around Denver. I'd like to get my feet wet in various areas to see what I do and don't like. After finishing a few apprenticeships, I'll have a better idea if I want to do agency work(many different projects), or if I want to work on one company's app. I'm leaning towards agency work, but we'll see what happens.
-
-    Well, time to start Week 1. Wish me luck!
-
+    %p
+      September 2, 2014. Just finished the precourse work for TeaLeaf's 3rd course. Nothing too difficult, except learning HAML. What a difficult, but very worthwhile, thing to learn!
+    %p
+      It took me a few days to get it down, and I'm still a little shaky with it, but it's slowly starting to make more and more sense. Regardless of the learning curve, it makes writing HTML much more enjoyable. No need to worry about closing DIV tags, or even using DIV tags for that matter. DIVs are the default HTML element that is used if you don't specify a different element.
+    %p
+      If you want to read more about my HAML experience, you can read <a href="http://www.patrickjones.me/blog/converting-rails-form-divs-haml/" title="Converting Rails Form from DIVs to HAML" target="_blank">this post</a> about converting a DIV-heavy Rails form to a HAML form. One of the most frustrating things I've had to do in the programming world. However, once I got it, it was sweet! I literally shouted "F*CK YES!!!!!!!!" in my home office when I reloaded the page and the form was finally properly displayed.
+    %p
+      Another cool aspect of the precourse is that they suggest we start going to MeetUp events for Ruby developers. Seeing as we're only 10 weeks from finishing the final course, it's time to start making connections with local companies looking for junior talent. Since my business is doing well financially, I'm thinking of doing a series of 3-month apprenticeships with various Rails shops around Denver. I'd like to get my feet wet in various areas to see what I do and don't like. After finishing a few apprenticeships, I'll have a better idea if I want to do agency work(many different projects), or if I want to work on one company's app. I'm leaning towards agency work, but we'll see what happens.
+    %p
+      Well, time to start Week 1. Wish me luck!
 
     <h3>TeaLeaf Academy Bootcamp Course 3: Week 1 Overview</h3>
-
-    It took me a few weeks, but I finally completed Week 1 of the 3rd course. In my defense, I've been working on a lot of really cool API integrations. I honestly feel hireable already, and I know I'm still going to learn SO MUCH MORE during this final TeaLeaf course. I get a little bored with online classes(my ADD kicks in) so, to keep up my excitement level, I've been building little API creations to show off my skills to future employers. You can check them out on <a href="http://pmichaeljones.herokuapp.com" title="Patrick Jones's Ruby on Rails website" target="_blank">my Ruby on Rails website</a>. Every single job posting I've seen so far has wanted external API integration knowledge. So, what better way to show knowledge in this area than to build a bunch of API tools.
-
-    So far, I've built a <a href="http://pmichaeljones.herokuapp.com/contact_form" title="Mandrill API Contact Form" target="_blank">contact form using Mandrill</a>, an <a href="http://pmichaeljones.herokuapp.com/twilio_reminders" title="Twilio API SMS Reminder Tool" target="_blank">SMS reminder tool using Twilio</a>, and a <a href="http://pmichaeljones.herokuapp.com/crossfit_name_generator/new" title="CrossFit Gym Name Generator" target="_blank">CrossFit Gym Name Generator</a> using a thesaurus API. Up next is something with Amazon Web Services. Not sure what, but it's a highly sought after API to know. Lastly, I'm looking forward to adding Stripe to my toolbox. Having the ability to securely bill people will be great for when I start building my first SaaS. 1000 customers at $20/month. That's a pretty sweet living!
-
-    No joke people, no less than 5 months ago, I didn't even know what an API was, or how to use them. I didn't know what MVC meant. I didn't know SHIT about server-side web development. It's totally possible to learn all this stuff, online, for MUCH LESS than a $15,000 bootcamp. TeaLeaf has taught me so much. The $2500 investment for all 3 courses has been very worth it so far.
-
-    Anyways, back to week 1 review.
-
-    Week 1 was almost all about testing, Test Driving Development to be specific. I understand the value of testing, but it's going to take a long time getting used to writing tests before writing code. I love sitting down with a problem and just coding away until I get an answer. That's what I did with my API counter for my CrossFit name generator. I idea came to me to make a Counter.rb model that I could use across my site to keep track of API requests. I sat down, and within 45 minutes, I had a API counter implemented on my site. Success! That's the opposite of TDD, and I need to start getting into that mind set. It's all about writing tests for what you want your application to do, and then writing code that makes the tests pass.
-
-    From here on out, everything we do is going to be based on TDD. If we implement a new feature, we need to write all the tests for it before we write any code for it. That means testing models, controllers, and most likely views(not sure if we can test views, but maybe...) Either way, it's definitely a change in pace, and feels like it will slow me down, but I know it's a good thing. Kevin explained the <a href="http://en.wikipedia.org/wiki/Technical_debt" title="Technical Debt" target="_blank">concept of technical debt</a>, and the fact that if you don't write tests, you might be able to get a good jump start on writing actual code, but you're only increasing the amount of tests you will EVENTUALLY have to write if you ever plan to refactor your code. If you never want to refactor code and want to be scared to make any changes to your code base, go ahead, don't write any tests. However, should you ever wish to add a new feature or refactor some poorly written code, you NEED tests to make sure you're not breaking anything. Basically, keeping your technical debt low helps you develop a more robust web application. Take the time to write tests and you'll be able to implement new features much more quickly. It's just a matter of pulling down the master branch, creating a feature branch, running the test suite on the feature branch, and if they all pass, you can create a pull request and push your changes to production.
-
-    Here's a good graph to explain technical debt. As you can see, the longer you wait to eliminate your debt, the harder is becomes to make changes and the less able you are to respond to customer needs.
-
-    <a href="http://agileexecutive.files.wordpress.com/2010/10/technical_debt_slide.jpg"><img src="http://agileexecutive.files.wordpress.com/2010/10/technical_debt_slide.jpg" width="954" height="559" class="aligncenter" /></a>
-
-    So anyways. Lots of TDD is week 1. Also, you learn the Git Flow methodology of web development. I had been working mostly on the master branch for most of my projects. Now, every week we create a new branch, make all the changes to that branch, create a pull request, have people comment on our code, and then merge the pull request. It's the closest thing that we can do to having a distributed team and it's good practice keeping your branches separate.
+    %p
+      It took me a few weeks, but I finally completed Week 1 of the 3rd course. In my defense, I've been working on a lot of really cool API integrations. I honestly feel hireable already, and I know I'm still going to learn SO MUCH MORE during this final TeaLeaf course. I get a little bored with online classes(my ADD kicks in) so, to keep up my excitement level, I've been building little API creations to show off my skills to future employers. You can check them out on <a href="http://pmichaeljones.herokuapp.com" title="Patrick Jones's Ruby on Rails website" target="_blank">my Ruby on Rails website</a>. Every single job posting I've seen so far has wanted external API integration knowledge. So, what better way to show knowledge in this area than to build a bunch of API tools.
+    %p
+      So far, I've built a <a href="http://pmichaeljones.herokuapp.com/contact_form" title="Mandrill API Contact Form" target="_blank">contact form using Mandrill</a>, an <a href="http://pmichaeljones.herokuapp.com/twilio_reminders" title="Twilio API SMS Reminder Tool" target="_blank">SMS reminder tool using Twilio</a>, and a <a href="http://pmichaeljones.herokuapp.com/crossfit_name_generator/new" title="CrossFit Gym Name Generator" target="_blank">CrossFit Gym Name Generator</a> using a thesaurus API. Up next is something with Amazon Web Services. Not sure what, but it's a highly sought after API to know. Lastly, I'm looking forward to adding Stripe to my toolbox. Having the ability to securely bill people will be great for when I start building my first SaaS. 1000 customers at $20/month. That's a pretty sweet living!
+    %p
+      No joke people, no less than 5 months ago, I didn't even know what an API was, or how to use them. I didn't know what MVC meant. I didn't know SHIT about server-side web development. It's totally possible to learn all this stuff, online, for MUCH LESS than a $15,000 bootcamp. TeaLeaf has taught me so much. The $2500 investment for all 3 courses has been very worth it so far.
+    %p
+      Anyways, back to week 1 review.
+    %p
+      Week 1 was almost all about testing, Test Driving Development to be specific. I understand the value of testing, but it's going to take a long time getting used to writing tests before writing code. I love sitting down with a problem and just coding away until I get an answer. That's what I did with my API counter for my CrossFit name generator. I idea came to me to make a Counter.rb model that I could use across my site to keep track of API requests. I sat down, and within 45 minutes, I had a API counter implemented on my site. Success! That's the opposite of TDD, and I need to start getting into that mind set. It's all about writing tests for what you want your application to do, and then writing code that makes the tests pass.
+    %p
+      From here on out, everything we do is going to be based on TDD. If we implement a new feature, we need to write all the tests for it before we write any code for it. That means testing models, controllers, and most likely views(not sure if we can test views, but maybe...) Either way, it's definitely a change in pace, and feels like it will slow me down, but I know it's a good thing. Kevin explained the <a href="http://en.wikipedia.org/wiki/Technical_debt" title="Technical Debt" target="_blank">concept of technical debt</a>, and the fact that if you don't write tests, you might be able to get a good jump start on writing actual code, but you're only increasing the amount of tests you will EVENTUALLY have to write if you ever plan to refactor your code. If you never want to refactor code and want to be scared to make any changes to your code base, go ahead, don't write any tests. However, should you ever wish to add a new feature or refactor some poorly written code, you NEED tests to make sure you're not breaking anything. Basically, keeping your technical debt low helps you develop a more robust web application. Take the time to write tests and you'll be able to implement new features much more quickly. It's just a matter of pulling down the master branch, creating a feature branch, running the test suite on the feature branch, and if they all pass, you can create a pull request and push your changes to production.
+    %p
+      Here's a good graph to explain technical debt. As you can see, the longer you wait to eliminate your debt, the harder is becomes to make changes and the less able you are to respond to customer needs.
+    %p
+      <a href="http://agileexecutive.files.wordpress.com/2010/10/technical_debt_slide.jpg"><img src="http://agileexecutive.files.wordpress.com/2010/10/technical_debt_slide.jpg" width="954" height="559" class="aligncenter" /></a>
+    %p
+      So anyways. Lots of TDD is week 1. Also, you learn the Git Flow methodology of web development. I had been working mostly on the master branch for most of my projects. Now, every week we create a new branch, make all the changes to that branch, create a pull request, have people comment on our code, and then merge the pull request. It's the closest thing that we can do to having a distributed team and it's good practice keeping your branches separate.
 
     <h3>TeaLeaf Academy Bootcamp Course 3: Week 2 Overview</h3>
-    I finished week 2 over a week ago, and I'm just about to finish week 3. I'll write my week 2 review tonight. In the meantime, look who I ran in to in Portland. Though TeaLeaf is where I've learned 100% of my Rails knowledge, I got my CSS/HTML start with Treehouse.
-
-    <blockquote class="twitter-tweet" lang="en"><p>It&#39;s because of <a href="https://twitter.com/treehouse">@treehouse</a> that I&#39;m a Rails dev. Ran into <a href="https://twitter.com/jseifer">@jseifer</a> and <a href="https://twitter.com/jimrhoskins">@jimrhoskins</a> on my vacation in Portland <a href="http://t.co/2VOKrheOHD">pic.twitter.com/2VOKrheOHD</a></p>&mdash; Patrick Jones (@pmichaeljones) <a href="https://twitter.com/pmichaeljones/status/516275789600673792">September 28, 2014</a></blockquote>
+    %p
+      I finished week 2 over a week ago, and I'm just about to finish week 3. I'll write my week 2 review tonight. In the meantime, look who I ran in to in Portland. Though TeaLeaf is where I've learned 100% of my Rails knowledge, I got my CSS/HTML start with Treehouse.
+    %p
+      <blockquote class="twitter-tweet" lang="en"><p>It&#39;s because of <a href="https://twitter.com/treehouse">@treehouse</a> that I&#39;m a Rails dev. Ran into <a href="https://twitter.com/jseifer">@jseifer</a> and <a href="https://twitter.com/jimrhoskins">@jimrhoskins</a> on my vacation in Portland <a href="http://t.co/2VOKrheOHD">pic.twitter.com/2VOKrheOHD</a></p>&mdash; Patrick Jones (@pmichaeljones) <a href="https://twitter.com/pmichaeljones/status/516275789600673792">September 28, 2014</a></blockquote>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
     <h3>TeaLeaf Academy Bootcamp Course 3: Week 3 Overview</h3>
-    Finished. Will write review soon.
+    %p
+      Finished. Will write review soon.
     <h3>TeaLeaf Academy Bootcamp Course 3: Week 4 Overview</h3>
-    Finished. Will write review soon.
+    %p
+      Finished. Will write review soon.
     <h3>TeaLeaf Academy Bootcamp Course 3: Week 5 Overview</h3>
-    In process. Learning background jobs using Unicorn server and Sidekiq. So coo!
+    %p
+      In process. Learning background jobs using Unicorn server and Sidekiq. So coo!
+    %p
+      Learning to program takes dedication. If you want to show future employers dedication, you NEED TO PUSH CODE TO GITHUB. I can't stress that enough. That's your only way to show you're really serious about what you're doing.
+    %p
+      Recently, I had a guy contact me and ask me how course 3 was going. He said he was currently in course 2. Told him Course 3 was going well, but quite tough. I decided to take a look at his GitHub to see what kind of commitment he was putting in. Below you'll see a screenshot of his GitHub(top) and my GitHub(bottom). Who do you think is cranking out more code and putting in more work? Nothing against the guy, but since TeaLeaf doesn't offer job placement like those $15K in-person bootcamps, we need to prove our worth to future employers. How? GitHub! Write something, anything. Work on a new site layout, build a cool API integration. I think the biggest lesson I've learned since starting my coding journey is...I've learned HOW to learn. I can read docs now and get to work. I had never heard of <a href="http://www.nokogiri.org/" title="Nokogiri gem" target="_blank">Nokogiri</a>(a gem for parsing website content), but after about 20 minutes reading the doc files, I built a cool scraper. It's easy to learn programming, it just takes time and persistence. <strong>Now git on it!</strong> (see what i did there?)
 
-    Learning to program takes dedication. If you want to show future employers dedication, you NEED TO PUSH CODE TO GITHUB. I can't stress that enough. That's your only way to show you're really serious about what you're doing.
-
-    Recently, I had a guy contact me and ask me how course 3 was going. He said he was currently in course 2. Told him Course 3 was going well, but quite tough. I decided to take a look at his GitHub to see what kind of commitment he was putting in. Below you'll see a screenshot of his GitHub(top) and my GitHub(bottom). Who do you think is cranking out more code and putting in more work? Nothing against the guy, but since TeaLeaf doesn't offer job placement like those $15K in-person bootcamps, we need to prove our worth to future employers. How? GitHub! Write something, anything. Work on a new site layout, build a cool API integration. I think the biggest lesson I've learned since starting my coding journey is...I've learned HOW to learn. I can read docs now and get to work. I had never heard of <a href="http://www.nokogiri.org/" title="Nokogiri gem" target="_blank">Nokogiri</a>(a gem for parsing website content), but after about 20 minutes reading the doc files, I built a cool scraper. It's easy to learn programming, it just takes time and persistence. <strong>Now git on it!</strong> (see what i did there?)
-
-    <img src="http://www.patrickjones.me/blog/wp-content/uploads/2014/04/github-coding-jr-rails-developer.png" alt="GitHub Coding Progress for Junior Ruby on Rails Developer" width="765" height="654" class="aligncenter size-full wp-image-730" />
+    %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3ILW1uQU9WSUxoUVE", :style => "border: 1px solid black"}
 
     <h3>TeaLeaf Academy Bootcamp Course 3: Week 6 Overview</h3>
-    Week 6 kicked my ass. Some very difficult stuff.
-
-    Big news though. I have a kinda-sorta job interview in Berlin in November. Woohoo!
-
-    Also, I just build a SUPER COOL <a href="https://tealeaf-leaderboard.herokuapp.com/" title="GitHub Coding Tracker" target="_blank">GitHub public contribution tracking system</a>. Check it out!
+    %p
+      Week 6 kicked my ass. Some very difficult stuff.
+    %p
+      Big news though. I have a kinda-sorta job interview in Berlin in November. Woohoo!
+    %p
+      Also, I just build a SUPER COOL <a href="https://tealeaf-leaderboard.herokuapp.com/" title="GitHub Coding Tracker" target="_blank">GitHub public contribution tracking system</a>. Check it out!
 
     <h3>TeaLeaf Academy Bootcamp Course 3: Week 7 Overview</h3>
     <h3>TeaLeaf Academy Bootcamp Course 3: Week 8 Overview</h3>
