@@ -28,6 +28,11 @@
               The CrossFit gym name generator is free and always will be. If you enjoyed using it, please "Like" my page below. That's all I ask.
             %p{style: 'font-size: 13px; font-weight: bold;'}
               Thanks -Patrick
+            %p
+              %a{ :href => "/crossfit_name_generator/new" } CrossFit Business Name Generator | Powered by FitnessTexter
+            %p{:style => "margin-left: 50px;"}
+              <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FFitnessTexter&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80&amp;appId=1386285168291466" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:80px;" allowTransparency="true"></iframe>
+          %hr
           .small-6.small-centered.columns
             = text_field_tag :query, nil, class: "radius", placeholder: "Enter adjective like fierce, wild, strong, brave, etc"
           .small-12.columns.centered
@@ -37,10 +42,6 @@
               Used by future CrossFit owners
               %b= @counter.count
               times and counting!
-            %p
-              %a{ :href => "/crossfit_name_generator/new" } CrossFit Business Name Generator | Powered by FitnessTexter
-            %p{:style => "margin-left: 50px;"}
-              <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FFitnessTexter&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80&amp;appId=1386285168291466" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:80px;" allowTransparency="true"></iframe>
           %hr
           .panel-body#crossfit-names{ :style => "text-align: center;"}
   %hr
