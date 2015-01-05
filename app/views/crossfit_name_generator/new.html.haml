@@ -23,6 +23,11 @@
       %fieldset
         %legend CrossFit Name Generator
         .row
+          .small-12.column.centered
+            %p{style: 'font-size: 15px; font-weight: bold;'}
+              I've decided to keep the CrossFit name generator free. If you used it, please "Like" my page below. That's all I ask.
+            %p{style: 'font-size: 13px; font-weight: bold;'}
+              Thanks -Patrick
           .small-6.small-centered.columns
             = text_field_tag :query, nil, class: "radius", placeholder: "Enter adjective like fierce, wild, strong, brave, etc"
           .small-12.columns.centered
@@ -32,10 +37,6 @@
               Used by future CrossFit owners
               %b= @counter.count
               times and counting!
-            %p{style: 'font-size: 15px; font-weight: bold;'}
-              I've decided to keep the CrossFit name generator free. If you used it, please "Like" my page below. That's all I ask.
-            %p{style: 'font-size: 13px; font-weight: bold;'}
-              Thanks -Patrick
             %p
               %a{ :href => "/crossfit_name_generator/new" } CrossFit Business Name Generator | Powered by FitnessTexter
             %p{:style => "margin-left: 50px;"}
