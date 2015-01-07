@@ -1,0 +1,31 @@
+- @title = "How I Built my First Ever 3rd-party API Web Application"
+- @metadescription = "APIs and webhooks are the lifeblood of programming. Here's how I built a cool crossfit name generator using those ideas."
+.row
+  .small-12.column
+    %h2 How I Built my First Ever 3rd-party API Web Application
+    %p Published: August 28, 2014
+    %hr
+    %p
+      Just a little update.
+    %p
+      I finished TeaLeaf Academy’s Course #2 in late July. I had a 2-week vacation planned for August, so I knew I wasnt going to start Course3 until I got back from vacation. No use in getting started on the course and then not being able to put in consistent effort.
+    %p
+      So, I decided it was time to build a functioning Ruby on Rails project to show off what I’ve learned already.
+    %p
+      I decided to build a CrossFit Name Generator. Why, you ask? Well, I run a fitness marketing company called FitnessTexter. We help fitness businesses increase their membership by using SMS marketing.
+    %p
+      We get a LOT of web traffic from people searching for a “CrossFit Name Generator”. CrossFits are known for having very “adjective-friendly” names, like “CrossFit Fierce” “CrossFit Raging”, etc. Seeing a business opportunity, I decided to build one and advertise my business at the same time.
+    %p
+      The idea was simple:
+    %p
+      1. Find an online thesaurus that had a free/cheap API
+      2. Take an input word, send it to the API, get a list of synonyms, and then prepend the word “CrossFit” to each one.
+      Sounded easy, but it wasn’t.
+    %p
+      Here’s the final product: http://pmichaeljones.herokuapp.com/crossfit_name_generator/new
+    %p
+      Here's the HAML layout:
+      <script src="https://gist.github.com/pmichaeljones/c103c2ac1e6b09b82ba8.js"></script>
+    %p
+      Here's the controller:
+      <script src="https://gist.github.com/pmichaeljones/fe8bd2b264614d7fa35a.js"></script>
