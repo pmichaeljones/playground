@@ -1,25 +1,25 @@
 - @title = "Sending Mandrill Merge Variables using Rails Controller"
 - @metadescription = "Sending Mandrill merge variables can be a bit of a headache. Here's how I solved it."
-  .row
-    .small-12.column
-      %h2 Sending Mandrill Merge Variables using Rails Controller
-        %p Published: October 12, 2014
-        %hr
-        %p
-          I was having a heck of a time getting my Mandrill merge variables to get passed to the MailChimp template that I’m using in my Mandrill account. That’s right, by connecting your Mandrill and MailChimp accounts, you can create sexy email templates in MailChimp and use them in Mandrill for transactional emails.
-        %p
-          For the longest time, I was following the Mandrill directions verbatim, I was formatting it just like mandrill wanted:
-        %p
-          There example(without headers method from Rails):
-          %strong
-            X-MC-MergeVars: {“var1″: “global value 1″}
-        %p
-          Mine:
-          %strong
-            headers[X-MC-MergeVars] = {“name” =>”Patty Jones”, “message” =>”What up good sir!”}
-        %p
-          For some reason, this was not passing my variables to Mandrill. Well, it turns out you need to convert your merge variables to a JSON object before you send it to Mandrill. The below worked perfectly! It passed my variables to my email template.
-        %p
-          So, you know what that means, it’s time to create some sexy “Welcome New User” email templates!
+.row
+  .small-12.column
+    %h2 Sending Mandrill Merge Variables using Rails Controller
+    %p Published: October 12, 2014
+    %hr
+    %p
+      I was having a heck of a time getting my Mandrill merge variables to get passed to the MailChimp template that I’m using in my Mandrill account. That’s right, by connecting your Mandrill and MailChimp accounts, you can create sexy email templates in MailChimp and use them in Mandrill for transactional emails.
+    %p
+      For the longest time, I was following the Mandrill directions verbatim, I was formatting it just like mandrill wanted:
+    %p
+      There example(without headers method from Rails):
+      %strong
+        X-MC-MergeVars: {“var1″: “global value 1″}
+    %p
+      Mine:
+      %strong
+        headers[X-MC-MergeVars] = {“name” =>”Patty Jones”, “message” =>”What up good sir!”}
+    %p
+      For some reason, this was not passing my variables to Mandrill. Well, it turns out you need to convert your merge variables to a JSON object before you send it to Mandrill. The below worked perfectly! It passed my variables to my email template.
+    %p
+      So, you know what that means, it’s time to create some sexy “Welcome New User” email templates!
 
-          <script src="https://gist.github.com/pmichaeljones/949e7ac9af7ff62ff265.js"></script>
+      <script src="https://gist.github.com/pmichaeljones/949e7ac9af7ff62ff265.js"></script>
