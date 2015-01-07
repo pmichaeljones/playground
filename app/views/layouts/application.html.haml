@@ -6,8 +6,11 @@
         = @title
     - else
       %title Patrick Jones | Junior Ruby on Rails Developer
-    %meta(charset="UTF-8")
-    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %meta{:charset => "UTF-8" }
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+    %meta{:property => "og:title", :content => "Patrick Jones | Junior Ruby on Rails Developer" }
+    %meta{:property => "og:type", :content => "website" }
+    %meta{:property => "og:url", :content => "https://pmichaeljones.herokuapp.com" }
     - if @metadescription
       %meta{:name => 'description', :content => "#{@metadescription}"}
     - else
