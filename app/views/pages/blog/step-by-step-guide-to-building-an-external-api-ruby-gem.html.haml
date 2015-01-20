@@ -21,18 +21,20 @@
       I decided to write a simple Ruby script that I could run from the command line.
     %p
       Below is a PasteBin of the Ruby script that I was running from command line. It's quite simple.
+  .small-12.large-6.columns
     %ul.no-bullet.bold
       %li 1. Run 'ruby uploader.rb' in the command line.
-      %li 2. It prints out a list of all the PDF files in the current directory. Every time I complete a customer's PDF file, I add it to this directory and then delete it after sending.
-      %li 3. Per TryPaper API requirements, Ruby reads the file, converts it to a Base64 string, and loads it into a variable.
-      %li 3. It prompts for all the address requirements and stores them in local variables.
-      %li 4. After completing all the address inputs, it confirms the correct mailing address.
-      %li 5. If it's wrong, type "N" and the address entry loop restarts. If address is correct, it makes an HTTP POST to the TryPaper API.
-      %li 6. The POST header contains producion API key for billing purposes. Request body contains recipient address, return address ID (from TryPaper dashboard), and Base64 encoded file.
-      %li 7. TryPaper receives file and sends back a 201 or 404. Wah-lah! API success!
-      %li 8. The second HTTP POST deals with printing(spooling) my documents. It basically takes the body from the TryPaper API response and says, "Hey, print this document immediately instead of waiting 12 hours to auto-spool it."
-    %p.centered
-      %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IOElUZThmWUZReUU", :style => "width: 60%" }
+      %li 2. It prints out a list of all PDF files currently in the directory.
+      %li 3. Per TryPaper API requirements, Ruby reads the file, converts it to Base64, and loads it into a variable.
+      %li 4. It prompts for all the address requirements and stores them in local variables.
+      %li 5. After completing all the address inputs, it confirms the correct mailing address.
+      %li 6. Type "N" and the address entry loop restarts. If address is correct, it makes an HTTP POST to the TryPaper API.
+      %li 7. The POST header contains producion API key. Body contains recipient address, return address ID (from TryPaper dashboard), and Base64 encoded file.
+      %li 8. TryPaper receives file and sends back a 201 or 400 response. Wah-lah! API success!
+      %li 9. The second HTTP POST deals with spooling. Learn about spooling at TryPaper if you're interested.
+  .small-12.large-6.column.centered
+    %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IOElUZThmWUZReUU", :style => "width: 100%" }
+  .small-12.columns
     %p
       <iframe src="http://pastebin.com/embed_iframe.php?i=RUKHSU52" style="border:none;width:100%;height:400px;"></iframe>
     %hr
