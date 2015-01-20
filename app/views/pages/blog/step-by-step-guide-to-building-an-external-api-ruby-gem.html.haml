@@ -1,5 +1,5 @@
-- @title = "Guide to Building Your First Ruby Gem using a Third Party API"
-- @metadescription = "I had to build a gem for a postal mailing API. Here's how I did it."
+- @title = "Guide to Building a Ruby Gem Using an External Third Party API"
+- @metadescription = "Needing a way to print PDF files online, I decided to write a gem for the TryPaper USPS API. Here's how I did it."
 .row
   .small-12.column
     %h1.centered{:style =>"font-size: 36px;"} How to Build Your First Ruby Gem using a Third Party API
@@ -21,7 +21,7 @@
       I decided to write a simple Ruby script that I could run from the command line.
     %p
       Below is a PasteBin of the Ruby script that I was running from command line. It's quite simple.
-    %ul.no-bullet
+    %ul.no-bullet.bold
       %li 1. Run 'ruby uploader.rb' in the command line.
       %li 2. It prints out a list of all the PDF files in the current directory. Every time I complete a customer's PDF file, I add it to this directory and then delete it after sending.
       %li 3. Per TryPaper API requirements, Ruby reads the file, converts it to a Base64 string, and loads it into a variable.
