@@ -128,21 +128,25 @@
     %p
       This file is the bread and butter of the Gem. The mailer file is where everything comes together to make the HTTP request.
     %p
-      First thing, need need to make sure the class exists. After that, we're testing to see that there are getter/setter methods for doc and recipient. The final test(before the HTTP submit tests), is making sure that the Mailer class can accept an optional array argument. This optional array will hold any "optional printing tags" that the end-user wants to send to TryPaper.
+      First thing, I need to make sure the class exists. After that, we're testing to see that there are getter/setter methods for doc and recipient. The final test(before the HTTP submit tests), is making sure that the Mailer class can accept an optional array argument. This optional array will hold any "optional printing tags" that the end-user wants to send to TryPaper.
     %p
-      The last three tests get a little more complex. The first (of the last three) make sure that the gem allows you to upload and send a PDF file. The second test makes sure you can't upload and send a TXT file (TryPaper only accepts PDF files), and the first test makes sure that you can add those optional tags when you upload a PDF document.
+      The last three tests get a little more complex. The first (of the last three) makes sure that the gem lets you upload and send a PDF file. The second test makes sure you can't upload and send a TXT file (TryPaper only accepts PDF files), and the last test makes sure that you can add those optional tags when you upload a PDF document.
     %p
       They utilize the VCR gem to make an initial request to the TryPaper API. They record the response into a designated file (that doesn't exist before you run the tests for the first time).
     %p
-      When you run the tests for the first time, it will create a file in your "fixtures/cassettes" directory, and name it whatever you name it. As you can see below the mailer.rb code, I have three VCR cassette YML files that match the three names that I used in the tests below.
+      When you run the tests for the first time, it will create a file in your "fixtures/cassettes" directory, and name it whatever you name it. Name the cassette something that makes sence to your tests. See how I named mine what I was testing. As you can see below the mailer.rb code, I have three VCR cassette YML files that match the three names that I used in the tests below.
     %p
-      If you run your test once than once, it will not recreate the YAML file. Therefore, if you need to make changes to tests and get a fresh YAML file, just erase the cassette that goes by the same name as the one in the test, and it will record a new cassette. Hope you're not too confused! It took me a while to grasp this concept. However, without this gem, you'd have a hell of a time testing your gem.
-    <iframe src="http://pastebin.com/embed_iframe.php?i=SNwGWaFL" style="border:none;width:100%"></iframe>
+      If you run your test once than once, it will not recreate the YAML file. Therefore, if you need to make changes to tests and get a fresh YAML file, just erase the cassette that goes by the same name as the one in the test, and it will record a new cassette the next time you run your testing suite.
+    %p
+      Hope you're not too confused! It took me a while to grasp this concept, so don't worry if you're overwhelmed. Give your brain some time to digest all this. Maybe read the VCR docs to get a better understanding. Reading gem docs is the best thing you can do to get a better understanding of what a gem does and how it does it.
+    <iframe src="http://pastebin.com/embed_iframe.php?i=SNwGWaFL" style="border:none;width:100%;height:191px;"></iframe>
     %h4 mailer_spec.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=Mxay7WCF" style="border:none;width:100%;height:1745px;"></iframe>
     %hr
     %h3.bold.centered Using VCR Gem to Mimic HTTP Requests
     %hr
+    %p
+      Below are the three VCR cassettes that were created during my tests. Once they've been created, you can write other tests based on a 201 "successful" HTTP request or a 400 "unsuccessful" HTTP request, without having to make more API calls. You just tell VCR to use the cassette that already exists(your 201, 500, 400 cassette, etc) and your tests will be speedy as ever!
     %h4 pdf_document.yml
     <iframe src="http://pastebin.com/embed_iframe.php?i=UgWGja6A" style="border:none;width:100%;height:300px;"></iframe>
     %h4 good_document_with_tags.yml
@@ -153,21 +157,10 @@
     %h2.bold.centered Writing Implementation Code...The Fun Part of TDD!
     %hr
     %p
-      FUN STUFF HERE
-    %hr
-    %h3.bold.centered Creating the Version File
-    %hr
+      Once you've got all your tests written and failing, it's time to get some green in your life.
+    %p.centered
+      %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3Ib0Nqb1lGdVZ1Q2c"}
     %p
-      VERSION FILE STUFF
-    %h4 version.rb
-    <iframe src="http://pastebin.com/embed_iframe.php?i=Srfaqgpq" style="border:none;width:100%;height:86px;"></iframe>
-    %hr
-    %h3.bold.centered Creating the Main Gem File
-    %hr
-    %p
-      MAIN FILE STUFF
-    %h4 trypaper.rb
-    <iframe src="http://pastebin.com/embed_iframe.php?i=0Y3AUEGj" style="border:none;width:100%;height:128px;"></iframe>
     %hr
     %h3.bold.centered Creating the Document Gem File
     %hr
@@ -189,6 +182,20 @@
       MAILER STUFF HERE
     %h4 mailer.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=3a2UiScY" style="border:none;width:100%;height:1052px;"></iframe>
+    %hr
+    %h3.bold.centered Creating the Version File
+    %hr
+    %p
+      VERSION FILE STUFF
+    %h4 version.rb
+    <iframe src="http://pastebin.com/embed_iframe.php?i=Srfaqgpq" style="border:none;width:100%;height:86px;"></iframe>
+    %hr
+    %h3.bold.centered Creating the Main Gem File
+    %hr
+    %p
+      MAIN FILE STUFF
+    %h4 trypaper.rb
+    <iframe src="http://pastebin.com/embed_iframe.php?i=0Y3AUEGj" style="border:none;width:100%;height:128px;"></iframe>
     %hr
     %h3.bold.centered Creating the Finished ReadMe File
     %hr
