@@ -2,12 +2,13 @@
 - @metadescription = "Needing a way to print PDF files online, I decided to write a gem for the TryPaper USPS API. Here's how I did it."
 .row
   .small-12.column
-    %h1.centered{:style =>"font-size: 36px;"} How to Build Your First Ruby Gem using a Third Party API
+    %h1.centered.bold{:style =>"font-size: 34px;"} How to Build Your First Ruby Gem using a Third Party API
     %p Published: January 19, 2015
     %hr
     %p If the post below isn't complete, it's because I'm still writing it. I'm pushing to Heroku after every paragraph.
     %hr
-    %h3 A Little Backstory
+    %h3.bold.centered Backstory for Why I Built this Gem
+    %hr
     %p
       I own a business called
       %a{:href => "http://boostfitnessmarketing.com/fitnesstexter", :target => "_blank"}FitnessTexter.
@@ -45,7 +46,7 @@
     %p
       Therefore, I set out on creating my first legit open source gem. I emailed the team at TryPaper(mostly .NET guys) and told them I wanted to build them a gem. Their product had saved my business countless hours and I felt like they deserved a gem so more Ruby devs could implement their API. They were stoked and said they couldn't wait to see the finished product.
     %hr
-    %h2 Building a Ruby Gem for an External 3rd Party API
+    %h2.bold.centered Building a Ruby Gem for an External 3rd Party API
     %hr
     %p
       The hardest part of building a Ruby Gem is getting started. Before building this gem, I had never built a gem before, let alone a gem that was going to utilize a 3rd party API. I could build a pretty good-looking Rails app in a few days, with all sorts of bells and whistles. I could write a nice command line Ruby script. Could I build a production-quality Ruby gem? I had no idea. I was nervous to say the least.
@@ -55,20 +56,31 @@
       the creator of
       %a{:href => "http://exercism.io", :target => "_blank"} Exercism.io
       I just wanted to get a feel for her coding career path. As a new-on-the-block Ruby developer(I've been doing this since April 2014), I felt like I was "late to the game." Every developer bio I've read seems to say the same thing:
-      %p.bold "I've been coding since I was 2 years old. I wrote my first program at 5. By 10, I was a professor at MIT."
-      %p
-        You get the drift. Reading those sorts of bios makes a new developer think it's a pointless endeavor. You think to yourself:
-      %p.bold "Geez, I'm 27 years old and I just started coding. I'll never achieve their greatness."
-      %p
-        Wrong! Katrina started coding when she was 27, and look at what a rockstar she is! There's hope for us newbies! She also gave me a word of advice. I'll paraphrase:
-      %p.bold "There are a lot of developers who don't challenge themselves. You'll only get better if you do projects that seem too hard."
-      %p
-        This project was intimidating & challenging. Meaning I could only become a better developer as a result. Time to cut a gem!
-      %hr
+    %p.bold
+      "I've been coding since I was 2 years old. I wrote my first program at 5. By 10, I was a professor at MIT."
+    %p
+      You get the drift. Reading those sorts of bios makes a new developer think it's a pointless endeavor. You think to yourself:
+    %p.bold
+      "Geez, I'm 27 years old and I just started coding. I'll never achieve their greatness."
+    %p
+      Wrong! Katrina started coding when she was 27, and look at what a rockstar she is! There's hope for us newbies! She also gave me a word of advice. I'll paraphrase:
+    %p.bold
+      "There are a lot of developers who don't challenge themselves. You'll only get better if you do projects that seem too hard."
+    %p
+      This project was intimidating & challenging. Meaning I could only become a better developer as a result. Time to cut a gem!
+    %hr
+    %h3.bold.centered Creating the Gem and Filling out Gemspec
+    %hr
+    %p
+      Creating the directory for your gem is super easy when you use Bundler:
+    %p.bold bundle gem trypaper
+    %p
+      Done! That was simple. That gives you a base from which to work. Now that you have your directory set up, go ahead and fill in the gemspec info. Don't worry about the dependencies, those will be added later.
     %h4 gemspec
     <iframe src="http://pastebin.com/embed_iframe.php?i=GUUvXqXd" style="border:none;width:100%;height:300px;"></iframe>
-    %h4 Readme
-    <iframe src="http://pastebin.com/embed_iframe.php?i=7Pm7CHqz" style="border:none;width:100%;height:300px;"></iframe>
+    %hr
+    %h3.bold.centered Doing It the TDD Way, from Start to Finish
+    %hr
     %h4 spec_helper.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=tNuycAFu" style="border:none;width:100%;height:359px;"></iframe>
     %h4 recipient_spec.rb
@@ -77,12 +89,18 @@
     <iframe src="http://pastebin.com/embed_iframe.php?i=JCgJk47A" style="border:none;width:100%;height:1976px;"></iframe>
     %h4 document_spec.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=8C96zLwU" style="border:none;width:100%;height:506px;"></iframe>
+    %hr
+    %h3.bold.centered Using VCR Gem to Mimic HTTP Requests
+    %hr
     %h4 pdf_document.yml
     <iframe src="http://pastebin.com/embed_iframe.php?i=UgWGja6A" style="border:none;width:100%;height:300px;"></iframe>
     %h4 good_document_with_tags.yml
     <iframe src="http://pastebin.com/embed_iframe.php?i=TY1dxwPF" style="border:none;width:100%;height:300px;"></iframe>
     %h4 bad_document.yml
     <iframe src="http://pastebin.com/embed_iframe.php?i=wcJCqZXF" style="border:none;width:100%;height:300px;"></iframe>
+    %hr
+    %h3.bold.centered Writing Implementation Code...The Fun Part of TDD!
+    %hr
     %h4 trypaper.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=0Y3AUEGj" style="border:none;width:100%;height:128px;"></iframe>
     %h4 version.rb
@@ -93,8 +111,11 @@
     <iframe src="http://pastebin.com/embed_iframe.php?i=Th7xFdRW" style="border:none;width:100%;height:600px;"></iframe>
     %h4 recipient.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=5BjDkV1u" style="border:none;width:100%;height:1010px;"></iframe>
-
-
+    %hr
+    %h3.bold.centered Creating the Finished ReadMe File
+    %hr
+    %h4 Readme
+    <iframe src="http://pastebin.com/embed_iframe.php?i=7Pm7CHqz" style="border:none;width:100%;height:300px;"></iframe>
 
 
 
