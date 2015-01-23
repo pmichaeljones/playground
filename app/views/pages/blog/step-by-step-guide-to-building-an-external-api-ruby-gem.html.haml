@@ -129,6 +129,15 @@
       This file is the bread and butter of the Gem. The mailer file is where everything comes together to make the HTTP request.
     %p
       First thing, need need to make sure the class exists. After that, we're testing to see that there are getter/setter methods for doc and recipient. The final test(before the HTTP submit tests), is making sure that the Mailer class can accept an optional array argument. This optional array will hold any "optional printing tags" that the end-user wants to send to TryPaper.
+    %p
+      The last three tests get a little more complex. The first (of the last three) make sure that the gem allows you to upload and send a PDF file. The second test makes sure you can't upload and send a TXT file (TryPaper only accepts PDF files), and the first test makes sure that you can add those optional tags when you upload a PDF document.
+    %p
+      They utilize the VCR gem to make an initial request to the TryPaper API. They record the response into a designated file (that doesn't exist before you run the tests for the first time).
+    %p
+      When you run the tests for the first time, it will create a file in your "fixtures/cassettes" directory, and name it whatever you name it. As you can see below the mailer.rb code, I have three VCR cassette YML files that match the three names that I used in the tests below.
+    %p
+      If you run your test once than once, it will not recreate the YAML file. Therefore, if you need to make changes to tests and get a fresh YAML file, just erase the cassette that goes by the same name as the one in the test, and it will record a new cassette. Hope you're not too confused! It took me a while to grasp this concept. However, without this gem, you'd have a hell of a time testing your gem.
+    <iframe src="http://pastebin.com/embed_iframe.php?i=SNwGWaFL" style="border:none;width:100%"></iframe>
     %h4 mailer_spec.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=Mxay7WCF" style="border:none;width:100%;height:1745px;"></iframe>
     %hr
