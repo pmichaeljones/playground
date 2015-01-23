@@ -75,14 +75,31 @@
       Creating the directory for your gem is super easy when you use Bundler:
     %p.bold bundle gem trypaper
     %p
-      Done! That was simple. That gives you a base from which to work. Now that you have your directory set up, go ahead and fill in the gemspec info. Don't worry about the dependencies, those will be added later.
+      Done! That was simple. That gives you a base from which to work. Now that you have your directory set up, go ahead and fill in the gemspec info.
+    %p
+      First things first, we need to set up the dependencies of the gem. These are going to be the gems that are required to run the gem, either in development stage or in production. Since my gem doesn't require any other gems in production, I only have to worry about development dependencies.
+    %p
+      Bundler and Rake come preconfigured when you use the Bundle command to build the gem. For testing purposes, I've chosen to use RSpec(since I've familiar with the DSL) and VCR, which is a gem that helps immitate HTTP requests during tests so that you don't need to make HTTP request every single time you run a test.
     %h4 gemspec
     <iframe src="http://pastebin.com/embed_iframe.php?i=GUUvXqXd" style="border:none;width:100%;height:300px;"></iframe>
     %hr
     %h3.bold.centered Doing It the TDD Way, from Start to Finish
     %hr
+    %p
+      The spec_helper.rb file is required in all your testing specs. It sets important variables that you will need throughout your test, as well as configures RSpec, and any other testing gems. Make sure you REQUIRE your gem, as well any any external testing gems in this file. This will make sure that each of your subsequent spec files has these gems required. Otherwise, you'd have to require each gem in every single testing spec.
+    %p
+      I copied and pasted the VCR configuration from their
+      %a{:href => "https://github.com/vcr/vcr" } GitHub page.
+      I included the webmock hook_into configuration, because I'll be using webmock to disable external HTTP requests from happening after the initial request. Each request will be saved as a yml file in the 'spec/fixtures/cassttes' directory for using in later tests.
+    %p
+      Take some time and read all about VCR. It's a pretty rad gem. I was completely baffled by this gem at the start. I didn't really understand it's purpose. To get a better understanding of how it worked, I looked at a very simple Thesaurus API gem that I've used before,
+      %a{:href => "https://github.com/dtuite/dinosaurus"} Dinosaurus.
+    %p
+      Basically, as I understand it, it's a way to make an HTTP request to a website, and instead of dealing with the HTTP response, it actually saves the response into a directory that you tell it to. From there, everytime you make a similar HTTP request, your tests will just use the VCR cassette response, instead of making the HTTP request again and again. And believe me, when you run your specs tens or hundreds of times during the build, you'll appreciate how speedy those VCR cassettes are.
     %h4 spec_helper.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=tNuycAFu" style="border:none;width:100%;height:359px;"></iframe>
+    %p
+
     %h4 recipient_spec.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=mU9w3TpH" style="border:none;width:100%;height:1136px;"></iframe>
     %h4 mailer_spec.rb
