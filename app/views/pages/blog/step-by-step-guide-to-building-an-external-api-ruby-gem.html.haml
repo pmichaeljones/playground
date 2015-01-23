@@ -83,7 +83,7 @@
     %h4 gemspec
     <iframe src="http://pastebin.com/embed_iframe.php?i=GUUvXqXd" style="border:none;width:100%;height:300px;"></iframe>
     %hr
-    %h3.bold.centered Doing It the TDD Way, from Start to Finish
+    %h3.bold.centered Doing It the TDD Way. Starting with the Spec Helper
     %hr
     %p
       The spec_helper.rb file is required in all your testing specs. It sets important variables that you will need throughout your test, as well as configures RSpec, and any other testing gems. Make sure you REQUIRE your gem, as well any any external testing gems in this file. This will make sure that each of your subsequent spec files has these gems required. Otherwise, you'd have to require each gem in every single testing spec.
@@ -98,14 +98,33 @@
       Basically, as I understand it, it's a way to make an HTTP request to a website, and instead of dealing with the HTTP response, it actually saves the response into a directory that you tell it to. From there, everytime you make a similar HTTP request, your tests will just use the VCR cassette response, instead of making the HTTP request again and again. And believe me, when you run your specs tens or hundreds of times during the build, you'll appreciate how speedy those VCR cassettes are.
     %h4 spec_helper.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=tNuycAFu" style="border:none;width:100%;height:359px;"></iframe>
+    %hr
+    %h3.bold.centered Creating the Recipient Spec File
+    %hr
     %p
-
+      One of the least hard, but most important, aspects of creating a gem is figuring out what you want to call your classes. You're going to be using these classes throughout your implementation files and specs files, so make sure they make sense. Otherwise, once you realize that "class PersonWhoRecievesThePDFDocument" is too wordy, you'll have to go back and change everything! Believe me!
+    %p
+      So, once you've required 'spec_helper' in your testing spec file, you can start writing your tests. Notice that you need to take into account namespacing when you write your test files. Since my entire gem is inside of the TryPaper module, I need to make sure that I access the classes using "TryPaper::{ClassNameHere}".
+    %p
+      In order to make the tests follow the DRY rule, you'll want to refactor any code that is used more than once. Using RSpec's "let" method, I assigned the variable "receiver" to be an instance of the Recipient class. I'll be using "receiver" througout all the test, so this will save me many repeated lines of code.
+    %p
+      The first test is making sure that the class even exists. If "receiver" doesn't exist, it couldn't possible be an instance of the "TryPaper::Recipient" class.
+    %p
+      After the "existence" test, I tested to make sure that the recipient class had setter methods for all the needed address components.
+    %p
+      The second last test makes sure that the end-user can only instantiate the class with string arguments, and not integers. The last test makes sure that the "formatted_address" method (which hasn't been written yet) will return a hash. This hash is what will be passed sent to the TryPaper API.
     %h4 recipient_spec.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=mU9w3TpH" style="border:none;width:100%;height:1136px;"></iframe>
-    %h4 mailer_spec.rb
-    <iframe src="http://pastebin.com/embed_iframe.php?i=Mxay7WCF" style="border:none;width:100%;height:1745px;"></iframe>
+    %hr
+    %h3.bold.centered Creating the Document Spec File
+    %hr
     %h4 document_spec.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=STHa0vLH" style="border:none;width:100%;height:443px;"></iframe>
+    %hr
+    %h3.bold.centered Creating the Mailer Spec File
+    %hr
+    %h4 mailer_spec.rb
+    <iframe src="http://pastebin.com/embed_iframe.php?i=Mxay7WCF" style="border:none;width:100%;height:1745px;"></iframe>
     %hr
     %h3.bold.centered Using VCR Gem to Mimic HTTP Requests
     %hr
@@ -116,18 +135,45 @@
     %h4 bad_document.yml
     <iframe src="http://pastebin.com/embed_iframe.php?i=wcJCqZXF" style="border:none;width:100%;height:300px;"></iframe>
     %hr
-    %h3.bold.centered Writing Implementation Code...The Fun Part of TDD!
+    %h2.bold.centered Writing Implementation Code...The Fun Part of TDD!
     %hr
-    %h4 trypaper.rb
-    <iframe src="http://pastebin.com/embed_iframe.php?i=0Y3AUEGj" style="border:none;width:100%;height:128px;"></iframe>
+    %p
+      FUN STUFF HERE
+    %hr
+    %h3.bold.centered Creating the Version File
+    %hr
+    %p
+      VERSION FILE STUFF
     %h4 version.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=Srfaqgpq" style="border:none;width:100%;height:86px;"></iframe>
+    %hr
+    %h3.bold.centered Creating the Main Gem File
+    %hr
+    %p
+      MAIN FILE STUFF
+    %h4 trypaper.rb
+    <iframe src="http://pastebin.com/embed_iframe.php?i=0Y3AUEGj" style="border:none;width:100%;height:128px;"></iframe>
+    %hr
+    %h3.bold.centered Creating the Document Gem File
+    %hr
+    %p
+      DOCUMENT FILE STUFF
     %h4 document.rb
-    <iframe src="http://pastebin.com/embed_iframe.php?i=eLAWppgw" style="border:none;width:100%;height:443px;></iframe>
-    %h4 mailer.rb
-    <iframe src="http://pastebin.com/embed_iframe.php?i=Th7xFdRW" style="border:none;width:100%;height:600px;"></iframe>
+    <iframe src="http://pastebin.com/embed_iframe.php?i=eLAWppgw" style="border:none;width:100%;height:443px;"></iframe>
+    %hr
+    %h3.bold.centered Creating the Recipient Gem File
+    %hr
+    %p
+      RECIPIENT STUFF HERE
     %h4 recipient.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=5BjDkV1u" style="border:none;width:100%;height:1010px;"></iframe>
+    %hr
+    %h3.bold.centered Creating the Mailer Gem File
+    %hr
+    %p
+      MAILER STUFF HERE
+    %h4 mailer.rb
+    <iframe src="http://pastebin.com/embed_iframe.php?i=3a2UiScY" style="border:none;width:100%;height:1052px;"></iframe>
     %hr
     %h3.bold.centered Creating the Finished ReadMe File
     %hr
@@ -146,8 +192,6 @@
       It's a step by step process my brothers and sisters. You're not going to go from novice developer to Katz in a day, a week, a month, or even a year. But damnit man, just keep coding, keep learning, and don't let anything hold you back!
     %p.centered
       %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IQzNpQ0ZPMS12OWc"}
-
-
 
 
 
