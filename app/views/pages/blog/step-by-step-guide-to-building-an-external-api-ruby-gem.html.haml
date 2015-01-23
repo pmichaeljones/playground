@@ -118,11 +118,17 @@
     %hr
     %h3.bold.centered Creating the Document Spec File
     %hr
+    %p
+      The document_spec file is pretty simple. We just need to make sure that the class exists, that the class accepts a file when initialized, and that they class has a method that can convert the file into Base64 format. Simple enough.
     %h4 document_spec.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=STHa0vLH" style="border:none;width:100%;height:443px;"></iframe>
     %hr
     %h3.bold.centered Creating the Mailer Spec File
     %hr
+    %p
+      This file is the bread and butter of the Gem. The mailer file is where everything comes together to make the HTTP request.
+    %p
+      First thing, need need to make sure the class exists. After that, we're testing to see that there are getter/setter methods for doc and recipient. The final test(before the HTTP submit tests), is making sure that the Mailer class can accept an optional array argument. This optional array will hold any "optional printing tags" that the end-user wants to send to TryPaper.
     %h4 mailer_spec.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=Mxay7WCF" style="border:none;width:100%;height:1745px;"></iframe>
     %hr
@@ -181,6 +187,22 @@
       Writing the ReadMe file is just the cherry on top. After all that hard work, you get to tell your Ruby brothers and sisters how they get to use your precious little gem. Use MarkDown to make it look pretty. Give a good example usage, so that people will know how to use your gem out of the box.
     %h4 Readme
     <iframe src="http://pastebin.com/embed_iframe.php?i=7Pm7CHqz" style="border:none;width:100%;height:300px;"></iframe>
+    %hr
+    %h3.bold.centered Take-Aways from Build the TryPaper API Gem
+    %hr
+    %p
+      One of the best things I did before creating this gem was writing the Ruby script that you see at the very top of this blog post. Writing that script, and learning the TryPaper API was very important. If you don't understand the API you're working with, you'll never know how to build a gem that interacts with the API.
+    %p
+      I need to thanks Matt and Ben from
+      %a{:href => "http://quickleft.com"} QuickLeft.
+      Reading their blog posts about
+      %a{:href => "https://quickleft.com/blog/engineering-lunch-series-step-by-step-guide-to-building-your-first-ruby-gem/"} creating your first gem
+      and
+      %a{:href => "https://blog.engineyard.com/2014/wrapping-your-api-in-a-ruby-gem"} wrapping external APIs in gems
+      gave me the inspiration to build my own gem.
+      Also want to thank
+      %a{:href => "http://davidtuite.com/"} David Tuite
+      for answering some VCR questions for me.
     %hr
     %h3.bold.centered Closing Thoughts on Building My First Ruby Gem
     %hr
