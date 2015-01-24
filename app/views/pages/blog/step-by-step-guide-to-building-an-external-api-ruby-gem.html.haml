@@ -165,7 +165,13 @@
     %h3.bold.centered Creating the Document Gem File
     %hr
     %p
-      DOCUMENT FILE STUFF
+      This is a pretty simple class to create. Make sure you wrap all your classes in "module GemName". This creates the proper namespacing so that you can instantiate your gem with "GemName::ClassName.new.(arg1, arg2, etc)"
+    %p
+      Since I knew my ReadMe would be quite descriptive, I made this class pretty basic. The end user must first a PDF file into a variable. That variable is then used when they instantiate the document class.
+    %p
+      In order to get the tests to pass, I need to make sure I have getter methods, so that's where the "attr_reader" comes in.
+    %p.centered
+      %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3ISW45eWRsN3BtU1U"}
     %h4 document.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=eLAWppgw" style="border:none;width:100%;height:443px;"></iframe>
     %hr
@@ -173,6 +179,8 @@
     %hr
     %p
       RECIPIENT STUFF HERE
+    %p.centered
+      %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IYjJzVFgzakVpSEk"}
     %h4 recipient.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=5BjDkV1u" style="border:none;width:100%;height:1010px;"></iframe>
     %hr
@@ -180,6 +188,8 @@
     %hr
     %p
       MAILER STUFF HERE
+    %p.centered
+      %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IWnJMSS1kQlEtaXc"}
     %h4 mailer.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=3a2UiScY" style="border:none;width:100%;height:1052px;"></iframe>
     %hr
@@ -187,7 +197,7 @@
     %hr
     %p
       Once you've finished all your code, it's time to bump the version. Every change to your gem needs to be noted in your version number. Here's a good
-      %a{:href =>"http://guides.rubygems.org/patterns/"} Gem Pattern article
+      %a{:href =>"http://guides.rubygems.org/patterns/", :target => "_blank"} Gem Pattern article
       about the different types of changes and where you should document them. Major version changes vs minor version changes, etc.
     %h4 version.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=Srfaqgpq" style="border:none;width:100%;height:86px;"></iframe>
@@ -197,7 +207,7 @@
     %p
       After reading numerous blog posts about building gems and scouring the Twilio-Ruby gem(which I consider amazing and best-practice worthy), I realized that the most common pattern to structure a gem is to have your main file include all your other necessary files. So, as you can see in the snippet below, the most important file in the entire gem is just a bunch of "requires" of all the other source files. Simple enough!
     %h4 trypaper.rb
-    <iframe src="http://pastebin.com/embed_iframe.php?i=0Y3AUEGj" style="border:none;width:100%;height:128px;"></iframe>
+    <iframe src="http://pastebin.com/embed_iframe.php?i=X32bPETE" style="border:none;width:100%;height:125px;"></iframe>
     %hr
     %h3.bold.centered Creating the Finished ReadMe File
     %hr
