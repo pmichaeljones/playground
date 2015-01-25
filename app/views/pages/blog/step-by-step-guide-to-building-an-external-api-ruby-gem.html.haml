@@ -189,7 +189,11 @@
     %p
       I used attr_reader for the "formatted address" method, because that method needs to be read-only. No use giving someone the ability to mess up the JSON format that it returns. The formatted address return value is exactly what the TryPaper API is expecting for the address fields.
     %p
-
+      I wrote a private method called "check_attributes" that is used in conjunction with the "formatted_address" method. It takes all the given address components and runs then through a block to make sure that they are all in String format. If they aren't, the "InvalidDataError" error will fire before the gem can send the faulty address fields to the API. My goal was to make scrub all data before it even gets to the API so as to reduce the amount of 400 error API responses.
+    %p
+      The configure method is something I'm VERY proud of. Blocks are one of the most important parts of the Ruby language. I'll admit that my knowledge of building methods that take blocks was rather shaky. I did some reading and looked into other gems that had similar configure methods. This method yields "self", which is the recipient object. By yielding itself, it gives you the ability to set all the address fields using a simple block. See example below:
+    <iframe src="http://pastebin.com/embed_iframe.php?i=2tFVZU9L" style="border:none;width:100%"></iframe>
+    %p
 
     %p.centered
       %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IYjJzVFgzakVpSEk"}
