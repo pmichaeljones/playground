@@ -5,8 +5,8 @@
     %h1.centered.bold{:style =>"font-size: 34px;"} How to Build Your First Ruby Gem using a Third Party API
     %p Published: January 19, 2015
     %hr
-    %p If the post below isn't complete, it's because I'm still writing it. I'm pushing to Heroku after every paragraph.
-    %p I'm always eager for a code review. If you have suggestions for this gem, please comment at the bottom of the post.
+    %p.centered If the post below isn't complete, it's because I'm still writing it. I'm pushing to Heroku after every paragraph.
+    %p.centered I'm always eager for a code review. If you have suggestions for this gem, please comment at the bottom of the post.
     %hr
     %h3.bold.centered Backstory for Why I Built this Gem
     %hr
@@ -162,7 +162,7 @@
     %p
       Once you've got all your tests written and failing, it's time to get some green in your life.
     %p.centered
-      %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3Ib0Nqb1lGdVZ1Q2c"}
+      %img{:width => 600, :src => "https://drive.google.com/uc?id=0BwSA_JYWKK3Ib0Nqb1lGdVZ1Q2c"}
     %p
     %hr
     %h3.bold.centered Creating the Document Gem File
@@ -174,7 +174,7 @@
     %p
       In order to get the tests to pass, I need to make sure I have getter methods, so that's where the "attr_reader" comes in.
     %p.centered
-      %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3ISW45eWRsN3BtU1U"}
+      %img{:width => 600, :src => "https://drive.google.com/uc?id=0BwSA_JYWKK3ISW45eWRsN3BtU1U"}
     %h4 document.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=eLAWppgw" style="border:none;width:100%;height:443px;"></iframe>
     %hr
@@ -192,20 +192,37 @@
       I wrote a private method called "check_attributes" that is used in conjunction with the "formatted_address" method. It takes all the given address components and runs then through a block to make sure that they are all in String format. If they aren't, the "InvalidDataError" error will fire before the gem can send the faulty address fields to the API. My goal was to make scrub all data before it even gets to the API so as to reduce the amount of 400 error API responses.
     %p
       The configure method is something I'm VERY proud of. Blocks are one of the most important parts of the Ruby language. I'll admit that my knowledge of building methods that take blocks was rather shaky. I did some reading and looked into other gems that had similar configure methods. This method yields "self", which is the recipient object. By yielding itself, it gives you the ability to set all the address fields using a simple block. See example below:
-    <iframe src="http://pastebin.com/embed_iframe.php?i=2tFVZU9L" style="border:none;width:100%"></iframe>
+    %h4 Using a configure method that takes a block
+    <iframe src="http://pastebin.com/embed_iframe.php?i=2tFVZU9L" style="border:none;width:100%;height:275px;"></iframe>
     %p
 
     %p.centered
-      %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IYjJzVFgzakVpSEk"}
+      %img{:width => 600, :src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IYjJzVFgzakVpSEk"}
     %h4 recipient.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=5BjDkV1u" style="border:none;width:100%;height:1010px;"></iframe>
     %hr
     %h3.bold.centered Creating the Mailer Gem File
     %hr
     %p
-      MAILER STUFF HERE
+      This is truly the meat and potatoes of this gem. This is where it all comes together.
+    %p
+      Because I'll be working with some JSON and making an HTTP request, I need to require both 'json' and 'net/http'. Once again, make sure you wrap you method inside the correct ruby gem module name.
+    %p
+      I included two new error types, but looking back, I never actually used these errors in this class. I'll need to pull them out on my next refactor.
+    %p
+      Since both the document and the recipient need to be set after instantiation, I used attr_accessor for those. The other info is available as convenience methods using attr_reader.
+    %p
+      When the user instantiates a Mailer object, they need to include their TryPaper API key, as well as their return address ID. These are both created in the TryPaper dashboard. If they so desire, they can include an array of printing tags. There are 5 tags available for use, and they are all located in the Tags documentation of the TryPaper API.
+    %p
+      The "send_data" method is what actually gets sent to the API. Before this method can be called, the end-user must set the document variable using the attr_accessor method. They can also set the recipient variable using the attr_accessor method, or they can set it directly inside the client using the "configure" method that was supplied in the recipient class.
+    %p
+      The "submit" method is a basic HTTP Post. TryPaper requires the post be made over an SSL connection, so I needed to make sure to set SSL to true. Form there, I build the headers to include the API key and the content-type.
+    %p
+      The "send_data" information is converted into JSON and then we make the HTTP Post call using the "request" method method supplied by the "net/http" library.
+    %p
+      A future refactor will include dealing with the reponse from the API. Right now, as it stands, you can go into the TryPaper API logs to see the response. However, I should really deal with that information from inside the Gem. I will utilize those errors that I created at the top of this class to deal with various response codes.
     %p.centered
-      %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IWnJMSS1kQlEtaXc"}
+      %img{:width => 600, :src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IWnJMSS1kQlEtaXc"}
     %h4 mailer.rb
     <iframe src="http://pastebin.com/embed_iframe.php?i=3a2UiScY" style="border:none;width:100%;height:1052px;"></iframe>
     %hr
