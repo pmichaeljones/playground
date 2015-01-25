@@ -181,7 +181,16 @@
     %h3.bold.centered Creating the Recipient Gem File
     %hr
     %p
-      The
+      The recipient file is not that complex either. Just a matter of writing it so that the recipient object can pass the correct recipient info to the TryPaper API. They require certain field to be sent to their API, in a certain format, JSON.
+    %p
+      Once again, make sure you wrap your class in the correct module name of your gem. After that, I wanted to create a special error(InvalidDataError) that would fire if any recipient information wasn't in the proper String format.
+    %p
+      I chose to use attr_accessor for the address input field so that, if the person didn't want to configure the entire object using a block(see configure method), they could manually set each address value.
+    %p
+      I used attr_reader for the "formatted address" method, because that method needs to be read-only. No use giving someone the ability to mess up the JSON format that it returns. The formatted address return value is exactly what the TryPaper API is expecting for the address fields.
+    %p
+
+
     %p.centered
       %img{:src => "https://drive.google.com/uc?id=0BwSA_JYWKK3IYjJzVFgzakVpSEk"}
     %h4 recipient.rb
