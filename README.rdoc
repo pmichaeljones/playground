@@ -2,11 +2,11 @@
 
 Welcome to my personal Ruby on Rails playground, where I implement my ideas.
 
-Here's the URL: http://pmichaeljones.herokuapp.com
+Here's the URL: http://patrickjones.me
 
 Feature-Specific URLs:
 
-CrossFit Name Generator: http://pmichaeljones.herokuapp.com/crossfit_name_generator/new
+CrossFit Name Generator: http://patrickjones.me/crossfit_name_generator/new
 
 Check back often!
 
