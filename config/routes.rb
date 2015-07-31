@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get '/delete_reminder/:id' => 'twilio_reminders#delete_reminder', as: "delete_reminder"
 
+  post '/business-hook' => 'fitnesstexter#webhook'
+
   resources :contact_form, only: [:index, :new, :create]
 
 
