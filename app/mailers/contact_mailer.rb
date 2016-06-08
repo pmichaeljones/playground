@@ -1,5 +1,16 @@
 class ContactMailer < ActionMailer::Base
 
+  def send_stripe_info(customer_id, what_happened)
+    @reason = what_happened
+    @customer = customer_id
+    mail(
+      from: "noreply@patrickjones.me",
+      to: "info@boostfitnessmarketing.com",
+      subject: "Stripe Webhook Update"
+      )
+  end
+
+
   def contact_form_email(obj)
     @message = obj[:message]
     @sender_name = obj[:name]
