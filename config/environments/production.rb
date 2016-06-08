@@ -8,7 +8,7 @@ Rails.application.configure do
     :user_name => ENV["POSTMARK_USERNAME"],
     :password  => ENV["POSTMARK_PASSWORD"], # SMTP password is any valid API key
     :authentication => 'plain', # Mandrill supports 'plain' or 'login'
-    :domain => 'patrickjones.me', # your domain to identify your server when connecting
+    :domain => 'patrickjones.me' # your domain to identify your server when connecting
   }
 
   # Code is not reloaded between requests.
