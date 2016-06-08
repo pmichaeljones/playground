@@ -4,7 +4,7 @@ class ContactMailer < ActionMailer::Base
     @reason = what_happened
     @customer = customer_id
     mail(
-      from: "noreply@patrickjones.me",
+      from: "info@boostfitnessmarketing.com",
       to: "info@boostfitnessmarketing.com",
       subject: "Stripe Webhook Update"
       )

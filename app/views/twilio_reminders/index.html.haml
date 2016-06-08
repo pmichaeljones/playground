@@ -15,45 +15,45 @@
       %li Click "Remove Item" to remove your task from the list
     %b Please only use your PERSONAL phone number. Please don't put my career in jeopardy by abusing this. Thanks!
     %hr
-.row
-  .small-12.columns
-    - if @twilio_reminder == nil
-    - else
-      = render 'shared/errors', obj: @twilio_reminder
-    = form_for @twilio_reminder do |f|
-      %fieldset
-        %legend Set Up Text Message Reminder
-        .row
-          .small-12.large-4.columns
-            = f.label :client, "Client Name"
-            = f.text_field :client, class: 'radius', placeholder:"Customer Name"
-          .small-12.large-4.columns
-            = f.label :event, "Item to be Picked Up"
-            = f.text_field :event, class: 'radius', placeholder:"Item to Be Picked Up [Sandwich, dry cleaning, etc]"
-          .small-12.large-4.columns
-            = f.label :phone_number, "Phone Number"
-            = f.text_field :phone_number, class: 'radius', placeholder:"Phone Number [Written as 555-555-5555]"
-        .row
-          .small-12.columns.centered
-            = f.submit "Create Pickup Reminder", class:'button alert radius'
-      %br
-.row
-  .small-12.columns
-    - if @reminders.count != 0
-      %h4 Current Events Waiting for Reminders
-.row
-  - @reminders.each do |r|
-    .small-12.large-6.columns
-      .panel.radius{style: "height: 150px;"}
-        %p
-          %b Client Name:
-          = r.client
-        %p
-          %b Item to be Picked Up:
-          = r.event
-        - if r.message_sent == true
-          .label Reminder Has Been Sent Successfully
-        - else
-          = link_to "Click to Send Pickup Reminder", send_reminder_path(r), { :style => "margin-bottom: 5px;", :class => 'success label'}
-        = link_to "Remove Item", delete_reminder_path(r), class:  'alert label'
+/ .row
+/   .small-12.columns
+/     - if @twilio_reminder == nil
+/     - else
+/       = render 'shared/errors', obj: @twilio_reminder
+/     = form_for @twilio_reminder do |f|
+/       %fieldset
+/         %legend Set Up Text Message Reminder
+/         .row
+/           .small-12.large-4.columns
+/             = f.label :client, "Client Name"
+/             = f.text_field :client, class: 'radius', placeholder:"Customer Name"
+/           .small-12.large-4.columns
+/             = f.label :event, "Item to be Picked Up"
+/             = f.text_field :event, class: 'radius', placeholder:"Item to Be Picked Up [Sandwich, dry cleaning, etc]"
+/           .small-12.large-4.columns
+/             = f.label :phone_number, "Phone Number"
+/             = f.text_field :phone_number, class: 'radius', placeholder:"Phone Number [Written as 555-555-5555]"
+/         .row
+/           .small-12.columns.centered
+/             = f.submit "Create Pickup Reminder", class:'button alert radius'
+/       %br
+/ .row
+/   .small-12.columns
+/     - if @reminders.count != 0
+/       %h4 Current Events Waiting for Reminders
+/ .row
+/   - @reminders.each do |r|
+/     .small-12.large-6.columns
+/       .panel.radius{style: "height: 150px;"}
+/         %p
+/           %b Client Name:
+/           = r.client
+/         %p
+/           %b Item to be Picked Up:
+/           = r.event
+/         - if r.message_sent == true
+/           .label Reminder Has Been Sent Successfully
+/         - else
+/           = link_to "Click to Send Pickup Reminder", send_reminder_path(r), { :style => "margin-bottom: 5px;", :class => 'success label'}
+/         = link_to "Remove Item", delete_reminder_path(r), class:  'alert label'
 
