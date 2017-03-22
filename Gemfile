@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.3'
+
 gem 'rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
