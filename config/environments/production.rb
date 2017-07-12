@@ -3,10 +3,10 @@ Rails.application.configure do
 
   #ActionMailer settings
   config.action_mailer.smtp_settings = {
-    :address   => "smtp.postmarkapp.com",
+    :address   => ENV["MAILGUN_SMTP_SERVER"],
     :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
-    :user_name => ENV["POSTMARK_USERNAME"],
-    :password  => ENV["POSTMARK_PASSWORD"], # SMTP password is any valid API key
+    :user_name => ENV["MAILGUN_SMTP_LOGIN"],
+    :password  => ENV["MAILGUN_SMTP_PASSWORD"], # SMTP password is any valid API key
     :authentication => 'plain', # Mandrill supports 'plain' or 'login'
     :domain => 'patrickjones.me' # your domain to identify your server when connecting
   }
