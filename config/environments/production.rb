@@ -2,13 +2,13 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   #ActionMailer settings
-  config.action_mailer.smtp_settings = {
-    :address   => ENV["MAILGUN_SMTP_SERVER"],
-    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
-    :user_name => ENV["MAILGUN_SMTP_LOGIN"],
-    :password  => ENV["MAILGUN_SMTP_PASSWORD"], # SMTP password is any valid API key
-    :authentication => 'plain', # Mandrill supports 'plain' or 'login'
-    :domain => 'patrickjones.me' # your domain to identify your server when connecting
+  ActionMailer::Base.smtp_settings = {
+  :port           => 587,
+  :address        => 'smtp.sendgrid.net',
+  :user_name      => ENV['SENDGRID_USERNAME'],
+  :password       => ENV['SENDGRID_PASSWORD'],
+  :authentication => :plain,
+  :enable_starttls_auto => true
   }
 
   # Code is not reloaded between requests.
