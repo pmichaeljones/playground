@@ -17,6 +17,7 @@ gem 'foundation-icons-sass-rails'
 gem 'haml-rails'
 gem 'sass-rails', '~> 4.0.3'
 gem 'jquery-rails'
+gem 'simple_calendar', '~> 2.0'
 
 # Manage API keys and passwords
 gem 'figaro'
