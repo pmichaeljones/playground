@@ -1,0 +1,12 @@
+.row
+  .small-12.columns
+    %h3 Here Are Your Words
+    %hr
+    - @words.each do |x|
+      %p=x
+.row
+  .small-4.small-centered.columns.centered
+    = form_tag words_path do 
+      = label_tag "Word"
+      = text_field_tag :word, nil, class: "radius"
+      = submit_tag "Create Word", class: "button"
