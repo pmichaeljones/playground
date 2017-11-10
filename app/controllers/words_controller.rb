@@ -5,7 +5,6 @@ class WordsController < ApplicationController
   end
 
   def create
-    binding.pry
     if params[:code] == ENV['CODEWORD']
       word = Word.new(word: params[:word])
       word.save

@@ -19,6 +19,18 @@
 
 /* CUSTOM STYLING BELOW */
 
+.alert-error {
+  background: red;
+  color: white;
+  border: 1px solid black;
+}
+
+.alert-success {
+  background: blue;
+  color: white;
+  border: 1px solid black;
+}
+
 .bold {
   font-weight: bold;
 }
