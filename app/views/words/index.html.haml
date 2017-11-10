@@ -3,10 +3,12 @@
     %h3 Here Are Your Words
     %hr
     - @words.each do |x|
-      %p=x
+      .small-2.columns.panel
+        =x.word
 .row
   .small-4.small-centered.columns.centered
     = form_tag words_path do 
-      = label_tag "Word"
-      = text_field_tag :word, nil, class: "radius"
+      = label_tag :word, "Let's Create a Word"
+      = text_field_tag :word, nil, class: "radius", placeholder: "Type word here."
+      = text_field_tag :codeword, nil, class: "radius", placeholder: "Password"
       = submit_tag "Create Word", class: "button"

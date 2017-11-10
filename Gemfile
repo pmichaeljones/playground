@@ -21,6 +21,7 @@ gem 'simple_calendar', '~> 2.0'
 
 # Manage API keys and passwords
 gem 'figaro'
+gem 'pg'
 
 # API gems
 gem 'twilio-ruby'
@@ -28,6 +29,8 @@ gem 'mandrill-api'
 
 # Gem for creating static pages
 gem 'high_voltage', '~> 2.2.1'
+
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 group :doc do
@@ -37,12 +40,10 @@ end
 group :development do
   gem 'quiet_assets'
   gem 'pry'
-  gem 'sqlite3'
   gem 'spring'
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 

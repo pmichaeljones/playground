@@ -5,6 +5,15 @@ class WordsController < ApplicationController
   end
 
   def create
+    binding.pry
+    if params[:code] == ENV['CODEWORD']
+      word = Word.new(word: params[:word])
+      word.save
+      flash[:success] = "Your word was added."
+    else
+      flash[:error] = "Wrong code word!"
+    end
+    redirect_to words_path
   end
 
   def edit
