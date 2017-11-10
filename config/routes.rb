@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :crossfit_name_generator, only: [:new, :create]
 
+  resources :words
+
   get '/blog' => 'pages#blog'
   #get '/blog' => "pages#blog"
 
