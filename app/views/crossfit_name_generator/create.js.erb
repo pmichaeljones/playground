@@ -1,5 +1,6 @@
 <% if @message %>
-  alert("That word doesn't exist in our dictionry. Try again.");
+  alert("That word doesn't exist in the dictionary. Try again.")
 <% else %>
+  $("#crossfit-counter").html("<%= @counter.count %> times")
   $("#crossfit-names").html("<%= escape_javascript(render(:partial => 'shared/crossfit_names')) %>")
 <% end %>

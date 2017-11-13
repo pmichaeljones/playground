@@ -45,6 +45,12 @@
             = text_field_tag :query, nil, class: "radius", placeholder: "Enter adjective like fierce, wild, strong, brave, etc"
           .small-12.columns.centered
             = submit_tag('Generate Names', class: "button radius alert")
+            %br
+            %p
+              Used by future CrossFit owners
+              %span#crossfit-counter
+                = "#{@counter.count} times"
+              and counting!
           %hr
           .panel-body#crossfit-names{ :style => "text-align: center;"}
   %hr
