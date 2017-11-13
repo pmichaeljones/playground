@@ -50,10 +50,13 @@ ActiveRecord::Schema.define(version: 20171110152546) do
     t.boolean  "message_sent", default: false
   end
 
+<<<<<<< HEAD
   create_table "words", force: true do |t|
     t.string   "word"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+=======
+>>>>>>> 9dc4a6f09c4c33c631035aaf2f58eac9a66be1e7
 end

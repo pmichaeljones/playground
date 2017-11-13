@@ -29,9 +29,7 @@ gem 'mandrill-api'
 
 # Gem for creating static pages
 gem 'high_voltage', '~> 2.2.1'
-
 gem 'dotenv-rails', groups: [:development, :test]
-
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'

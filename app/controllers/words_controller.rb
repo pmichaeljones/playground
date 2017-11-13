@@ -13,6 +13,10 @@ class WordsController < ApplicationController
       flash[:error] = "Wrong code word!"
     end
     redirect_to words_path
+
+  end
+
+  def create
   end
 
   def edit
