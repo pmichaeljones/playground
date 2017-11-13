@@ -16,10 +16,17 @@ class WordsController < ApplicationController
 
   end
 
-  def edit
+  def destroy
+    respond_to do |format|
+      format.js do 
+        @word = Word.find(params[:id])
+        @word.delete
+      end
+    end
+
   end
 
-  def destroy
+  def edit
   end
 
 

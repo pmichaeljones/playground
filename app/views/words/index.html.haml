@@ -3,8 +3,13 @@
     %h3 Here Are Your Words
     %hr
     - @words.each do |x|
-      %span{style: "border: 1px solid black; background: tomato; color: white; margin-left: 2px; padding: 10px;"}
-        =x.word
+      %span{id: "word-#{x.id}", style: "border: 1px solid black; background: tomato; color: white; margin-left: 2px; padding: 10px;"}
+        = "#{x.word}"
+        =form_tag word_path(x.id), method: :delete, remote: true, style: "display: inline;" do 
+          =submit_tag "X"
+        
+
+        
     %hr
 .row
   .small-4.small-centered.columns.centered
