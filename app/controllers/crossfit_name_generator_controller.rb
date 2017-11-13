@@ -21,18 +21,23 @@ class CrossfitNameGeneratorController < ApplicationController
 
             res = Net::HTTP.get_response(uri)
 
-            @reply_code = res.code
-
-            if @reply_code == "404"
-
+            if res.code != "200"
+              @message = "That word doesn't exist in our dictionary."
             else
 
               hash = JSON.parse(res.body)
 
+              @business_names = []
+
+              hash.keys.each do |x|
+                if x == "adjective"
+                  hash.fetch("adjective")["sim"].each{ |x| @business_names << x }
+                elsif x == "noun"
+                  hash.fetch("noun")["syn"].each{ |x| @business_names << x }
+                end
+              end
               @counter.count += 1
               @counter.save
-              @business_names = hash["adjective"]["sim"]
-
             end
 
           end #end of if statement
