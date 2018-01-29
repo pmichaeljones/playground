@@ -1,7 +1,46 @@
-- @title = "Using Each with Index to Display Ruby on Rails Adsense Diplay Ads"
+- @title = "Using Each with Index to Display Ruby on Rails Adsense Display Ads"
 - @metadescription = "When displaying your index view, you can use each_with_index to dynamically display Google AdSense display advertisements."
 .row
   .small-12.column
-    %title{style: "font-size: 24px;"}
-      Using Each with Index to Display Ruby on Rails Adsense Diplay Ads
-    %p Published: January 29, 2018
+    %h1 Using each_with_index Method to Dynamically Display Ruby on Rails Adsense Display Ads
+    %pubdate
+      %p Published: January 29, 2018
+.row
+  .small-12.columns
+    %p
+      While working on
+      = link_to "DoggieDashboard", "http://doggiedashboard.com"
+      the other day, I realized that I wasn't quite sure how I would add Google Adsense banners dynamically. In the pet index view of DoggieDashboard, user pets are
+      = link_to "paginated", "https://github.com/mislav/will_paginate"
+      at 50 pets per page (to keep page load times down). Well, instead of hard coding a square AdSense advertisement into the view multiple times, I wanted to figure out a way to get ads mixed into the scrolling view.
+    %p
+      My good friends
+      = link_to "each_with_index", "https://apidock.com/ruby/Enumerator/each_with_index"
+      and
+      = link_to "modulo", "https://ruby-doc.org/core-1.9.3/Numeric.html#method-i-modulo"
+      came to the rescue. By injecting the index into the iteration, you can set the frequency of the advertisement. In the example below, I have the advertisement showing in every 7th "pet card" slot.
+  .small-12.columns
+    %img{src: "https://s3-us-west-2.amazonaws.com/doggiedashboard/assets/blog/using_each_with_index_rails_adsense.png", style: "margin: 15px 0px;"}
+  .small-12.columns
+    %p
+      You might be wondering why I have
+      %code
+        index = index += 1
+      at the start of the loop. Since arrays and relations are
+      = link_to "zero-indexed objects", "https://en.wikipedia.org/wiki/Zero-based_numbering"
+      you're going to run into a problem with your first index, 0.
+      %code
+        0 % 7 = 0
+      Because modulo of zero equals zero, the advertisement gets inserted into the very first "pet card" slot. From a UX viewpoint, this is kind of annoying. You're expecting advertisements, but you're not expecting it to be the first thing you see. So, if you increase the index by 1, you get your first true return value for
+      %code
+        index % 7 == 0
+      at the 7th slot.
+    <script src="https://gist.github.com/pmichaeljones/330dda9b58338366179dde9172ee5a72.js"></script>
+  .small-12.columns
+    %p
+      With the above code example, I'm able to easily insert square Google Adsense advertisements into DoggieDashboard's main pet index view. If I want to adjust my frequency, and I'm sure I will in the future, I'll probably just set up an environmental variable along the lines of
+      %code
+        if index % ENV['Ad_Frequency'] == 0
+      and then I'll be able to tweak my ad frequency without having to redeploy. 
+    %p
+      Enjoy!
