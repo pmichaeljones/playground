@@ -1,5 +1,7 @@
 class ContactMailer < ActionMailer::Base
 
+  self.smtp_settings = {:port => 587, :address => 'smtp.sparkpostmail.com', :user_name => "SMTP_Injection", :password => ENV['SPARKPOST_PW'], :authentication => :login, :enable_starttls_auto => true }
+
   def send_stripe_info(customer_id, what_happened)
     @reason = what_happened
     @customer = customer_id
@@ -7,6 +9,15 @@ class ContactMailer < ActionMailer::Base
       from: "info@boostfitnessmarketing.com",
       to: "info@boostfitnessmarketing.com",
       subject: "Stripe Webhook Update"
+      )
+  end
+
+  def testing_sparkpost(email)
+    @email = email
+    mail(
+      from: "info@newsletter.doggiedashboard.com",
+      to: @email,
+      subject: "Testing Sparkpost"
       )
   end
 
@@ -33,3 +44,4 @@ class ContactMailer < ActionMailer::Base
   end
 
 end
+
