@@ -1,4 +1,8 @@
 .row
   .small-12.columns
+  - @posts.each do |post|
     %p
-      Here you will see all the blog posts
+      .panel
+        = link_to "#{post.title}", "/blog/#{post.slug}", style: "color: black; text-decoration: underline; font-size: 35px;"
+        %p.tiny{style: "margin: 0px;"}
+          Published: #{post.updated_at.strftime("%B %d, %Y")}

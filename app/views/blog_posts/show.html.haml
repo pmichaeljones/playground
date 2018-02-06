@@ -1,4 +1,13 @@
-.row
-  .small-12.columns
-    %p
-      Here you will see the blog posts
+%article
+  .row
+    .small-12.columns.centered
+      %h2
+        = @post.title
+      %time{datetime: "#{@post.updated_at}", pubdate:"pubdate"}
+      %p.left.tiny
+        = "Published: #{@post.updated_at.strftime("%B %d, %Y")}"
+      %hr
+  .row
+    .small-12.columns
+      = raw(@post.content)
+

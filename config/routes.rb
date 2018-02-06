@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   post 'blog/login', to: 'blog_posts#verify'
   post 'blog/logout', to: 'blog_posts#logout', as: "logout"
 
-  # get '/blog' => 'pages#blog'
+  get '/blog' => 'blog_posts#index', as: "blog"
+  get '/blog/:slug', to: 'blog_posts#show'
   #get '/blog' => "pages#blog"
 
   get '/twilio_inbox' => 'twilio#inbox'

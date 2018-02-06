@@ -1,3 +1,9 @@
+- if @post.errors.messages.present?
+  .row
+    .small-12.columns
+      %h3{style: "color: darkred;"}
+        - @post.errors.messages.each do |k,v|
+          = "Error: Your chosen #{k.capitalize} " + "#{v.first}. Please change slug."
 .row
   .small-12.columns
     =form_for @post do |f|
