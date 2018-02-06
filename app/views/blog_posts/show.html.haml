@@ -3,6 +3,8 @@
   - @metadescription = "#{@post.metadescription}"
   .row
     .small-12.columns.centered
+      - if session["logged_in_user"] == true
+        = link_to "Edit", edit_blog_post_path(@post.id), class: "right button", style: "padding: 2px;"
       %h3{style: "font-size:30px;"}
         = @post.title
       %time{datetime: "#{@post.updated_at}", pubdate:"pubdate"}
