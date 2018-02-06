@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :words
 
   resources :blog_posts
+  get '/sitemap.xml', to: 'pages#sitemap', :format => "xml", :as => :sitemap
 
   get 'blog/new', to: 'blog_posts#new'
   post 'blog/login', to: 'blog_posts#verify'
