@@ -13,7 +13,7 @@
           = button_to "Edit", edit_blog_post_path(post.id), method: :get, class: "right"
         = link_to "#{post.title}", "/blog/#{post.slug}", style: "color: black; text-decoration: underline; font-size: 27px;"
         %p.tiny{style: "margin: 0px;"}
-          Published: #{post.updated_at.strftime("%B %d, %Y")}
+          Last Updated: #{post.updated_at.strftime("%B %d, %Y")}
 - if session["logged_in_user"] == true
   .row
     .small-12.columns.centered{style: "margin: 5px 0px 10px 0px;"}

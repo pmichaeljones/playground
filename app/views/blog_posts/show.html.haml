@@ -7,7 +7,7 @@
         = @post.title
       %time{datetime: "#{@post.updated_at}", pubdate:"pubdate"}
       %p.left.tiny
-        = "Published: #{@post.updated_at.strftime("%B %d, %Y")}"
+        = "Last Updated: #{@post.updated_at.strftime("%B %d, %Y")}"
       %hr
   .row
     .small-12.columns
