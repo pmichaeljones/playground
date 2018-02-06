@@ -1,0 +1,23 @@
+.row
+  .small-12.columns
+    =form_for @post do |f|
+      %fieldset
+        %legend Let's Write a Blog Post!
+        .row
+          .small-12.large-6.columns
+            = f.label :title, "Blog Title"
+            = f.text_field :title, class: "radius"
+          .small-12.large-6.columns
+            = f.label :slug, "Slug"
+            = f.text_field :slug, class: "radius"
+          .small-12.columns
+            = f.label :metadescription, "Description"
+            = f.text_field :metadescription, class: "radius"
+          .small-12.columns
+            = f.label :content, "Content"
+            = f.text_area :content, rows: 15
+          .small-12.columns
+            =submit_tag "Save Blog Post", class: "button radius right"
+.row
+  .small-12.columns.centered{style: "margin: 5px 0px 10px 0px;"}
+    = button_to "Logout", logout_path

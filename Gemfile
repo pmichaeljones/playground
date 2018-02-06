@@ -10,6 +10,7 @@ gem 'mail'
 gem 'autoprefixer-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'rake', '>= 12.3.0'
 
 # Front-End Framework & Design Gems
 gem 'foundation-rails'

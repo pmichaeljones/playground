@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110152546) do
+ActiveRecord::Schema.define(version: 20180206124430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blog_posts", force: true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.string   "metadescription"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "counters", force: true do |t|
     t.string   "name"
@@ -50,13 +59,10 @@ ActiveRecord::Schema.define(version: 20171110152546) do
     t.boolean  "message_sent", default: false
   end
 
-<<<<<<< HEAD
   create_table "words", force: true do |t|
     t.string   "word"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-=======
->>>>>>> 9dc4a6f09c4c33c631035aaf2f58eac9a66be1e7
 end

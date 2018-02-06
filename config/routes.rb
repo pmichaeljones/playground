@@ -8,7 +8,13 @@ Rails.application.routes.draw do
 
   resources :words
 
-  get '/blog' => 'pages#blog'
+  resources :blog_posts
+
+  get 'blog/new', to: 'blog_posts#new'
+  post 'blog/login', to: 'blog_posts#verify'
+  post 'blog/logout', to: 'blog_posts#logout', as: "logout"
+
+  # get '/blog' => 'pages#blog'
   #get '/blog' => "pages#blog"
 
   get '/twilio_inbox' => 'twilio#inbox'
