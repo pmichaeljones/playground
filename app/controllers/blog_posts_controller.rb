@@ -32,6 +32,28 @@ class BlogPostsController < ApplicationController
   end
 
   def edit
+    @post = BlogPost.where(id: params[:id]).first
+
+    if @post
+      render :edit
+    else
+      flash[:error] = "Error Captain!"
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @post = BlogPost.find(params[:id])
+
+    @post.update(blog_post_params)
+
+    if @post.save
+      flash[:success] = "Your post as been updated."
+      redirect_to blog_path
+    else
+      flash[:error] = "Error. Please fix your mistakes."
+      render :edit
+    end
   end
 
   def verify
@@ -48,10 +70,15 @@ class BlogPostsController < ApplicationController
     @post = BlogPost.new
   end
 
-  def update
-  end
-
   def destroy
+    if session["logged_in_user"] == true
+      @post = BlogPost.find(params[:id])
+
+      @post.delete if @post
+      flash[:success] = "Blog post deleted."
+
+      redirect_to blog_path
+    end
   end
 
   def logout
