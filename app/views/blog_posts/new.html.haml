@@ -21,9 +21,13 @@
             = f.text_field :metadescription, class: "radius"
           .small-12.columns
             = f.label :content, "Content"
-            = f.text_area :content, rows: 15
+            = f.text_area :content, rows: 10, style: "font-size: 14px;"
           .small-12.columns
             =submit_tag "Save Blog Post", class: "button radius right"
+        .row
+          .small-12.columns
+            %code
+              = h "<a target='_blank' href=''>LINK</a>"
 .row
   .small-12.columns.centered{style: "margin: 5px 0px 10px 0px;"}
     = button_to "Logout", logout_path
