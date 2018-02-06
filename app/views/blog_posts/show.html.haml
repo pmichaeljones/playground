@@ -11,7 +11,7 @@
       %hr
   .row
     .small-12.columns
-      = simple_format(@post.content)
+      = simple_format(@post.content, {}, :sanitize => false)
   .row
     .small-12.columns.centered
       - if session["logged_in_user"] == true
