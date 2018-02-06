@@ -3,8 +3,6 @@
   - @metadescription = "#{@post.metadescription}"
   .row
     .small-12.columns.centered
-      - if session["logged_in_user"] == true
-        = link_to "Edit", edit_blog_post_path(@post.id), class: "right button", style: "padding: 2px;"
       %h3{style: "font-size:30px;"}
         = @post.title
       %time{datetime: "#{@post.updated_at}", pubdate:"pubdate"}
@@ -14,4 +12,9 @@
   .row
     .small-12.columns
       = raw(@post.content)
+  .row
+    .small-12.columns.centered
+      - if session["logged_in_user"] == true
+        = button_to "Edit", edit_blog_post_path(@post.id), method: :get, form_class: "inline"
+        = button_to "Logout", logout_path, form_class: "inline"
 

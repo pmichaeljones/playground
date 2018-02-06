@@ -27,3 +27,4 @@
 .row
   .small-12.columns.centered{style: "margin: 5px 0px 10px 0px;"}
     = button_to "Delete Post", blog_post_path(@post), method: :delete, data: { disable_with: 'Processing...' }
+    = button_to "Logout", logout_path
