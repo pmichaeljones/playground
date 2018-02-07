@@ -19,6 +19,8 @@ class BlogPostsController < ApplicationController
   end
 
   def create
+    params[:blog_post][:slug] = params[:blog_post][:slug].gsub(" ", "-")
+
     @post = BlogPost.new(blog_post_params)
 
     if @post.save
@@ -45,6 +47,8 @@ class BlogPostsController < ApplicationController
   def update
     @post = BlogPost.find(params[:id])
 
+    params[:blog_post][:slug] = params[:blog_post][:slug].gsub(" ", "-")
+    
     @post.update(blog_post_params)
 
     if @post.save
