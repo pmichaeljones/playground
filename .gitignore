@@ -15,3 +15,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore these files that happen when you enter using UI
+/.DS_Store
+public/.DS_Store
+.DS_Store
+app/.DS_Store
