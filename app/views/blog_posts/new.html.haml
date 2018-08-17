@@ -16,19 +16,84 @@
           .small-12.large-6.columns
             = f.label :slug, "Slug"
             = f.text_field :slug, class: "radius"
-          .small-12.columns
+          .small-10.columns
             = f.label :metadescription, "Description"
             = f.text_field :metadescription, class: "radius"
           .small-12.columns
+            <input type="button" value="b" />
+            <input type="button" value="i" />
+            <input type="button" value="u" />
+            <input type="button" value="h1" />
+            <input type="button" value="h2" />
+            <input type="button" value="h3" />
+            <input type="button" value="Link" />
+            <input type="button" value="DoggieDashboard" />
+            <input type="button" value="Img" />
             = f.label :content, "Content"
-            = f.text_area :content, rows: 10, style: "font-size: 18px;"
+            = f.text_area :content, rows: 10, style: "font-size: 18px;", id: "my_textarea", name: "my_textarea"
           .small-12.columns
             =submit_tag "Save Blog Post", class: "button radius right"
-        .row
-          .small-12.columns
-            %code
-              = h "<a target='_blank' href=''>LINK</a>"
-              = h "<p class='bold'>"
-.row
-  .small-12.columns.centered{style: "margin: 5px 0px 10px 0px;"}
-    = button_to "Logout", logout_path
+:javascript
+  $('input:button').click(function() {
+    
+    var myTextAreaValue = $('#my_textarea').val();
+    var selectedText = getInputSelection($('#my_textarea'));
+    if ($(this).val() === "Link") {
+      var url = prompt("What's the URl?");
+      var updatedText = '<a href="' + url + '" target="_blank" >' + selectedText + '</a>';
+    } else if ($(this).val() === "DoggieDashboard") { 
+      var updatedText = '<a href="https://doggiedashboard.com" target="_blank" >' + selectedText + '</a>';
+     } else if ($(this).val() === "Img") {
+      var url = prompt("What's the image url?");
+      var updatedText = '<div class="centered border-picture"><img src="' + url + '" align="right" class="pixabay"><a href="http://pixabay.com" class="pixalink" target="_blank">Courtesy of Pixabay.com</a></div>';
+    } else {
+      var updatedText = '<'+$(this).val()+'>' + selectedText + '</'+$(this).val()+'>';
+    }
+    myTextAreaValue = myTextAreaValue.replace(selectedText, updatedText);
+    $('#my_textarea').val(myTextAreaValue)
+  });
+
+
+  function getInputSelection(elem){
+   if(typeof elem != "undefined"){
+    s=elem[0].selectionStart;
+    e=elem[0].selectionEnd;
+    return elem.val().substring(s, e);
+   }else{
+    return '';
+   }
+  }
+/ - if @post.errors.messages.present?
+/   .row
+/     .small-12.columns
+/       %h3{style: "color: darkred;"}
+/         - @post.errors.messages.each do |k,v|
+/           = "Error: Your chosen #{k.capitalize} " + "#{v.first}. Please change slug."
+/ .row
+/   .small-12.columns
+/     =form_for @post do |f|
+/       %fieldset
+/         %legend Let's Write a Blog Post!
+/         .row
+/           .small-12.large-6.columns
+/             = f.label :title, "Blog Title"
+/             = f.text_field :title, class: "radius"
+/           .small-12.large-6.columns
+/             = f.label :slug, "Slug"
+/             = f.text_field :slug, class: "radius"
+/           .small-12.columns
+/             = f.label :metadescription, "Description"
+/             = f.text_field :metadescription, class: "radius"
+/           .small-12.columns
+/             = f.label :content, "Content"
+/             = f.text_area :content, rows: 10, style: "font-size: 18px;"
+/           .small-12.columns
+/             =submit_tag "Save Blog Post", class: "button radius right"
+/         .row
+/           .small-12.columns
+/             %code
+/               = h "<a target='_blank' href=''>LINK</a>"
+/               = h "<p class='bold'>"
+/ .row
+/   .small-12.columns.centered{style: "margin: 5px 0px 10px 0px;"}
+/     = button_to "Logout", logout_path
