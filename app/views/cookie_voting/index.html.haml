@@ -1,0 +1,15 @@
+- @title = "Simple Cookie-Based Voting"
+.row
+  .small-12.columns
+    %h4 Here we do cookie-based voting.
+
+:javascript
+  localStorage.setItem("already_voted", "FALSE");
+  var id = localStorage.getItem("already_voted");
+  alert("Has this user voted:" + id);
+  localStorage.setItem("already_voted", "TRUE");
+  var id = localStorage.getItem("already_voted");
+  alert("Has this user voted:" + id);
+  alert("Now we pause to find a non-variable.");
+  var thing = localStorage.getItem("none");
+  alert("The non thing is:" + thing);
