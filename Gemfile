@@ -23,7 +23,7 @@ gem 'simple_calendar', '~> 2.0'
 
 # Manage API keys and passwords
 gem 'figaro'
-gem 'pg'
+gem 'pg', '~> 0.11'
 
 # API gems
 gem 'twilio-ruby'
@@ -45,6 +45,6 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg'
+  gem 'pg', '~> 0.11'
 end
 
