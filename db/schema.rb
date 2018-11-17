@@ -11,56 +11,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206124430) do
+ActiveRecord::Schema.define(version: 20181117110414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "blog_posts", force: true do |t|
-    t.string   "title"
-    t.string   "slug"
-    t.string   "metadescription"
+  create_table "blog_posts", force: :cascade do |t|
+    t.string   "title",           limit: 255
+    t.string   "slug",            limit: 255
+    t.string   "metadescription", limit: 255
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "counters", force: true do |t|
-    t.string   "name"
+  create_table "counters", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.integer  "count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "incoming_sms", force: true do |t|
-    t.string   "body"
-    t.string   "from_city"
-    t.string   "message_sid"
-    t.string   "from_number"
+  create_table "incoming_sms", force: :cascade do |t|
+    t.string   "body",        limit: 255
+    t.string   "from_city",   limit: 255
+    t.string   "message_sid", limit: 255
+    t.string   "from_number", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
-    t.string   "message"
+    t.string   "name",        limit: 255
+    t.string   "message",     limit: 255
   end
 
-  create_table "messages", force: true do |t|
+  create_table "messages", force: :cascade do |t|
     t.text     "contents"
-    t.string   "sender"
+    t.string   "sender",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "twilio_reminders", force: true do |t|
-    t.string   "client"
-    t.string   "event"
-    t.string   "phone_number"
+  create_table "twilio_reminders", force: :cascade do |t|
+    t.string   "client",       limit: 255
+    t.string   "event",        limit: 255
+    t.string   "phone_number", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "message_sent", default: false
+    t.boolean  "message_sent",             default: false
   end
 
-  create_table "words", force: true do |t|
-    t.string   "word"
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name", limit: 255
+    t.string   "last_name",  limit: 255
+    t.string   "email",      limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.jsonb    "settings",               default: {}, null: false
+  end
+
+  create_table "words", force: :cascade do |t|
+    t.string   "word",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
