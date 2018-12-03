@@ -68,6 +68,7 @@ class BlogPostsController < ApplicationController
       redirect_to new_blog_post_path
     else
       flash[:error] = "You cannot do that!"
+      binding.pry
       redirect_to root_path
     end
   end
