@@ -63,6 +63,7 @@ class BlogPostsController < ApplicationController
   end
 
   def verify
+    Rails.logger.debug(request.cookies)
     if params[:user_name] == ENV['USERNAME'] && params[:password] == ENV['PASSWORD']
       session["logged_in_user"] = true
       redirect_to new_blog_post_path
