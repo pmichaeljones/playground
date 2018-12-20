@@ -11,6 +11,8 @@
       %hr
   .row
     .small-12.columns
+      - if session["logged_in_user"] == true
+        = button_to "Edit", edit_blog_post_path(@post.id), method: :get, form_class: "inline"
       = simple_format(@post.content, {}, :sanitize => false)
   .row
     .small-12.columns.centered

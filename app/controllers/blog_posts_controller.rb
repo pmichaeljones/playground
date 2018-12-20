@@ -55,7 +55,7 @@ class BlogPostsController < ApplicationController
 
     if @post.save
       flash[:success] = "Your post as been updated."
-      redirect_to blog_path
+      render :show
     else
       flash[:error] = "Error. Please fix your mistakes."
       render :edit
