@@ -51,7 +51,7 @@
       var updatedText = '<a href="https://doggiedashboard.com" target="_blank" >' + selectedText + '</a>';
      } else if ($(this).val() === "Img") {
       var url = prompt("What's the image url?");
-      var updatedText = '<div class="centered border-picture"><img src="' + url + '"><a href="' + url + '" target="_blank">CAPTION HERE</a></div>';
+      var updatedText = '<div class="centered border-picture"><img src="' + url + '"><a href="' + url + '" style="font-size: 12px; color: black;" target="_blank">CAPTION HERE</a></div>';
     } else {
       var updatedText = '<'+$(this).val()+'>' + selectedText + '</'+$(this).val()+'>';
     }
