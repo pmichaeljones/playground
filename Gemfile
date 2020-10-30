@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.5.7'
 
 gem 'rails'
 gem 'uglifier', '>= 1.3.0'
