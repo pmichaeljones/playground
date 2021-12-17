@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :words
 
+  resources :financial_entries
+
   resources :blog_posts
   get '/sitemap.xml', to: 'pages#sitemap', :format => "xml", :as => :sitemap
 

@@ -1,0 +1,21 @@
+.row
+  .small-12.columns
+    %h3.centered
+      Financial Entries Page
+    %hr
+.row
+  .small-12.columns
+    = form_tag financial_entries_path, action: "create", remote: "true" do
+      %fieldset
+        %legend Create Financial Entry
+        .row
+          .small-12.large-6.columns
+            = text_field_tag "financial_entry[name]", nil, class: "radius"
+          .small-12.large-6.columns
+            = text_field_tag "financial_entry[amount]", nil, class: "radius"
+          .small-12.columns.centered
+            = submit_tag 'Save', class: "button radius alert right", data:{disable_with: "Processing..."}
+.row
+  .small-12.columns
+    #financial_entries_holder
+      = render 'financial_entries/list_view', financial_entries: @financial_entries

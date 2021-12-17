@@ -1,0 +1,6 @@
+- if @error_message
+  alert("#{sanitize @error_message}");
+- else
+  $("#financial_entry_name").val('');
+  $("#financial_entry_amount").val('');
+  $('#financial_entries_holder').html("#{escape_javascript(render 'financial_entries/list_view', financial_entries: @financial_entries)}");
