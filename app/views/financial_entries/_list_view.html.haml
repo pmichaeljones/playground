@@ -1,5 +1,5 @@
 - financial_entries.each do |entry|
-  .panel
+  .panel{id: "financial_entry_holder_#{entry.id}"}
     %p
       = button_to "Delete", financial_entry_path(entry.id), method: :delete, style: "float: right;", remote: true, data: {disable_with: "Deleting..."}
       = link_to "Edit", edit_financial_entry_path(entry.id), style: "float: right; margin-right: 10px;"
