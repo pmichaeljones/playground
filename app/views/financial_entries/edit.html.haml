@@ -1,0 +1,19 @@
+.row
+  .small-12.columns
+    %h3.centered
+      Edit Financial Entry Page
+    %hr
+.row
+  .small-12.columns
+    = form_for @financial_entry  do |f|
+      %fieldset
+        %legend Create Financial Entry
+        .row
+          .small-12.large-6.columns
+            = f.label :name, "Name"
+            = f.text_field :name, class: "radius"
+          .small-12.large-6.columns
+            = f.label :amount, "Amount"
+            = f.text_field :amount, class: "radius"
+          .small-12.columns.centered
+            = f.submit 'Update', class: "button radius alert right", data:{disable_with: "Processing..."}
