@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20211217223951) do
+ActiveRecord::Schema.define(version: 20211218174055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20211217223951) do
 
   create_table "financial_entries", force: :cascade do |t|
     t.string   "name"
-    t.decimal  "amount",     precision: 8, scale: 2
+    t.decimal  "amount",     precision: 13, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
