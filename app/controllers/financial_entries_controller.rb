@@ -43,7 +43,6 @@ class FinancialEntriesController < ApplicationController
 
     if @financial_entry
       @financial_entry.destroy
-      @financial_entries = FinancialEntry.all
     else
       @error_message = "Error: You cannot delete that value."
     end
